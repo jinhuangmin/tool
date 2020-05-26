@@ -1,0 +1,138 @@
+<!DOCTYPE html><html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/statics/zxn/css/preview.css">
+<script src="http://g.tbcdn.cn/kissy/k/1.3.2/seed-min.js"></script>
+<script src="/statics/zxn/js/lib/sns-core.js"></script>
+<style>
+.ks-popup-hidden {display:none;}
+.ks-popup-shown {display:block;}
+#page #content #bd { width:100%; overflow:visible }
+.diyedit{ width:100%; text-align:center; }
+.diyedit a{  margin:0 auto;width:100px; height:32px; line-height:32px; text-align:center; display:inline-block; background-color:#c51b00; color:#ffffff; font-size:16px;-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px; margin-right:10px;}
+.diyedit a:hover{ background:#d51e01;}
+
+.top{ width:100%; background:#FFF; overflow:hidden;}
+.top_c{ width:950px; height:42px; margin:0px auto; overflow:hidden;}
+.top_cl{ float:left; height:42px; overflow:hidden;}
+.top_cl a{ float:left; width:54px; height:30px; line-height:30px; text-align:center; color:#444444; margin:6px 10px 0px 0px; background:url(images/top_zc.gif) no-repeat top left; display:inline;}
+.top_cl02{ float:left; height:42px; margin-top:10px; overflow:hidden;}
+.top_cl02 a{ color:#444444; margin:6px 10px 0px 0px; line-height:22px; display:inline;}
+.top_cr{ float:right; height:42px; overflow:hidden;}
+.top_cr span{ float:left; width:373px; height:42px; background:url(images/top_l.gif) no-repeat top left;}
+.top_cr span a{ float:left; height:42px; display:inline;}
+.top_cr span .a1{ width:122px;}
+.top_cr span .a2{ width:131px;}
+.top_cr span .a3{ width:120px;}
+.tshop-pbsm-shop-self-defined .skin-box-bd{ overflow:visible}
+</style>
+</head>
+<body style="overflow-y:scroll;overflow-x:auto;">
+<div class="top">
+	<div class="top_c">
+    	<div class="top_cl">
+        	
+        	
+        </div>
+        <div class="bd_top" style="width:250px; float:right; margin:5px 0px 0px 350px; overflow:hidden;"><div class="diyedit"><a href="javascript:void(window.close());">关闭</a></div></div>
+        <div class="top_cr">
+        	<span style="display:none">
+            	<a class="a1" href="#" title="xx" target="_blank"></a>
+                <a class="a2" href="#" title="xx" target="_blank"></a>
+            </span>
+        </div>
+    </div>
+</div>
+ <div class="codebox" style="width:1920px;">
+  <div id="main">
+  {stripslashes($html)}
+    </div></div>
+<script charset="utf-8" src="http://g.tbcdn.cn/kissy/k/1.3.2/json-min.js" async=""></script>
+<script type="text/javascript" src="/statics/zxn/js/b.js"></script>
+<script type="text/javascript" src="/statics/zxn/js/lib/cd.js"></script>
+<script>
+var tempSrollNum = Math.abs($(window).width() - $("#main").children("div.rel").width()) / 2;
+$(window).scrollLeft(tempSrollNum);
+$("div.codebox").css({"width":$("#main").children("div.rel").width()+"px","margin":"0px auto"});
+$("#main").children("div.rel").css({
+	"margin-left":"50%",
+	"left": "-"+($("#main").children("div.rel").width() / 2)+"px"
+});
+$(".jpb").each(function() {
+	var _t = $(this);//,config = JSON.parse(_t.attr("data-widget-config").replace(/\'/g, '"') || "{}")
+	_t.addClass("ks-popup-hidden").attr("style", "z-index:99;display:block;visibility:hidden;");//.appendTo($("#main").children("div.rel"));
+	// if(config.align && config.align.offset) {
+		// config.align.offset[0] = parseInt(config.align.offset[0], 10) + tempSrollNum;
+		// _t.attr("data-widget-config", JSON.stringify(config));
+	// }
+});
+$(".japb").each(function() {
+	var _t = $(this);
+	_t.addClass("ks-popup-hidden").attr("style", "z-index:99;display:block;visibility:hidden;");//.appendTo($("#main").children("div.rel"));
+	// if(config.align && config.align.offset) {
+		// config.align.offset[0] = parseInt(config.align.offset[0], 10) + tempSrollNum;
+		// _t.attr("data-widget-config", JSON.stringify(config));
+	// }
+});
+
+$(".jplb").each(function() {
+	var plHtml = '<div class="sns-widget sns-comment sns-widget-ui" data-comment="{&quot;param&quot;:{&quot;type_id&quot;:&quot;1100035&quot;,&quot;rec_user_id&quot;:&quot;-1&quot;,&quot;moreurl&quot;:&quot;http://item.taobao.com/item.htm?id=15705806426&quot;,&quot;target_key&quot;:&quot;huodong_35614370&quot;,&quot;title&quot;:&quot;空中红秀阁&quot;,&quot;page_size&quot;:3,&quot;view&quot;:&quot;default_list&quot;},&quot;paramList&quot;:{&quot;view&quot;:&quot;list_trunPage&quot;}}"><div class="comment-widget"><div class="comment-edit">        <div class="comment-add"><div class="textarea-b"><textarea class="f-txt" resize="none" style="" placeholder="我也插句话..."></textarea>        </div><div style="display: none;" class="checkcode sns-nf">        <span>验证码：</span>        <input type="text" style="width: 5em;" tabindex="3" class="f-checkcode" maxlength="4" size="4" name="TPL_checkcode">        <img height="35" width="85" style="vertical-align: middle;">        <span style="margin: 0pt 10px 0pt 0pt;">(不区分大小写)</span>        <a class="newCheckCode" href="#">换一张</a>        </div>        <div class="act">        <span class="skin-blue"><em class="J_LetterCount">0/140</em><span class="btn"><a href="#" class="J_PostComment">评论</a></span></span>        <a href="#" class="face">表情</a>            <label>    <input type="checkbox" class="J_SycMB"> 同时转发到我的淘宝    </label>            </div>        </div></div><ul class="comment-list"></ul></div></div>';
+	$(this).html(plHtml);
+});
+$(".jib").children().each(function() {
+	var box = $(this);
+	box.children().each(function() {
+		var _t = $(this);
+		if(_t.attr("data-u") || _t.attr("data-u") == "") {
+			_t.html(_t.attr("data-u"));
+		}
+	})
+});
+$(".jcb").each(function() {
+	var character = $(this);
+	if(character.attr("data-t") && character.attr("data-t") != "text") {
+		var temph = character.attr("data-h") || ";",
+			tempharr = temph.split(";");
+		character.children("a").html(tempharr[0]);
+	} 
+});
+if($("div.jnxfbox").length > 0) {
+	$("div.jnxfbox").height("100%").css("overflow", "hidden");
+}
+var o = window.opener;
+KISSY.use("node,button, dd,switchable, resizable,ua,event,overlay,ajax,countdown, dom", function (S, Node, Button, DD, Switchable, Resizable, UA, Event, Overlay, Ajax, Countdown) {
+	var DDM = DD.DDM, DOM = S.DOM;
+	S.ready(function () {
+		var source = document.getElementById('main').innerHTML;
+		S.all('.J_TWidget').each(function (v, k) {
+			var t = v.attr('data-widget-type'),
+		cfg = S.JSON.parse(v.attr('data-widget-config').replace(/\'/g, "\""));
+			if (cfg) {
+				cfg.srcNode = v;
+				if (t == 'Popup') {
+					cfg.triggerType = 'mouse';
+					window.popup = new Overlay.Popup(cfg);
+				} else if (t == 'Carousel') {
+					window.popup = new Switchable.Carousel(v, cfg);
+				} else if (t == 'Slide') {
+					window.popup = new Switchable.Slide(v, cfg);
+				} else if(t=='Tabs'){
+					window.popup = new Switchable.Tabs(v,cfg);
+				} else if(t=='Countdown') {
+					new Countdown(v,cfg.endTime,cfg);
+				} else if(t=='Accordion') {
+					new Switchable.Accordion(v,cfg);
+				}
+			}
+		});
+		S.each(S.all('.sns-widget'),function(v){
+			SNS.active(v);
+			//console.log(v);
+			
+		});
+	});
+});
+</script>
+</body></html>

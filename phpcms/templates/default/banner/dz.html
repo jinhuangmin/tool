@@ -1,0 +1,116 @@
+{template "content","header"}
+<div id="content">
+<style type="text/css">
+#pages{ width:1000px; margin:0 auto;}
+
+</style>
+
+<div id="position" style="display: block;">
+   <ul>
+      <li class="text">当前位置：</li>
+      <li class="site"><a href="/zxn" target="_top" title="首页">首页</a></li>
+      <li class="split"><em>&gt;</em></li><li class="site">店招样例</li>
+   </ul>
+</div>
+
+<script type="text/javascript">
+
+var $_GET = (function(){
+    var url = window.document.location.href.toString();
+    if( url.indexOf('.html') >=0 ){
+	 var u = url.split("-");
+		return u[1];
+		}else{
+	var u = url.split("catid=");
+      return u[1];
+	}
+	
+})();
+
+
+
+var curPage = 1; //当前页码
+var catid = $_GET;
+var total,pageSize,totalPage;
+//获取数据
+function getData(page){ 
+	$.ajax({
+		type: 'POST',
+		url: '/zxn/dzn',
+		data: {'pageNum':page-1,'catid':catid},
+		dataType:'json',
+		beforeSend:function(){
+			$("#list ul").append("<li id='loading'>loading...</li>");
+		},
+		success:function(json){
+			$("#list ul").empty();
+			total = json.total; //总记录数
+			pageSize = json.pageSize; //每页显示条数
+			curPage = page; //当前页
+			totalPage = json.totalPage; //总页数
+			var li = "";
+			var list = json.list;
+			$.each(list,function(index,array){ //遍历json数据列
+				li += '<li class="item"><div class="um-hd">'+array['title']+'</div><div class="um-bd"><div class="pic"><a href="/zxn/banner/'+array['id']+'" target="_blank"><img src="'+array['img']+'" alt=""></a></div><div class="btnx"><a href="/zxn/banner/'+array['id']+'" target="_blank">编辑</a></div></div></li>';
+			});
+			$("#list ul").append(li);
+		},
+		complete:function(){ //生成分页条
+			getPageBar();
+		},
+		error:function(){
+			$("#list ul").html("数据加载失败")
+		}
+	});
+}
+
+//获取分页条
+function getPageBar(){
+	//页码大于最大页数
+	if(curPage>totalPage) curPage=totalPage;
+	//页码小于1
+	if(curPage<1) curPage=1;
+	pageStr = "<a>共"+total+"条</a><a>"+curPage+"/"+totalPage+"</a>";
+	
+	//如果是第一页
+	if(curPage==1){
+		pageStr += "<a class='chud a1'>首页</a><a class='chud a1'>上一页</a>";
+	}else{
+		pageStr += "<a href='javascript:void(0)' rel='1' class='chud'>首页</a><a href='javascript:void(0)' rel='"+(curPage-1)+"' class='chud a1'>上一页</a>";
+	}
+	
+	//如果是最后页
+	if(curPage>=totalPage){
+		pageStr += "<a class='chud'>下一页</a><a class='chud a1'>尾页</a>";
+	}else{
+		pageStr += "<a href='javascript:void(0)' rel='"+(parseInt(curPage)+1)+"' class='chud a1'>下一页</a><a href='javascript:void(0)' rel='"+totalPage+"' class='chud a1'>尾页</a>";
+	}
+		
+	$("#pages").html(pageStr);
+}
+
+$(function(){
+	getData(1);
+	$(document).on('click','a.chud',function(){
+		var rel = $(this).attr("rel");
+		if(rel){
+			getData(rel);
+		}
+	});
+});
+</script>
+
+
+<div id="main" class="bannermain">
+  	
+   	<div id="list" class="bannerlist">
+    	<ul class="list"></ul>
+    </div>
+   	<div id="pages"></div>
+</div>
+
+
+
+</div>
+
+{template "content","footer"}

@@ -1,0 +1,48 @@
+﻿<div id="tabs-1">
+	<ul class="setform">
+		<li>
+			<label for="saveText">保存名称：</label>
+			<input id="saveText" class="setinput" type="text" title="请输入需要保存的名称，单击下方保存列表选择使用已保存的文档名" name="saveText" value="未标题自定义代码" />
+		</li>
+	</ul>
+</div>
+<div class="save-list-title-forinput">历史保存列表</div>
+
+<div class="save-list-forinput" id="saveListForInput"><ul>
+
+{loop $arrlist $i $items}
+{if $items['saveName']!=="系统自动保存"}
+{php  $dshu=fmod($s,2)==0?'0':'1';$ks=$dshu==0?'ogg':'';$s=$s+1;}
+<li class="{$ks}" title="" data-save="{$items['ID']}" data-savename="{$items['saveName']}" data-savetime="{$items['saveTime']}" style="display: list-item;"><span class="t-save-text">{$items['saveName']}</span><span class="t-save-time">{$items['saveTime']}</span></li>
+{/if}
+{/loop}
+
+</ul></div>
+
+<script type="text/javascript">
+$(function() {
+//加载表单样式
+	$(".setform, .save-list-forinput").tooltip({
+		position: {
+			my: "left top",
+			at: "left bottom+5"
+		},
+		show: {
+			duration: "fast"
+		},
+		hide: {
+			effect: "hide"
+		}
+	});
+	$("#saveListForInput").on("click", "li", function() {
+		var _li = $(this);
+		$("#saveListForInput").find("ul").children("li.selected").removeClass("selected");
+		_li.addClass("selected");
+		$("#saveText").attr("data-choosesavename", _li.attr("data-savename")).val(_li.attr("data-savename")).attr("data-choosesaveid", _li.attr("data-save"));
+	});
+	$("#saveListForInput ul").slimScroll({
+		height:"320px",
+		color: "#999"
+	});
+});
+</script>

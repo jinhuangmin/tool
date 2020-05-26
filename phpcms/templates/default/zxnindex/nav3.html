@@ -1,0 +1,199 @@
+{template "content","header"}
+
+
+  <link href="/statics/nav/js/style.css"  rel="stylesheet" /> 
+
+
+  <link rel="stylesheet" href="/statics/nav/js/colorpicker.css"  /> 
+  <script type="text/javascript" src="/statics/nav/js/colorpicker.js" ></script> 
+  <link rel="stylesheet" href="/statics/nav/js/navbasis.css"  /> 
+  <link rel="stylesheet" href="/statics/nav/js/navcss.min.css"  /> 
+  <script type="text/javascript" src="/statics/nav/js/ZeroClipboard.min.js" ></script> 
+  <script type="text/javascript" src="/statics/nav/js/bootstrap.min.js" ></script> 
+  <script type="text/javascript" src="/statics/nav/js/nav_css.min.js" ></script>
+
+  
+  
+  <SCRIPT type=text/javascript charset=utf-8 src="/statics/nav/js/jquery.color.min.js" ></SCRIPT>
+
+<div class="hdbg"></div>
+
+  <div style="display: none;">
+        <textarea id="log_data"> {
+"nav_color":"ffffff",
+"nav_bg_color":"",
+"nav_bg_img":"",
+"all_cats_width":"160",
+"nav_all_bg_color":"000000",
+"nav_color_hover":"ff9c00",
+"nav_bg_color_hover":"333333",
+"nav_bg_img_hover":"",
+"nav_all_bg_img":"",
+"nav_height":"30",
+"nav_font_size":"12",
+"nav_font_family":"",
+"nav_font_style":"normal",
+"nav_icon":"",
+"nav_line_width":"1",
+"nav_line_style":"",
+"nav_line_color":"555555",
+"cate_color":"ffffff",
+"cate_bg_color":"222222",
+"cate_bg_img":"",
+"cate_color_hover":"ff9c00",
+"cate_bg_color_hover":"333333",
+"cate_bg_img_hover":"",
+"cate_font_size":"12",
+"cate_font_family":"",
+"cate_font_style":"",
+"cate_icon":"http://img.alicdn.com/imgextra/i2/1026768645/TB2tGwzjXXXXXbtXXXXXXXXXXXX-1026768645.gif",
+"cate_display_style":"",
+"current_color":"",
+"current_bg_color":"none",
+"current_bg_img":"",
+"aitao_color":"",
+"aitao_bg_color":"",
+"aitao_bg_img":"",
+"aitao_display_style":"",
+"sub_nav_color":"4c4c4c",
+"sub_nav_bg_color":"",
+"sub_nav_bg_img":"",
+"sub_nav_all_bg_color":"ffffff",
+"sub_nav_color_hover":"000000",
+"sub_nav_bg_color_hover":"e6e6e6",
+"sub_nav_bg_img_hover":"",
+"sub_nav_all_bg_img":"",
+"sub_nav_line_height":"30",
+"sub_nav_font_size":"12",
+"sub_nav_font_family":"",
+"sub_nav_font_style":"",
+"sub_nav_border_color":"",
+"sub_nav_line_width":"",
+"sub_nav_line_style":"",
+"sub_nav_line_color":"",
+"sec_nav_color":"cccccc",
+"sec_nav_bg_color":"",
+"sec_nav_bg_img":"",
+"sec_nav_all_bg_color":"333333",
+"sec_nav_color_hover":"ffffff",
+"sec_nav_bg_color_hover":"191919",
+"sec_nav_bg_img_hover":"",
+"sec_nav_all_bg_img":"",
+"sec_nav_line_height":"30",
+"sec_nav_font_size":"",
+"sec_nav_font_family":"",
+"sec_nav_font_style":"",
+"sec_nav_border_color":"",
+"sec_nav_line_width":"",
+"sec_nav_line_style":"",
+"sec_nav_line_color":"",
+"_fixed_bg":"",
+"_extend_code":"",
+"_dz_height":"120",
+"_show_dz_mock":"n",
+"_hd_bg_color":"",
+"_hd_bg":"https://img.alicdn.com/imgextra/i2/1026768645/TB26m0kjpXXXXakXXXXXXXXXXXX-1026768645.jpg",
+"_content_bg_color":"",
+"_content_bg":"https://img.alicdn.com/imgextra/i1/1026768645/TB2_9E_jXXXXXcHXXXXXXXXXXXX-1026768645.jpg",
+"_dz_xtool_url":""
+}  </textarea>
+    </div>
+  <div class="naveditor" id="naveditor"> 
+   <div id="page"> 
+    <div id="content" style="background-image: none;"> 
+     <div class="Biaochi"> 
+     </div> 
+     <div id="hd" style="background-image: url(http://img04.taobaocdn.com/imgextra/i4/373282813/T2pOjFXEpXXXXXXXXX-373282813.jpg);"> 
+      <div class="custom-banner" id="custom-banner" style="height: 120px;"> 
+       <div class="title"> 
+        <h2> 我是店招</h2> 
+        <h5> 环境配置内修改</h5> 
+       </div> 
+      </div> 
+      <div class="layout" id="layoutnavmd" style="margin: 0px auto; width: 990px !important;"> 
+       <div class="skin-box tb-module tshop-pbsm tshop-pbsm-shop-nav-ch" style="width: 990px !important;"> 
+        <s class="skin-box-tp">
+         <b></b>
+        </s> 
+        <div class="skin-box-bd"> 
+         <div class="all-cats popup-container"> 
+          <div class="all-cats-trigger popup-trigger"> 
+           <a class="link" href="javascript:;"><span class="title">本店所有商品</span> <i class="popup-icon"> </i></a> 
+          </div> 
+          <div class="popup-content all-cats-popup"> 
+           <div class="popup-inner"> 
+            <ul class="J_TAllCatsTree cats-tree"> 
+             <li class="cat fst-cat"> <h4 class="cat-hd fst-cat-hd has-children"> <i class="cat-icon fst-cat-icon"></i><a class="cat-name fst-cat-name" href="javascript:;"> 所有宝贝</a> </h4> </li> 
+             <li class="cat fst-cat"> <h4 class="cat-hd fst-cat-hd has-children"> <i class="cat-icon fst-cat-icon active-trigger"></i><a class="cat-name fst-cat-name" href="javascript:;">一级下拉菜单</a> </h4> 
+              <div class="snd-pop" id="snd-pop" style="left: 188px; top: 30px;"> 
+               <div class="snd-pop-inner"> 
+                <ul class="fst-cat-bd"> 
+                 <li class="cat snd-cat"> <h4 class="cat-hd snd-cat-hd snd-cat-hd-hover"> <i class="cat-icon snd-cat-icon"></i><a class="cat-name snd-cat-name" href="javascript:;"> 二级下拉菜单</a> </h4> </li> 
+                 <li class="cat snd-cat"> <h4 class="cat-hd snd-cat-hd"> <i class="cat-icon snd-cat-icon"></i><a class="cat-name snd-cat-name" href="javascript:;"> 二级下拉菜单</a> </h4> </li> 
+                 <li class="cat snd-cat"> <h4 class="cat-hd snd-cat-hd"> <i class="cat-icon snd-cat-icon"></i><a class="cat-name snd-cat-name" href="javascript:;"> 二级下拉菜单</a> </h4> </li> 
+                </ul> 
+               </div> 
+              </div> </li> 
+             <li class="cat fst-cat"> <h4 class="cat-hd fst-cat-hd"> <i class="cat-icon fst-cat-icon  active-trigger"></i><a class="cat-name fst-cat-name" href="javascript:;">一级下拉菜单</a> </h4> </li> 
+             <li class="cat fst-cat"> <h4 class="cat-hd fst-cat-hd "> <i class="cat-icon fst-cat-icon  active-trigger"></i><a class="cat-name fst-cat-name" href="javascript:;">一级下拉菜单</a> </h4> </li> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+         <ul class="menu-list"> 
+          <li class="menu menu-selected"><a class="link" href="javascript:;"><span class="title"> 首页</span></a></li> 
+          <li class="menu aitao-menu"><a class="link J_TGoldData" href="javascript:;"><span class="title">微淘主页</span></a></li> 
+          <li class="menu"><a class="link J_TGoldData" href="javascript:;"><span class="title"> 店铺动态</span></a></li> 
+          <li class="menu"><a class="link J_TGoldData" href="javascript:;"><span class="title"> 信用评价</span></a></li> 
+          <li class="menu"><a class="link J_TGoldData" href="javascript:;"><span class="title"> 关于我们</span></a></li> 
+          <li class="menu popup-container" style="position:static"><a class="link popup-trigger" href="javascript:;"><span class="title">含有分类</span> <i class="popup-icon cat-popup-i"></i></a> 
+           <div class="popup-content" id="popup-content" style="margin-top: 30px;"> 
+            <ul class="menu-popup-cats"> 
+             <li class="sub-cat"><a class="cat-name" href="javascript:;">一级下拉菜单</a></li> 
+             <li class="sub-cat"><a class="cat-name" href="javascript:;">一级下拉菜单</a></li> 
+             <li class="sub-cat"><a class="cat-name" href="javascript:;">一级下拉菜单</a></li> 
+            </ul> 
+           </div> </li> 
+         </ul> 
+        </div> 
+        <s class="skin-box-bt">
+         <b></b>
+        </s> 
+       </div> 
+      </div> 
+     </div> 
+     <div id="csseditor" style="background-image: url(http://img02.taobaocdn.com/imgextra/i2/747621589/TB2a2dqbVXXXXaPXXXXXXXXXXXX-747621589.jpg);"> 
+     
+      <div id="ft"> 
+       <input id="demo_id" type="hidden" value="1" /> 
+       <div class="row toolbar" id="toolbar"> 
+         <div class="btns-bar"> 
+         <div class="copy-css-code-btn" data-original-title="导出导航CSS代码" data-toggle="tooltip"></div> 
+        </div> 
+        <div class="content">
+         <ul class="nav nav-tabs">
+          <li class=""><a href="javascript:"  data-toggle="tab" id="a-tabcont-1">导航菜单</a></li>
+          <li class=""><a href="javascript:"  data-toggle="tab" id="a-tabcont-2">所有分类</a></li>
+          <li><a href="javascript:"  data-toggle="tab" id="a-tabcont-3">当前页</a></li>
+          <li><a href="javascript:"  data-toggle="tab" id="a-tabcont-4">一级下拉菜单</a></li>
+          <li class="active"><a href="javascript:"  data-toggle="tab" id="a-tabcont-5">二级下拉菜单</a></li>
+          <li class=""><a href="javascript:"  data-toggle="tab" id="a-tabcont-6" title="高级用户使用">固定背景</a></li>
+          <li class=""><a href="javascript:"  data-toggle="tab" id="a-tabcont-7" title="模拟店招、页头之类的环境设置">环境设置</a></li>
+         
+         </ul>
+       
+        </div> 
+       </div> 
+      </div> 
+      <div class="btn btn-open" id="open-tools" data-original-title="打开设置项" data-toggle="tooltip"> 
+       <i class="icon-resize-full icon-white"></i>打开
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+<script type="text/javascript">
+
+</script> 
+ </body>
+</html>

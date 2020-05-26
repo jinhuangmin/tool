@@ -1,0 +1,227 @@
+﻿<?
+$data=$_POST;
+?>
+<form id="tForm" form-data="jtsb" method="post" >
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">内容设置</a></li>
+		<li><a href="#tabs-2">样式设置</a></li>
+	</ul>
+	<div id="tabs-1">
+		<ul class="setform">
+            <li style="display:none;">
+				<label for="i1">应用ID：</label>
+				<input id="i1" class="setinput disabled" type="text" title="自动生成，无需填写" readonly name="appID" value="<?=$data['appID']?>" />
+			</li>
+			<li>
+				<label for="ibeli1">应用名称：</label>
+				<input id="ibeli1" class="setinput " type="text" title="该应用的名称，允许修改" name="appLabel" value="<?=$data['appLabel']?>" />
+			</li>
+			<li>
+				<label for="rd1">内容设置：</label>
+				<div id="rd1">
+					<input type="radio" id="r1" name="characterMode" value="text" <? if($data['characterMode']=='text'){echo'checked="checked"';} ?> />
+					<label for="r1" title="文字自动滚动">文字</label>
+					<input type="radio" id="r2" name="characterMode" value="img" <? if($data['characterMode']=='img'){echo'checked="checked"';} ?> />
+					<label for="r2" title="图片自动滚动">图片</label>
+					<input type="radio" id="r3" name="characterMode" value="custom" <? if($data['characterMode']=='custom'){echo'checked="checked"';} ?> />
+					<label for="r3" title="图片自动滚动" style="width:100px;">自定义内容</label>
+				</div>
+			</li>
+			<li class="normal characterMode">
+				<label id="l2" for="i2">文字内容：</label>
+				<input id="i2" class="setinput" type="text" title="" name="characterContent" value="<?=$data['characterContent']?>" />
+			</li>
+			<li class="normal characterMode">
+				<label id="l3" for="i3">文字链接：</label>
+				<input id="i3" class="setinput" type="text" title="" name="href" value="<?=$data['href']?>" />
+			</li>
+			<li class="normal characterMode">
+				<label for="hrefMode">链接打开方式：</label>
+				<select id="hrefMode" name="hrefMode">
+					<option value="_self" <? if($data['hrefMode']=='_self'){echo'selected="selected"';} ?> >原窗口打开</option>
+					<option value="_blank" <? if($data['hrefMode']=='_blank'){echo'selected="selected"';} ?> >新窗口打开</option>
+				</select>
+			</li>
+            <li class="custom characterMode">
+				<label for="customContent">自定义内容：</label>
+				<textarea id="customContent" name="customContent"><?=stripslashes($data['customContent'])?></textarea>
+				<button type="button" class="t-kshbj-btn" data-target="zdy-clicked" data-zdyName="customContent" data-zdyAppID="<?=$data['appID']?>">可视化编辑</button><!-- data-zdyAttachID=""-->
+			</li>
+			<li class="textset">
+				<label for="i4">文字大小：</label>
+				<input id="i4" class="setinput" type="text" title="请输入滚动文字的文字大小，当选择为图片滚动时设置无效。" name="characterSize" value="<?=$data['characterSize']?>" />
+			</li>
+			<li class="textset">
+				<label for="characterWeight">文字粗细：</label>
+				<select id="characterWeight" name="characterWeight">
+					<option value="normal" <? if($data['characterWeight']=='normal'){echo'selected="selected"';} ?>>正常</option>
+					<option value="bold" <? if($data['characterWeight']=='bold'){echo'selected="selected"';} ?>>粗体</option>
+				</select>
+			</li>
+			<li class="textset">
+				<label for="characterWeight">文字字体：</label>
+				<select id="characterFont" name="characterFont">
+					<option value="宋体" <? if($data['characterFont']=='宋体'){echo'selected="selected"';} ?>>宋体</option>
+					<option value="黑体" <? if($data['characterFont']=='黑体'){echo'selected="selected"';} ?>>黑体</option>
+					<option value="微软雅黑" <? if($data['characterFont']=='微软雅黑'){echo'selected="selected"';} ?>>雅黑</option>
+					<option value="楷体" <? if($data['characterFont']=='楷体'){echo'selected="selected"';} ?>>楷体</option>
+				</select>
+			</li class="textset">
+			<li>
+				<label for="i5">文字颜色：</label>
+				<input id="i5" class="setinput tColorPicker" type="text" title="" name="characterColor" value="<?=$data['characterColor']?>" />
+			</li>
+			<li>
+				<label for="characterSpeed">滚动速度：</label>
+				<select id="characterSpeed" name="characterSpeed">
+					<option value="10" <? if($data['characterSpeed']=='10'){echo'selected="selected"';} ?>>快速</option>
+					<option value="4" <? if($data['characterSpeed']=='4'){echo'selected="selected"';} ?>>普通</option>
+					<option value="2" <? if($data['characterSpeed']=='2'){echo'selected="selected"';} ?>>慢速</option>
+				</select>
+			</li>
+			<li>
+				<label for="characterEffect">滚动效果：</label>
+				<select id="characterEffect" name="characterEffect">
+					<option value="0" <? if($data['characterEffect']=='0'){echo'selected="selected"';} ?>>流畅</option>
+					<option value="500" <? if($data['characterEffect']=='500'){echo'selected="selected"';} ?>>一步一顿</option>
+				</select>
+			</li>
+            <li>
+				<label for="characterScrollMode">滚动模式：</label>
+				<select id="characterScrollMode" name="characterScrollMode">
+					<option value="scroll" <? if($data['characterScrollMode']=='scroll'){echo'selected="selected"';} ?>>循环滚动</option>
+					<option value="alternate" <? if($data['characterScrollMode']=='alternate'){echo'selected="selected"';} ?>>来回滚动</option>
+					<option value="slide" <? if($data['characterScrollMode']=='slide'){echo'selected="selected"';} ?>>单次滚动</option>
+				</select>
+			</li>
+			<li>
+				<label for="characterDirection">滚动方向：</label>
+				<select id="characterDirection" name="characterDirection">
+					<option value="left" <? if($data['characterDirection']=='left'){echo'selected="selected"';} ?>>从右至左</option>
+					<option value="right" <? if($data['characterDirection']=='right'){echo'selected="selected"';} ?>>从左至右</option>
+					<option value="down" <? if($data['characterDirection']=='down'){echo'selected="selected"';} ?>>从上至下</option>
+					<option value="up" <? if($data['characterDirection']=='up'){echo'selected="selected"';} ?>>从下至上</option>
+				</select>
+			</li>
+            <li class="forScrollMode">
+				<label for="rd2">起始位置：</label>
+				<div id="rd2">
+					<input type="radio" id="r4" name="characterDirectionPosition" value="1" <? if($data['characterDirectionPosition']=='1'){echo'checked="checked"';} ?> />
+					<label id="l4" for="r4" title="">左侧</label>
+					<input type="radio" id="r5" name="characterDirectionPosition" value="2" <? if($data['characterDirectionPosition']=='2'){echo'checked="checked"';} ?> />
+					<label id="l5"  for="r5" title="">右侧</label>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div id="tabs-2">
+		<ul class="setform">
+			<li>
+				<label for="ii1">应用宽度：</label>
+				<input id="ii1" class="setinput" type="text" title="应用的宽度，如需精确调整，请在此处输入数值。" name="width" value="<?=$data['width']?>" />
+			</li>
+			<li>
+				<label for="ii2">应用高度：</label>
+				<input id="ii2" class="setinput" type="text" title="应用的高度，如需精确调整，请在此处输入数值。" name="height" value="<?=$data['height']?>" />
+			</li>
+			<li>
+				<label for="ii3">应用上边距：</label>
+				<input id="ii3" class="setinput" type="text" title="应用的上边距，如需精确调整，请在此处输入数值。" name="top" value="<?=$data['top']?>" />
+			</li>
+			<li>
+				<label for="ii4">应用左边距：</label>
+				<input id="ii4" class="setinput" type="text" title="应用的左边距，如需精确调整，请在此处输入数值。" name="left" value="<?=$data['left']?>" />
+			</li>
+		</ul>
+	</div>
+</div>
+</form>
+<script type="text/javascript">
+$(function() {
+//加载表单样式
+	$("#tabs").tabs();
+	$("#tForm select").selectmenu();
+	$("input, .setform > li > div").buttonset();
+	$(".characterMode").hide();
+	if("<?=$data['characterMode']?>" == "custom") {
+		$(".custom").show();
+	} else {
+		$(".normal").show();
+	}
+	if("<?=$data['characterMode']?>" == "img") {
+		$(".textset").hide();
+	} else {
+		$(".textset").show();
+	}
+	if("<?=$data['characterScrollMode']?>" == "alternate") {
+		$(".forScrollMode").hide();
+	}
+	$("#rd1").children("input[name='characterMode']").click(function() {
+		var val = $(this).val();
+		if(val == "text") {
+			$("#l2").html("文字内容：");
+			$("#l3").html("文字链接：");
+			$("#i2").val("");
+			$("#i3").val("");
+			$(".custom").hide();
+			$(".normal").show();
+			$(".textset").show();
+		} else if(val == "img") {
+			$("#l2").html("图片地址：");
+			$("#l3").html("图片链接：");
+			$("#i2").val("");
+			$("#i3").val("");
+			$(".custom").hide();
+			$(".normal").show();
+			$(".textset").hide();
+		} else {
+			$(".custom").show();
+			$(".normal").hide();
+			$(".textset").show();
+			
+		}
+	});
+	if("<?=$data['characterDirection']?>" == "left" || "<?=$data['characterDirection']?>" == "right") {
+		$("#l4").html('<span class="ui-button-text">左侧</span>');
+		$("#l5").html('<span class="ui-button-text">右侧</span>');
+	} else {
+		$("#l4").html('<span class="ui-button-text">顶部</span>');
+		$("#l5").html('<span class="ui-button-text">底部</span>');
+	}
+	$( "#characterDirection" ).selectmenu({
+       change: function( event, data ) {
+			var val = $(this).val();
+			if(val == "left" || val == "right") {
+				$("#l4").html('<span class="ui-button-text">左侧</span>');
+				$("#l5").html('<span class="ui-button-text">右侧</span>');
+			} else {
+				$("#l4").html('<span class="ui-button-text">顶部</span>');
+				$("#l5").html('<span class="ui-button-text">底部</span>');
+			}
+		}
+	});
+	$( "#characterScrollMode" ).selectmenu({
+       change: function( event, data ) {
+			var val = $(this).val();
+			if(val == "alternate") {
+				$(".forScrollMode").hide();
+			} else {
+				$(".forScrollMode").show();
+			}
+		}
+	});
+	$(".setform").tooltip({
+		position: {
+			my: "left top",
+			at: "left bottom+5"
+		},
+		show: {
+			duration: "fast"
+		},
+		hide: {
+			effect: "hide"
+		}
+	});
+});
+</script>

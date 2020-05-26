@@ -1,0 +1,229 @@
+﻿<?
+$data=$_POST;
+
+
+  if($data['active']==-1){$active=3;}else{$active=$data['active'];}
+
+?>
+<form id="tForm" form-data="jcb" method="post" >
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">内容设置</a></li>
+		<li><a href="#tabs-2">鼠标经过变换</a></li>
+		<li><a href="#tabs-3">样式设置</a></li>
+	</ul>
+	<div id="tabs-1">
+		<ul class="setform">
+			<li>
+				<label for="i1">应用ID：</label>
+				<input id="i1" class="setinput disabled" type="text" title="自动生成，无需填写" readonly="readonly" name="appID" value="<?=$data['appID']?>" />
+			</li>
+			<li>
+				<label for="i2">文字内容：</label>
+				<input id="i2" class="setinput" type="text" title="请输入文字内容" name="characterContent" value="<?=$data['characterContent']?>" />
+			</li>
+			<li>
+				<label for="rd3">文字对齐方式：</label>
+				<div id="rd3">
+                    <input type="radio" id="r5" name="characterAlign" value="left" <? if($data['characterAlign']=='left'){echo'checked="checked"';} ?> />
+					<label for="r5">居左</label>
+					<input type="radio" id="r6" name="characterAlign" value="center" <? if($data['characterAlign']=='center'){echo'checked="checked"';} ?> />
+					<label for="r6">居中</label>
+					<input type="radio" id="r7" name="characterAlign" value="right" <? if($data['characterAlign']=='right'){echo'checked="checked"';} ?> />
+					<label for="r7">居右</label>
+				</div>
+			</li>
+			<li>
+				<label for="i3">文字链接：</label>
+				<input id="i3" class="setinput" type="text" title="请输入文字链接，留空则为无链接的纯文字" name="href" value="<?=$data['href']?>" />
+			</li>
+			<li>
+				<label for="hrefMode">链接打开方式：</label>
+				<select id="hrefMode" name="hrefMode">
+                    <option value="_self" <? if($data['hrefMode']=='_self'){echo'selected="selected"';} ?>>原窗口打开</option>
+					<option value="_blank" <? if($data['hrefMode']=='_blank'){echo'selected="selected"';} ?>>新窗口打开</option>
+				</select>
+			</li>
+			<li>
+				<label for="i4">文字大小：</label>
+				<input id="i4" class="setinput" type="text" title="请输入文字的大小，无需加px；如：12。" name="characterSize" value="<?=$data['characterSize']?>" />
+			</li>
+			<li>
+				<label for="characterWeight">文字粗细：</label>
+				<select id="characterWeight" name="characterWeight">
+					<option value="normal" <? if($data['characterWeight']=='normal'){echo'selected="selected"';} ?>>正常</option>
+					<option value="bold" <? if($data['characterWeight']=='bold'){echo'selected="selected"';} ?>>粗体</option>
+				</select>
+			</li>
+			<li>
+				<label for="characterFont">文字字体：</label>
+				<select id="characterFont" name="characterFont">
+                    <option value="宋体" <? if($data['characterFont']=='宋体'){echo'selected="selected"';} ?> data-style="font-family:宋体;">宋体</option>
+					<option value="黑体" <? if($data['characterFont']=='黑体'){echo'selected="selected"';} ?> data-style="font-family:黑体;">黑体</option>
+					<option value="微软雅黑" <? if($data['characterFont']=='微软雅黑'){echo'selected="selected"';} ?> data-style="font-family:微软雅黑;">雅黑</option>
+					<option value="楷体" <? if($data['characterFont']=='楷体'){echo'selected="selected"';} ?> data-style="font-family:楷体;">楷体</option>
+					<option value="Arial" <? if($data['characterFont']=='Arial'){echo'selected="selected"';} ?> data-style="font-family:Arial;">Arial</option>
+					<option value="Verdana" <? if($data['characterFont']=='Verdana'){echo'selected="selected"';} ?> data-style="font-family:Verdana;">Verdana</option>
+					<option value="Georgia" <? if($data['characterFont']=='Georgia'){echo'selected="selected"';} ?> data-style="font-family:Georgia;">Georgia</option>
+					<option value="Times New Roman" <? if($data['characterFont']=='Times New Roman'){echo'selected="selected"';} ?> data-style="font-family:Times New Roman;">Times New Roman</option>
+					<option value="Trebuchet MS" <? if($data['characterFont']=='Trebuchet MS'){echo'selected="selected"';} ?> data-style="font-family:Trebuchet MS;">Trebuchet MS</option>
+					<option value="Courier" <? if($data['characterFont']=='Courier'){echo'selected="selected"';} ?> data-style="font-family:Courier;">Courier</option>
+					<option value="Impact" <? if($data['characterFont']=='Impact'){echo'selected="selected"';} ?> data-style="font-family:Impact;">Impact</option>
+					<option value="Comic Sans MS" <? if($data['characterFont']=='Comic Sans MS'){echo'selected="selected"';} ?> data-style="font-family:Comic Sans MS;">Comic Sans MS</option>
+					<option value="Tahoma" <? if($data['characterFont']=='Tahoma'){echo'selected="selected"';} ?> data-style="font-family:Tahoma;">Tahoma</option>
+					<option value="Symbol" <? if($data['characterFont']=='Symbol'){echo'selected="selected"';} ?> data-style="font-family:Symbol;">Symbol</option>
+					<option value="Palatino Linotype" <? if($data['characterFont']=='Palatino Linotype'){echo'selected="selected"';} ?> data-style="font-family:Palatino Linotype;">Palatino Linotype</option>
+					<option value="Bookman Old Style" <? if($data['characterFont']=='Bookman Old Style'){echo'selected="selected"';} ?> data-style="font-family:Bookman Old Style;">Bookman Old Style</option>
+				</select>
+			</li>
+			<li>
+				<label for="i5">文字颜色：</label>
+				<input id="i5" class="setinput tColorPicker" type="text" title="" name="characterColor" value="<?=$data['characterColor']?>" />
+			</li>
+			<li>
+				<label for="i9">文字背景颜色：</label>
+				<input id="i9" class="setinput tColorPicker" type="text" title="" name="characterBgColor" value="<?=$data['characterBgColor']?>" />
+			</li>
+			<li>
+				<label for="characterDash">文字中划线：</label>
+				<select id="characterDash" name="characterDash">
+					<option value="off" <? if($data['characterDash']=='off'){echo'selected="selected"';} ?>>不显示</option>
+					<option value="on" <? if($data['characterDash']=='on'){echo'selected="selected"';} ?>>显示</option>
+				</select>
+			</li>
+		</ul>
+	</div>
+	<div id="tabs-2">
+		<ul class="setform">
+			<li>
+				<label for="rd1">鼠标经过变换开关：</label>
+				<div id="rd1">
+                    <input type="radio" id="r1" name="characterHoverMode" value="on" <? if($data['characterHoverMode']=='on'){echo'checked="checked"';} ?> />
+					<label for="r1">开启</label>
+					<input type="radio" id="r2" name="characterHoverMode" value="off" <? if($data['characterHoverMode']=='off'){echo'checked="checked"';} ?> />
+					<label for="r2">关闭</label>
+				</div>
+			</li>
+			<li>
+				<label for="characterHoverSpeed">切换图片的动画速度：</label>
+				<select id="characterHoverSpeed" name="characterHoverSpeed">
+                    <option value="" <? if($data['characterHoverSpeed']==''){echo'selected="selected"';} ?>>快速</option>
+					<option value="trans05s" <? if($data['characterHoverSpeed']=='trans05s'){echo'selected="selected"';} ?>>中速</option>
+					<option value="trans1s" <? if($data['characterHoverSpeed']=='trans1s'){echo'selected="selected"';} ?>>慢速</option>
+				</select>
+			</li>
+			<li>
+				<label for="i6">文字大小：</label>
+				<input id="i6" class="setinput" type="text" title="请输入文字的大小，无需加px；如：12。" name="characterSizeHover" value="<?=$data['characterSizeHover']?>" />
+			</li>
+			<li>
+				<label for="characterWeightHover">文字粗细：</label>
+				<select id="characterWeightHover" name="characterWeightHover">
+                    <option value="normal" <? if($data['characterWeightHover']=='normal'){echo'selected="selected"';} ?>>正常</option>
+					<option value="bold" <? if($data['characterWeightHover']=='bold'){echo'selected="selected"';} ?>>粗体</option>
+				</select>
+			</li>
+			<li>
+				<label for="characterFontHover">文字字体：</label>
+				<select id="characterFontHover" name="characterFontHover">
+                    <option value="宋体" <? if($data['characterFontHover']=='宋体'){echo'selected="selected"';} ?> data-style="font-family:宋体;">宋体</option>
+					<option value="黑体" <? if($data['characterFontHover']=='黑体'){echo'selected="selected"';} ?> data-style="font-family:黑体;">黑体</option>
+					<option value="微软雅黑" <? if($data['characterFontHover']=='微软雅黑'){echo'selected="selected"';} ?> data-style="font-family:微软雅黑;">雅黑</option>
+					<option value="楷体" <? if($data['characterFontHover']=='楷体'){echo'selected="selected"';} ?> data-style="font-family:楷体;">楷体</option>
+					<option value="Arial" <? if($data['characterFontHover']=='Arial'){echo'selected="selected"';} ?> data-style="font-family:Arial;">Arial</option>
+					<option value="Verdana" <? if($data['characterFontHover']=='Verdana'){echo'selected="selected"';} ?> data-style="font-family:Verdana;">Verdana</option>
+					<option value="Georgia" <? if($data['characterFontHover']=='Georgia'){echo'selected="selected"';} ?> data-style="font-family:Georgia;">Georgia</option>
+					<option value="Times New Roman" <? if($data['characterFontHover']=='Times New Roman'){echo'selected="selected"';} ?> data-style="font-family:Times New Roman;">Times New Roman</option>
+					<option value="Trebuchet MS" <? if($data['characterFontHover']=='Trebuchet MS'){echo'selected="selected"';} ?> data-style="font-family:Trebuchet MS;">Trebuchet MS</option>
+					<option value="Courier" <? if($data['characterFontHover']=='Courier'){echo'selected="selected"';} ?> data-style="font-family:Courier;">Courier</option>
+					<option value="Impact" <? if($data['characterFontHover']=='Impact'){echo'selected="selected"';} ?> data-style="font-family:Impact;">Impact</option>
+					<option value="Comic Sans MS" <? if($data['characterFontHover']=='Comic Sans MS'){echo'selected="selected"';} ?> data-style="font-family:Comic Sans MS;">Comic Sans MS</option>
+					<option value="Tahoma" <? if($data['characterFontHover']=='Tahoma'){echo'selected="selected"';} ?> data-style="font-family:Tahoma;">Tahoma</option>
+					<option value="Symbol" <? if($data['characterFontHover']=='Symbol'){echo'selected="selected"';} ?> data-style="font-family:Symbol;">Symbol</option>
+					<option value="Palatino Linotype" <? if($data['characterFontHover']=='Palatino Linotype'){echo'selected="selected"';} ?> data-style="font-family:Palatino Linotype;">Palatino Linotype</option>
+					<option value="Bookman Old Style" <? if($data['characterFontHover']=='Bookman Old Style'){echo'selected="selected"';} ?> data-style="font-family:Bookman Old Style;">Bookman Old Style</option>
+				</select>
+			</li>
+			<li>
+				<label for="i7">文字颜色：</label>
+				<input id="i7" class="setinput tColorPicker" type="text" title="" name="characterColorHover" value="<?=$data['characterColorHover']?>" />
+			</li>
+			<li>
+				<label for="i10">文字背景颜色：</label>
+				<input id="i10" class="setinput tColorPicker" type="text" title="" name="characterBgColorHover" value="<?=$data['characterBgColorHover']?>" />
+			</li>
+			<li style="text-align:center;font-size:14px;color:#333;background:url(http://img03.taobaocdn.com/imgextra/i3/39767794/TB2RPU4apXXXXcLXXXXXXXXXXXX_!!39767794.png);"><span style="background:#fff;padding:0 10px;">文字下划线</span></li>
+			<li>
+				<label for="rd2">文字下划线：</label>
+				<div id="rd2">
+                    <input type="radio" id="r3" name="characterUnderLine" value="on" <? if($data['characterUnderLine']=='on'){echo'checked="checked"';} ?> />
+					<label for="r3">显示</label>
+					<input type="radio" id="r4" name="characterUnderLine" value="off" <? if($data['characterUnderLine']=='off'){echo'checked="checked"';} ?> />
+					<label for="r4" style="width: 70px;">不显示</label>
+				</div>
+			</li>
+			<li>
+				<label for="characterUnderLineStyle">下划线样式：</label>
+				<select id="characterUnderLineStyle" name="characterUnderLineStyle">
+                    <option value="solid" <? if($data['characterUnderLineStyle']=='solid'){echo'selected="selected"';} ?>>实线</option>
+					<option value="dotted" <? if($data['characterUnderLineStyle']=='dotted'){echo'selected="selected"';} ?>>虚线</option>
+				</select>
+			</li>
+			<li>
+				<label for="characterUnderLineWeight">下划线粗细：</label>
+				<select id="characterUnderLineWeight" name="characterUnderLineWeight">
+                    <option value="1" <? if($data['characterUnderLineWeight']=='1'){echo'selected="selected"';} ?>>1</option>
+					<option value="2" <? if($data['characterUnderLineWeight']=='2'){echo'selected="selected"';} ?>>2</option>
+					<option value="3" <? if($data['characterUnderLineWeight']=='3'){echo'selected="selected"';} ?>>3</option>
+					<option value="4" <? if($data['characterUnderLineWeight']=='4'){echo'selected="selected"';} ?>>4</option>
+					<option value="5" <? if($data['characterUnderLineWeight']=='5'){echo'selected="selected"';} ?>>5</option>
+				</select>
+			</li>
+			<li>
+				<label for="i8">下划线颜色：</label>
+				<input id="i8" class="setinput tColorPicker" type="text" title="" name="characterUnderLineColor" value="<?=$data['characterUnderLineColor']?>" />
+			</li>
+		</ul>
+	</div>
+	<div id="tabs-3">
+		<ul class="setform">
+			<li>
+				<label for="ii1">应用宽度：</label>
+				<input id="ii1" class="setinput" type="text" title="应用的宽度，如需精确调整，请在此处输入数值。" name="width" value="<?=$data['width']?>" />
+			</li>
+			<li>
+				<label for="ii2">应用高度：</label>
+				<input id="ii2" class="setinput" type="text" title="应用的高度，如需精确调整，请在此处输入数值。" name="height" value="<?=$data['height']?>" />
+			</li>
+			<li>
+				<label for="ii3">应用上边距：</label>
+				<input id="ii3" class="setinput" type="text" title="应用的上边距，如需精确调整，请在此处输入数值。" name="top" value="<?=$data['top']?>" />
+			</li>
+			<li>
+				<label for="ii4">应用左边距：</label>
+				<input id="ii4" class="setinput" type="text" title="应用的左边距，如需精确调整，请在此处输入数值。" name="left" value="<?=$data['left']?>" />
+			</li>
+		</ul>
+	</div>
+</div>
+</form>
+<script type="text/javascript">
+$(function() {
+//加载表单样式
+	$("#tabs").tabs({active: <?=$active?>});
+	$("input, .setform > li > div").buttonset();
+	$("#tForm select").fontselectmenu();
+	$(".setform").tooltip({
+		position: {
+			my: "left top",
+			at: "left bottom+5"
+		},
+		show: {
+			duration: "fast"
+		},
+		hide: {
+			effect: "hide"
+		}
+	});
+});
+</script>

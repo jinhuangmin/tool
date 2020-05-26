@@ -1,0 +1,64 @@
+.icon-blank{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/blank.gif") no-repeat center center;
+}
+.icon-add{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/edit_add.png") no-repeat center center;
+}
+.icon-edit{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/pencil.png") no-repeat center center;
+}
+.icon-remove{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/edit_remove.png") no-repeat center center;
+}
+.icon-save{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/filesave.png") no-repeat center center;
+}
+.icon-cut{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/cut.png") no-repeat center center;
+}
+.icon-ok{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/ok.png") no-repeat center center;
+}
+.icon-no{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/no.png") no-repeat center center;
+}
+.icon-cancel{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/cancel.png") no-repeat center center;
+}
+.icon-reload{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/reload.png") no-repeat center center;
+}
+.icon-search{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/search.png") no-repeat center center;
+}
+.icon-print{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/print.png") no-repeat center center;
+}
+.icon-help{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/help.png") no-repeat center center;
+}
+.icon-undo{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/undo.png") no-repeat center center;
+}
+.icon-redo{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/redo.png") no-repeat center center;
+}
+.icon-back{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/back.png") no-repeat center center;
+}
+.icon-sum{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/sum.png") no-repeat center center;
+}
+.icon-tip{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/tip.png") no-repeat center center;
+}
+
+.icon-mini-add{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/mini_add.png") no-repeat center center;
+}
+.icon-mini-edit{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/mini_edit.png") no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url("http://www.xituzx.com/js/jquery/jquery-easyui-1.3.2/themes/icons/mini_refresh.png") no-repeat center center;
+}

@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>效果预览 - 模板装修辅助工具3.0 方便智能的淘宝装修代码生成工具</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="renderer" content="webkit">
+<link rel="stylesheet" type="text/css" href="css/3i.css">
+<style>.ks-popup-hidden {display:none;}.ks-popup-shown {display:block;}</style>
+<style>
+.top{width:100%; background:#f5f5f5;text-align:center;overflow:hidden;position: fixed;height:130px;z-index: 99;top:0;left:0;}
+.top_c{height:80px;line-height:80px;background: #444;color:#888;font-size: 14px; overflow: hidden;}
+.top_c .muban{padding-left:5px;color:#d54343;}
+</style>
+</head>
+<body style="overflow-y:scroll;overflow-x:auto;">
+
+
+<div class="top">
+	<div style="height: 50px;line-height:50px;color:#707070;font-size:14px;overflow: hidden;">
+		<span style="padding-right:20px;">没有找到您喜欢的效果？请联系我们<a target="_blank" href="http://www.taobao.com/webww/ww.php?ver=3&touid=%E6%B2%83%E5%A7%86%E8%AE%BE%E8%AE%A1&siteid=cntaobao&status=2&charset=utf-8" title="点击这里给我发消息"><img src="http://amos.alicdn.com/realonline.aw?v=2&uid=%E6%B2%83%E5%A7%86%E8%AE%BE%E8%AE%A1&site=cntaobao&s=2&charset=utf-8" style="display: inline-block;margin-top:-2px;float: none;vertical-align:middle;" /></a></span>
+    	<span style="padding-right:20px;">免费提供垂直行业视觉方案：15355003615</span>
+    	<span>视觉定制：</span>
+    	<a target=blank href=tencent://message/?uin=79001768&Site=点击这里给我发消息&Menu=yes><img border="0" SRC=http://wpa.qq.com/pa?p=1:79001768:1 alt="点击这里给我发消息" style="display: inline-block;margin-top:-4px;float: none;vertical-align:middle;padding-right:20px;"></a>
+    	<span>商家QQ群：</span>
+    	<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=8f49285a5c503cd3a8deb28038ad156887f7250e6dc562e44221b4c5de41778a"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="沃姆设计分享群" title="沃姆设计分享群" style="display: inline-block;margin-top:-4px;float: none;vertical-align:middle;padding-right:20px;" ></a>
+    	<span>旺旺不在线售后电话：18072803854</span>
+    </div>
+	<div class="top_c">
+		<span>电脑端模块预览效果如下</span>
+    	<a id="editor" href="" title="立即编辑"><img src="https://img.alicdn.com/imgextra/i3/800803731/TB2VKAli.1HTKJjSZFmXXXeYFXa_!!800803731.png" alt="" style="display: inline-block;margin-top:-2px;float: none;vertical-align:middle;"></a>
+		<span style="padding-left: 50px;">模块秀效果需配合模板使用 未购买模板请旺旺联系 推荐适合您的模版</span>
+		<a target="_blank" class="muban" href="https://zxn.taobao.com/designer_detail.htm?&designerId=1016893&productType=0&site=3">天猫模版</a>
+		<a target="_blank" class="muban" href="https://zxn.taobao.com/designer_detail.htm?&designerId=1016893&productType=0&site=2">淘宝模版</a>
+		<a target="_blank" class="muban" href="https://zxn.taobao.com/designer_detail.htm?spm=a215h.7721252.1998546510.6.qvSIcI&designerId=1016893&productType=0&site=1003">无线模版</a>
+    </div>  
+</div>
+
+
+<div class="codebox" style="margin-top:130px;width:100%;overflow: hidden;">
+	<div id="main">{$html}</div>
+</div>
+<script src="http://g.alicdn.com/kissy/k/1.3.2/seed-min.js"></script>
+<script src="https://g.alicdn.com/shop/wangpu/1.7.5/decoration/init-async-min.js"></script>
+<script type="text/javascript" src="js/lib/3b.js"></script>
+<script>
+
+var link = window.location.href;
+var linkid = link.split("P");
+
+document.getElementById("editor").href="index.php#i_"+linkid[1];
+
+var tempSrollNum = Math.abs($(window).width() - $("#main").children("div.rel").width()) / 2;
+$(window).scrollLeft(tempSrollNum);
+$("#main").children("div.rel").css({
+	"margin-left":"50%",
+	"left": "-"+($("#main").children("div.rel").width() / 2)+"px"
+});
+$(".jpb").each(function() {
+	var _t = $(this);
+	_t.addClass("ks-popup-hidden").attr("style", "z-index:99;display:block;visibility:hidden;");
+});
+$(".japb").each(function() {
+	var _t = $(this);
+	_t.addClass("ks-popup-hidden").attr("style", "z-index:99;display:block;visibility:hidden;");
+});
+
+$(".jplb").each(function() {
+	var plHtml = '<div class="sns-widget sns-comment sns-widget-ui" data-comment="{&quot;param&quot;:{&quot;type_id&quot;:&quot;1100035&quot;,&quot;rec_user_id&quot;:&quot;-1&quot;,&quot;moreurl&quot;:&quot;http://item.taobao.com/item.htm?id=15705806426&quot;,&quot;target_key&quot;:&quot;huodong_35614370&quot;,&quot;title&quot;:&quot;空中红秀阁&quot;,&quot;page_size&quot;:3,&quot;view&quot;:&quot;default_list&quot;},&quot;paramList&quot;:{&quot;view&quot;:&quot;list_trunPage&quot;}}"><div class="comment-widget"><div class="comment-edit">        <div class="comment-add"><div class="textarea-b"><textarea class="f-txt" resize="none" style="" placeholder="我也插句话..."></textarea>        </div><div style="display: none;" class="checkcode sns-nf">        <span>验证码：</span>        <input type="text" style="width: 5em;" tabindex="3" class="f-checkcode" maxlength="4" size="4" name="TPL_checkcode">        <img height="35" width="85" style="vertical-align: middle;">        <span style="margin: 0pt 10px 0pt 0pt;">(不区分大小写)</span>        <a class="newCheckCode" href="#">换一张</a>        </div>        <div class="act">        <span class="skin-blue"><em class="J_LetterCount">0/140</em><span class="btn"><a href="#" class="J_PostComment">评论</a></span></span>        <a href="#" class="face">表情</a>            <label>    <input type="checkbox" class="J_SycMB"> 同时转发到我的淘宝    </label>            </div>        </div></div><ul class="comment-list"></ul></div></div>';
+	$(this).html(plHtml);
+});
+$(".jib").children().each(function() {
+	var box = $(this);
+	box.children().each(function() {
+		var _t = $(this);
+		if(_t.attr("data-u") || _t.attr("data-u") == "") {
+			_t.html(_t.attr("data-u"));
+		}
+	})
+});
+$(".jnwz").each(function() {
+	var character = $(this), modeArr, temph, tempharr;
+	if(character.attr("data-t")) {
+		modeArr = character.attr("data-t").split(";");
+		if(modeArr[0] && modeArr[0]!="text") {
+			temph = character.attr("data-h") || ";";
+			tempharr = temph.split(";");
+			character.children("a:eq(0)").html(tempharr[0]);
+		}
+		if(modeArr[1] && modeArr[1]!="text") {
+			temph = character.attr("data-hh") || ";";
+			tempharr = temph.split(";");
+			character.children("a:eq(1)").html(tempharr[0]);
+		}
+	} 
+});
+if($("div.jnxfbox").length > 0) {
+	$("div.jnxfbox").height("100%").css("overflow", "hidden");
+}
+
+
+</script>
+<script type="text/javascript">
+KISSY.use("dom",function(S,DOM){
+	S.getScript('http://a.tbcdn.cn/p/snsdk/core.js');
+	S.getScript('js/preview/countdown.js');
+	S.getScript('js/preview/preview.js');
+});
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35094907" charset="UTF-8"></script>
+
+</body>
+</html>

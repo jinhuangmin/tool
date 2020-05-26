@@ -1,0 +1,17 @@
+
+html,body{padding: 0;margin: 0;}
+.menu{height:40px;width:100%;overflow:hidden;font-size: 12px;position: relative;}
+.menu .logo{float:left;display:inline;overflow:hidden;height:40px;width:130px;background: url("../../../../img03.taobaocdn.com/imgextra/i3/747621589/TB267mZbFXXXXaxXXXXXXXXXXXX-747621589.png") no-repeat center center;}
+.menu .logo a{ display: block;height: 100%;width: 100%; }
+.menu .login{ float:left;display:inline;height:40px;line-height: 40px;color: #fff;margin-left:5px;font-size: 12px;}
+.menu .login span{ color: #ff0000;}
+.menu a{ color: #fff;text-decoration: none;}
+.menu .navbar{float:left;display:inline;overflow:hidden;height:40px;line-height:40px;color: #fff;}
+.menu .navbar a.hover{ color: #FFCC00;font-weight: bold;text-decoration: underline;}
+img{ border: 0;}
+.page {line-height: 25px; padding:5px 0; clear:both; font-family:Arial;}
+.page span,.pages a { display:inline-block; height:20px; line-height:20px;padding:3px 5px;background-color:rgb(83, 83, 83);text-align:center;}
+.page a { text-decoration: none;color: rgb(181, 181, 181); }
+.page a.next,.page a.prev{ background-image: none;}
+.page a:hover,span.cur a{  color:#fff;}
+

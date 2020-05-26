@@ -1,0 +1,357 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>淘宝手机端链接转换工具</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="renderer" content="webkit">
+<link type="text/css" rel="stylesheet" href="statics/zxn/css/a.css" />
+<link type="text/css" rel="stylesheet" href="statics/zxn/css/b.css" />
+<link type="text/css" rel="stylesheet" href="statics/zxn/css/c.css" />
+<link type="text/css" rel="stylesheet" href="statics/zxn/css/d.css" />
+<link rel="stylesheet" type="text/css" href="statics/zxn/css/elastislide.css" />
+<style>
+@media (min-width: 1920px) {
+// Your CSS here
+}
+
+@media (min-width: 1280px) {
+    // Your CSS here
+}
+
+@media (min-width: 768px) {
+    // Your CSS here
+}
+
+@media (min-width: 0px) {
+    // Your CSS here
+}
+#divUrlType input{display:none;}
+#divUrlType label {
+	display:block;
+	float:left;
+	width:auto;
+	height:50px;
+	font-size:14px;
+	background:#f3f3f3;
+	color:#aab5bd;
+	border:none;
+	line-height:50px;
+	text-align:center;
+	border-bottom:1px solid #ddd;
+	padding:0 25px;
+	cursor:pointer;
+}
+
+#divUrlType label.i-selected {
+	color:#788188;
+	background:#efefef;
+	border:1px solid #ddd;
+	border-bottom:none;
+}
+
+#urlToolBox .urlInputGm {
+	margin-top:60px;
+}
+#urlToolBox .urlInputGm li {
+	float: left;
+	clear:both;
+	width:100%;
+	margin-bottom:10px
+}
+#urlToolBox .urlInputGm li label.i-label{
+	width:130px;
+	height:50px;
+	line-height:40px;
+	display:block;
+	float:left;
+	font-size:14px;
+	color:#788188;
+	text-align:right;
+}
+#urlToolBox .urlInputGm li input.i-input{
+	height:40px;
+	line-height:40px;
+	font-size:24px;
+	border:1px solid #ddd;
+	border-radius:5px;
+	outline:0;
+	padding:0;
+	margin-left:5px;
+	width:380px;
+	display:block;
+	float:left;
+	text-indent:10px;
+}
+#urlToolBox .urlInputGm li textarea.i-textarea{
+	width:380px;
+	height:150px;
+	font-size:24px;
+	border:1px solid #ddd;
+	border-radius:5px;
+	margin-left:5px;
+	outline:0;
+	padding:0;
+	display:block;
+	float:left;
+}
+#urlToolBox .urlInputGm li button.i-button{
+	width:185px;
+	margin:0 auto;
+	height:38px;
+	outline:0;
+	background-image:url(statics/zxn/images/btn.png);
+	margin-left:70px;
+	cursor:pointer;
+	display:block;
+	float:left;
+}
+#urlToolBox .urlInputGm li img.i-img {
+	border:1px solid #ddd;
+	outline:0;
+	margin-left:5px;
+	display:block;
+	float:left;
+}
+#urlToolBox .urlInputGm li select.i-select {
+	border:none;
+	outline:0;
+	display:block;
+	float:right;
+	margin-right:100px;
+	margin-top:12px;
+}
+#urlToolBox .urlInputGm li .i-span-r {
+	display:block;
+	float:right;
+	color:#aab5bd;
+	margin-top:10px;
+}
+.header {
+height: 70px;
+border-bottom: 1px solid #393b40;
+box-shadow: inset 0 -1px #2b2b2f;
+}
+.container {
+position: relative;
+width: 1150px;
+margin: 0 auto;
+}
+.header .container {
+z-index:1;
+}
+.header .logo {
+float: left;
+width: 70px;
+height: 70px;
+background: #4fb8cb url("http://img03.taobaocdn.com/imgextra/i3/39767794/TB2aFKMbFXXXXbZXXXXXXXXXXXX-39767794.jpg") center no-repeat;
+z-index: 5;
+}
+.header h1 {
+float: left;
+line-height: 70px;
+margin-left: 15px;
+color: #c2bfbf;
+font-size: 18px;
+letter-spacing: 8px;
+font-weight:normal;
+}
+
+a.alltemplets,a.hrlink,div.junetool{
+display:block;
+position:absolute;
+color:#7c7e80;
+font-size:14px;
+font-family:微软雅黑;
+height:70px;
+line-height:70px;
+text-align:center;
+z-index:2;
+}
+a.alltemplets{
+width:100px;
+top:0;
+right:100px;
+}
+a.hrlink{
+width:100px;
+top:0;
+right:200px;
+color:#cc3738;
+}
+div.junetool{
+overflow:hidden;
+width:100px;
+top:0;
+right:0;
+background:url(http://img04.taobaocdn.com/imgextra/i4/39767794/TB2NrQkbFXXXXXJXXXXXXXXXXXX-39767794.png) right center no-repeat;
+text-align:left;
+text-indent:15px;
+}
+div.junetool:hover{
+overflow:visible;
+color:#eee;
+background-color:#1d1e23;
+background-image:url(http://img02.taobaocdn.com/imgextra/i2/39767794/TB2Pi.abFXXXXXfXpXXXXXXXXXX-39767794.png);
+*height:270px;
+}
+a.alltemplets:hover{
+color:#eee;
+background-color:#1d1e23;
+}
+a.junetoola{
+display:block;
+color:#7c7e80;
+font-size:14px;
+}
+a.junetoola:hover{
+color:#eee;
+}
+div.junetool ul{
+width:140px;
+padding-top:1px;
+}
+div.junetool ul li{
+*line-height:40px;
+*height:40px;
+}
+div.junetool ul a.june-preview{
+display:block;
+background:#2d2e33;
+line-height:40px;
+color:#7c7e80;
+border-bottom:1px #282828 solid;
+*height:40px;
+font-size:12px;
+}
+div.junetool ul a.june-preview:hover{
+background:#1d1e23;
+color:#eee;
+}
+</style>
+</head>
+<body>
+	<div id="head" style="background:#333;position:relative;z-index:9999;">
+
+		<div class="header" style="min-width:1150px;">
+			<div class="container">
+				<a href="/" target="_blank" class="logo" id="junezx_logo"></a>
+				<a class="alltemplets" href="http://taezx.taobao.com/designer_detail.htm?designerId=0" target="_blank">全部模板 &gt;</a>
+
+				<div class="junetool">
+					<a class="junetoola" href="statics/zxn/" target="_blank">配套工具</a>
+					<ul>
+						<li><a class="june-preview" target="_blank" href="statics/zxn/index.php">模板装修辅助工具</a></li>
+						<li><a class="june-preview" target="_blank" href="../gongju/daohang/">导航样式生成工具</a></li>
+						<li><a class="june-preview" target="_blank" href="statics/zxn/color.html">色码获取工具</a></li>
+						<li><a class="june-preview" target="_blank" href="statics/zxn/bgfixed.html">固定背景生成工具</a></li>
+						<li><a class="june-preview" target="_blank" href="/gm/">手机端链接转换工具</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--
+	<div id="hd" style="background:#333;">
+		<div style="width:1150px;margin:0 auto;position:relative;">
+			<div id="logo"><a class="june-preview" href="http://junezx.com" target="_blank" style="display:block;width:100%;height:100%;"></a></div>
+			<div id="topbanner">
+				<div id="moretools" data-tools="mobileUrl"></div>
+			</div>
+		</div>
+	</div>
+	<div id="leftpannel" style="width:0;left:0;top:60px;bottom:0;background:#f3f3f3;color:#aab5bd;display:none;">
+	</div>
+-->
+	<div id="bd" style="bottom:0;background:#f2f2f2;top:70px;">
+		<div id="box" style="left:0;bottom:0;right:0;top:70px;">
+			<div id="tablebox" style="position:absolute;left:0;right:0;top:0;bottom:0;overflow-x:hidden;overflow-y:scroll;">
+				<div style="width:1920px;height:1px;background:#ddd;position:absolute;top:0px;"></div>
+				<div id="j_table" style="height:680px;width:1135px;top:0;margin:0 auto; background: #f3f3f3 none repeat scroll 50% 0%;">
+					<div id="urlToolBox" style="position:relative;float:left;display:block;width:590px;height:588px;margin-top:72px;border:1px solid #ddd;background:#efefef;">
+						<div id="divUrlType" style="position:absolute;top:-50px;left:-1px;" data-focus="0">
+							<label for="urlType3" class="i-selected">店铺首页</label><input type="radio" name="urlType" id="urlType3" value="shop" checked="checked"/>
+							<label for="urlType2">店铺分类页</label><input type="radio" name="urlType" id="urlType2" value="category"/>
+							<label for="urlType1">宝贝详情页</label><input type="radio" name="urlType" id="urlType1" value="item"/>
+							<label for="urlType5">旺旺链接</label><input type="radio" name="urlType" id="urlType5" value="wang"/>
+							<label for="urlType4">优惠券链接</label><input type="radio" name="urlType" id="urlType4" value="yhq"/>
+						</div>
+						<textarea id="urlHtmlHidden1" style="display: none;"></textarea>
+						<textarea id="urlHtmlHidden2" style="display: none;"></textarea>
+						<textarea id="urlHtmlHidden3" style="display: none;"></textarea>
+						<textarea id="urlHtmlHidden4" style="display: none;"></textarea>
+						<textarea id="urlHtmlHidden5" style="display: none;"></textarea>
+						<div class="urlInputGm">
+							<ul>
+								<li>
+									<label class="i-label" id="urlLabel">PC端地址：</label>
+									<input class="i-input" type="text" name="urlValue" id="urlValue" value="" />
+								</li>
+								<li>
+									<label class="i-label">&nbsp;</label>
+									<button class="i-button" id="urlSubmit" type="button"></button>
+								</li>
+								<li>
+									<label class="i-label">移动端地址：</label>
+									<textarea class="i-textarea" id="urlResult"></textarea>
+								</li>
+								<li id="ewmLi">
+									<label class="i-label">二维码图片：</label>
+									<img class="i-img" id="urlEwm" src="">
+									<img class="i-img" id="urlEwm1" src="">
+									<select class="i-select" id="ewmsize">
+										<!--<option value="30">30</option>
+										<option value="40">40</option>
+										<option value="45">45</option>
+										<option value="50">50</option>
+										<option value="60">60</option>-->
+										<option value="70">70</option>
+										<option value="80">80</option>
+										<option value="85">85</option>
+										<option value="90">90</option>
+										<option value="100" selected="selected">100</option>
+										<option value="110">110</option>
+										<option value="120">120</option>
+										<option value="125">125</option>
+										<option value="130">130</option>
+										<option value="140">140</option>
+									</select>
+									<span class="i-span-r">二维码尺寸：</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<iframe id="gm" src="https://m.taobao.com/#index" style="width:480px;height:640px;float:right;margin-top:20px;margin-right:20px;border:1px solid #ddd;background:#efefef;"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="ft"></div>
+</div>
+<script type="text/javascript" src="statics/zxn/js/a.js"></script><!--a-->
+<script type="text/javascript" src="statics/zxn/js/b.js"></script><!--b-->
+<script type="text/javascript" src="statics/zxn/js/c.js"></script><!--c-->
+<script type="text/javascript" src="statics/zxn/js/d.js"></script><!--d-->
+<script type="text/javascript" src="/grsc/javascript/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="statics/zxn/js/lib/e.js"></script><!--lib/e-->
+<script type="text/javascript" src="statics/zxn/js/lib/r.js"></script><!--lib/r-->
+<script type="text/javascript" src="statics/zxn/js/f.js"></script><!--f-->
+<script type="text/javascript" src="statics/zxn/js/n.js"></script><!--n-->
+<script type="text/javascript" src="statics/zxn/js/g.js"></script><!--g-->
+<script type="text/javascript" src="statics/zxn/js/moretools.js"></script>
+<!--轮播-->
+<script src="statics/zxn/js/lib/modernizr.custom.17475.js"></script>
+<script type="text/javascript" src="statics/zxn/js/lib/jquerypp.custom.js"></script>
+<script type="text/javascript" src="statics/zxn/js/lib/jquery.elastislide.js"></script>
+<script type="text/javascript"></script>
+
+<script type="text/javascript" src="statics/zxn/js/bb.js" id="june_first"></script><script language="javascript">
+ <!--
+if (top.location != location) top.location.href = location.href;
+ //-->
+ </script>
+</body>
+</html>

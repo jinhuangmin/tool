@@ -1,0 +1,741 @@
+<?
+error_reporting(E_ALL ^ E_DEPRECATED);
+?>
+<!DOCTYPE html>
+<html style="min-width:1240px;">
+<head>
+<meta charset="UTF-8">
+<title>模板装修辅助工具-方便智能的淘宝装修代码生成工具</title>
+<meta http-equiv="X-UA-Compatible"/>
+<meta name="renderer" content="webkit">
+<link rel="stylesheet" type="text/css" href="/statics/zxn/css/preview.css">
+<link rel="stylesheet" type="text/css" href="/statics/grsc/css/main.css">
+<link type="text/css" rel="stylesheet" href="/statics/zxn/css/a.css" />
+<link type="text/css" rel="stylesheet" href="/statics/grsc/css/jiu.css" />
+<script type="text/javascript"> var JUNEZX__USERSTATUS = false, JUNEZX__USERNAME = "", JUNEZX__USERCOLLECT = []; </script>
+<script src="http://g.tbcdn.cn/kissy/k/1.3.2/seed-min.js"></script>
+<script charset="utf-8" src="http://g.tbcdn.cn/kissy/k/1.3.2/json-min.js" async=""></script>
+<script src="/statics/zxn/tool/js/lib/sns-core.js"></script>
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script type="text/javascript" src="/statics/zxn/js/lib/cd.js"></script>
+<script src="/statics/grsc/plugjd.js"></script>
+<!-- Include the imagesLoaded plug-in -->
+<!--
+<script src="grsc/libs/jquery.imagesloaded.js"></script>
+-->
+<script src="/statics/grsc/jquery.wookmark.js"></script>
+<script src="/statics/grsc/javascript/jquery.slides.js"></script>
+<!-- Include the idialog plug-in -->
+<!--
+<script type="text/javascript" charset="utf-8" src="tool/js/jquery.cookie.js"></script>
+<script type="text/javascript" charset="utf-8" src="tool/js/jquery.form.js"></script>
+<script type="text/javascript" src="tool/js/jquery-ui.js"></script>
+-->
+<script type="text/javascript" charset="utf-8" src="/statics/zxn/js/c.js"></script>
+<script type="text/javascript" charset="utf-8" src="/statics/zxn/js/d.js"></script>
+<script type="text/javascript" src="/statics/zxn/js/f.js"></script>
+<script type="text/javascript" src="/statics/zxn/js/g.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+
+</style>
+</head>
+<body><!-- style="overflow-y:scroll;overflow-x:auto;"-->
+	<input type="hidden" value="tool" id="docname" /> 
+    <div class="header" style="min-width:1240px; ">
+		<div class="container">
+			
+            <a class="logo" href="index.php" target="_self"></a>
+            
+            <div class="junetool">
+				<a class="junetoola" href="tool/" target="_blank">配套工具</a>
+				<ul>
+					<li><a class="june-preview" target="_blank" href="tool/index.php">模板装修辅助工具</a></li>
+					<li><a class="june-preview" target="_blank" href="tool/navcss.html" style="display:none">导航样式生成工具</a></li>
+					<li><a class="june-preview" target="_blank" href="tool/color.html">色码获取工具</a></li>
+					<li><a class="june-preview" target="_blank" href="tool/bgfixed.html">固定背景生成工具</a></li>
+                    <li><a class="june-preview" target="_blank" href="tool/indexjd.php">京东工具</a></li>
+					<li><a class="june-preview" target="_blank" href="/side.php" >侧边栏装修工具</a></li>
+				</ul>
+			</div>
+            
+             <div class="junetool muen-1">
+				<a class="junetoola" href="https://zxn.taobao.com/designer_detail.htm?designerId=1022650" target="_blank">全部模板</a>
+				<ul>
+					<li><a class="june-preview" target="_blank" href="https://zxn.taobao.com/designer_detail.htm?designerId=1022650&productType=22&site=2">淘宝模板</a></li>
+					<li><a class="june-preview" target="_blank" href="https://zxn.taobao.com/designer_detail.htm?designerId=1022650&productType=0&site=3">天猫模板</a></li>
+				</ul>
+			</div>
+            
+            <a class="alltemplets alltempletsmuen-1" href="index.php" target="_self">淘宝辅助工具</a>
+            <a class="alltemplets alltempletsmuen-2" href="index.php" target="_self">首页</a>
+		</div>
+	</div>
+	<div class="slider2" style="min-width:1240px; height:100px">
+      当前为京东辅助工具,无需模板支持
+	</div>
+	<div class="live jingdong" id="junezx_live" style="min-width:1240px;">
+
+		<div class="container">
+			<div class="c1" id="j_ties" style="display:block;">
+				<div id="shareLabelList">
+	<!--全屏 轮播 固定背景 滚动 嵌套轮播 详情页 790 750 内页-->
+	<span class="sort sortSelected" data-sortType="sort">默认排序</span>
+	<span class="sort" data-sortType="faver">按收藏</span>
+	<span class="sort" data-sortType="use">按热度</span>
+	<span class="sort" data-sortType="time">按新品</span>
+	<label for="layoutLabel" style="margin-left:15px;">按宽度：</label>
+	<select class="label-select" style="width:90px;" id="layoutLabel">
+		<option value="">全部</option>
+		<option value="全屏">全屏</option>
+		<option value="店招">店招</option>
+		<option value="整版">整版</option>
+		<option value="1200">1200</option>
+		<option value="990">990</option>
+		<option value="950">950</option>
+		<option value="790">790</option>
+		<option value="750">750</option>
+		<option value="190">190</option>
+	</select>
+	
+	<label for="functionLabel">&nbsp;&nbsp;&nbsp;&nbsp;按功能：</label>
+	<select class="label-select" style="width:90px;" id="functionLabel">
+		<option value="">全部</option>
+		<option value="轮播">轮播</option>
+		<option value="焦点轮播">焦点轮播</option>
+		<option value="嵌套轮播">嵌套轮播</option>
+		<option value="无缝轮播">无缝轮播</option>
+		<option value="特效层">特效层</option>
+		<option value="分类">分类</option>
+		<option value="文字">文字</option>
+		<option value="弹出层">弹出层</option>
+		<option value="手风琴">手风琴</option>
+		<option value="倒计时">倒计时</option>
+		<option value="切片正反面">切片正反面</option>
+		<option value="滚动文字">滚动文字</option>
+		<option value="图片">图片</option>
+		<option value="FLASH">FLASH</option>
+		<option value="视频">视频</option>
+	</select>
+	
+	<label for="effectLabel">&nbsp;&nbsp;&nbsp;&nbsp;按效果：</label>
+	<select class="label-select" style="width:90px;" id="effectLabel">
+		<option value="">全部</option>
+		<option value="滚动">滚动</option>
+		<option value="旋转">旋转</option>
+		<option value="翻转">翻转</option>
+		<option value="拼接">拼接</option>
+		<option value="瀑布流">瀑布流</option>
+		<option value="铺货">铺货</option>
+		<option value="聚划算">聚划算</option>
+		<option value="详情页">详情页</option>
+		<option value="内页">内页</option>
+		<option value="放大镜">放大镜</option>
+		<option value="下雪">下雪</option>
+		<option value="烟花">烟花</option>
+	</select>
+	
+	<label for="categoryLabel">&nbsp;&nbsp;&nbsp;&nbsp;按行业：</label>
+	<select class="label-select" style="width:90px;" id="categoryLabel">
+		<option value="">全部</option>
+		<option value="通用">通用</option>
+		<option value="男装">男装</option>
+		<option value="女装">女装</option>
+		<option value="鞋包">鞋包</option>
+		<option value="数码">数码</option>
+		<option value="书籍">书籍</option>
+		<option value="食品">食品</option>
+		<option value="童装">童装</option>
+		<option value="饰品">饰品</option>
+		<option value="美妆">美妆</option>
+	</select>
+	<input style="position:absolute;top:28px;right:75px;width:140px;margin-right:0;" type="text" name="shareTitle" id="shareTitle" value="" />
+	<button style="position:absolute;top:28px;right:23px;" type="submit" id="shareTitleBtn">搜索</button>
+	
+	<!--
+	<span>下雪</span>
+	<span>烟花</span>
+	<span>图片</span>
+	<span>视频</span>
+	<span>FLASH</span> 
+	
+	<span>全部</span>
+	
+	<span>固定背景</span>
+	<span>通用</span>
+	<span>自定义</span>
+	<span>店招</span>
+	
+	<span>滚动</span>
+	<span>旋转</span>
+	<span>翻转</span>
+	<span>拼接</span>
+	
+	<span>分类</span>
+	<span>文字</span>
+	<span>特效层</span>
+	<span>放大镜</span>
+	<span>弹出层</span>
+	<span>手风琴</span>
+	<span>倒计时</span>
+	<span>切片正反面</span>
+	<span>滚动文字</span>
+	
+	
+	<span class="slide" data-labelType="slide">轮播</span>
+	<span class="slide" data-labelType="slide">嵌套轮播</span>
+	<span class="slide" data-labelType="slide">焦点轮播</span>
+	<span class="slide" data-labelType="slide">无缝轮播</span>
+	
+	<span>瀑布流</span>
+	<span>铺货</span>
+	<span>聚划算</span>
+	<span>详情页</span>
+	
+	<span class="layout" data-labelType="layout">790</span>
+	<span class="layout" data-labelType="layout">750</span>
+	<span class="layout" data-labelType="layout">990</span>
+	<span class="layout" data-labelType="layout">950</span>
+	<span class="layout" data-labelType="layout">1200</span>
+	<span class="layout" data-labelType="layout">全屏</span>
+	
+	-->
+	
+</div>
+<ul id="tiles" class="junezx-tiles sh-share-ul" style="height:900px;"></ul>
+<input type="hidden" value="" id="labelName" />
+<input type="hidden" value="" id="categoryName" />
+<input type="hidden" value="sort" id="sortName" />
+<div id="tiles_more" class="junezx-tiles-more"><i></i>点击加载更多</div>
+<!-- Once the page is loaded, initalize the plug-in. -->
+<script type="text/javascript">
+(function ($) {
+  var $tiles = $('#tiles'),
+	  $handler = $('li', $tiles),
+	  page = 1,
+	  isLoading = false,
+	  apiURL = '/zxd/server',
+	  lastRequestTimestamp = 0,
+	  fadeInDelay = 1000,
+	  $window = $(window),
+	  SETtIMEOut = null,
+	  $document = $(document);
+	$("#shareLabelList").children(".label-select").selectmenu({
+		change: labelSelectChange
+	});
+	$("#shareTitle").button();
+	$("#shareTitleBtn").button();
+	$("#shareLabelList").on("click", "span.sort", function(event) {
+		var _t = $(this), sortType = _t.attr("data-sortType");
+		$("#shareLabelList").children("span.sort").removeClass("sortSelected");
+		_t.addClass("sortSelected");
+		$("#sortName").val(sortType);
+		// var maxIndex = $("#shareLabelList").children("span.labelSelected").length - 1;
+		// var result = '';
+		// $("#shareLabelList").children("span.labelSelected").text(function(index, content){
+			// result += (index === maxIndex) ? content : content + ' '; 
+		// })
+		// $("#labelName").val(result);
+		initShareLabelList();
+	});
+	
+	$("#shareTitleBtn").on("click", function() {
+		var val = $("#shareTitle").val();
+		if(val == "") {
+			apiURL = "grsc/serverjd.php";
+		} else {
+			$("#shareLabelList").children(".label-select").selectmenu( "destroy" );
+			$("#layoutLabel option[value='']").prop("selected", true);
+			$("#functionLabel option[value='']").prop("selected", true);
+			$("#effectLabel option[value='']").prop("selected", true);
+			$("#categoryLabel option[value='']").prop("selected", true);
+			$("#shareLabelList").children(".label-select").selectmenu({
+				change: labelSelectChange
+			});
+			apiURL = "grsc/serverjd.php?type=search";
+		}
+		labelSelectChange();
+		$(this).attr("data-status", "searching").hide();
+		SETtIMEOut = setTimeout(function() {
+			$("#shareTitleBtn").attr("data-status", "searchend").show();
+		},30000);
+	});
+	
+	function labelSelectChange(event) {
+		var maxIndex = $("#shareLabelList").children(".label-select").length - 1, result = "";
+		$(".label-select").each(function(index, ele) {
+			var content = $(this).val(), id = $(this).attr("id");
+			if(id == "categoryLabel") {
+				if(content != "通用" && content !="") {
+					$("#categoryName").val("通用");
+				} else {
+					$("#categoryName").val("");
+				}
+			}
+			if(content && content != "") {
+				result += (index === maxIndex) ? content : content + ' '; 
+			}
+		});
+		$("#labelName").val(result);
+		initShareLabelList();
+	}
+	
+	function initShareLabelList() {
+		$("#tiles").html("");
+		page = 1;
+		$.ajax({
+		  url: apiURL,
+		  dataType: 'json', // Set to jsonp if you use a server on a different domain and change it's setting accordingly
+		  data: {page: page, sort: $("#sortName").val(), label: $("#labelName").val(), category: $("#categoryName").val(), title: $("#shareTitle").val()}, // Page parameter to make sure we load new data
+		  success: onLoadData
+		});
+	}
+  // Prepare layout options.
+  var options = {
+	autoResize: true, // This will auto-update the layout when the browser window is resized.
+	container: $('#tiles'), // Optional, used for some extra CSS styling
+	offset: 18, // Optional, the distance between grid items
+	outerOffset: 15,
+	itemWidth: 390 // Optional, the width of a grid item
+  };
+
+  /**
+   * When scrolled all the way to the bottom, add more tiles.
+   */
+  function onScroll(event) {
+	// Only check when we're not still waiting for data.
+	$(this).children("i").addClass("loading");
+	if (!isLoading) {
+	  // Check if we're within 100 pixels of the bottom edge of the broser window.
+	  var closeToBottom = ($window.scrollTop() + $window.height() > $document.height() - 100);
+	  if (closeToBottom) {
+		// Only allow requests every second
+		var currentTime = new Date().getTime();
+		if (lastRequestTimestamp < currentTime - 1000) {
+		  lastRequestTimestamp = currentTime;
+		  loadData();
+		}
+	  }
+	}
+  };
+
+  /**
+   * Refreshes the layout.
+   */
+  function applyLayout($newImages) {
+	//options.container.imagesLoaded(function() {
+	$(options.container).imagesLoaded(function() {
+	  // Destroy the old handler
+	  if ($handler.wookmarkInstance) {
+		$handler.wookmarkInstance.clear();
+	  }
+
+	  // Create a new layout handler.
+	  $tiles.append($newImages);
+	  $handler = $('li', $tiles);
+	  $handler.wookmark(options);
+
+	  // Set opacity for each new image at a random time
+		$newImages.each(function() {
+			var $self = $(this), ID = $self.attr("data-ID");
+			window.setTimeout(function() {
+				$self.css('opacity', 1);
+				if($.inArray(ID, JUNEZX__USERCOLLECT) >= 0) {
+					setSUnLike(ID);
+				}
+			}, Math.random() * fadeInDelay);
+		});
+	});
+  };
+
+  /**
+   * Loads data from the API.
+   */
+  function loadData() {
+	isLoading = true;
+	$('#loaderCircle').show();
+
+	$.ajax({
+	  url: apiURL,
+	  dataType: 'json', // Set to jsonp if you use a server on a different domain and change it's setting accordingly
+	  data: {page: page, sort: $("#sortName").val(), label: $("#labelName").val(), category: $("#categoryName").val(), title: $("#shareTitle").val()}, // Page parameter to make sure we load new data
+	  success: onLoadData
+	});
+  };
+
+  /**
+   * Receives data from the API, creates HTML for images and updates the layout
+   */
+  function onLoadData(response) {
+	$("#tiles_more").children("i").removeClass("loading");
+	isLoading = false;
+	$('#loaderCircle').hide();
+	if($("#shareTitleBtn").attr("data-status") == "searching") {
+		$("#shareTitleBtn").attr("data-status", "searchend").show();
+		clearTimeout(SETtIMEOut);
+		SETtIMEOut = null;
+	}
+	// Increment page index for future calls.
+	page++;
+
+	// Create HTML for the images.
+	var html = '',
+		data = response.data,
+		i = 0, length = data.length, image, opacity,
+		$newImages;
+	for (; i < length; i++) {
+		var image = data[i];
+		html += '<li data-ID="'+image.id+'">';
+		html += '<a class="spiclink" target="_blank" href="tool/previewIjd.php?id='+image.id+'">';
+		// Image tag (preview in Wookmark are 200px wide, so we calculate the height based on that).
+		html += '<img src="'+image.image+'" width="384" height="'+Math.round(image.height/image.width*384)+'" \/>';
+		html += '</a>';
+		// Image title.
+		html += '<span class="stitle">【京东适用】'+image.shareTitle+'</span>';
+		html += '<span class="sinfo">'+image.name+'</span>';
+		html += '<span class="stime">'+image.time+'</span>';
+		html += '<span class="slabel">'+image.shareLabel+'</span>';
+		//Share btns
+		html += '<p class="sbtns"><span class="slike" style="display:none" data-ID="'+image.id+'" data-name="'+image.imgname+'"></span><span class="spreview" style="margin-left:89px"><a href="/zxd/previewI/'+image.id+'" target="_blank"></a></span><span class="suse"><a href="/zxd/index#i_'+image.id+'" target="_blank"></a></span></p>';
+		html += '</li>';
+	}
+
+	$newImages = $(html);
+
+	// Disable requests if we reached the end
+	if (response.message == 'No more pictures') {
+	  $("#tiles_more").off('click', onScroll).html("没有更多的内容啦").css("cursor", "default");
+	} else {
+		$("#tiles_more").on('click', onScroll).html("<i></i>点击加载更多").css("cursor", "pointer");
+	}
+
+	// Apply layout.
+	applyLayout($newImages);
+  };
+
+  // Capture scroll event.
+  $("#tiles_more").on('click', onScroll);
+
+  // Load first data from the API.
+  loadData();
+})(jQuery);
+</script>
+
+
+			</div>
+		</div>
+	</div>
+<div id="footer">
+<div class="fcontent">
+     <div>
+		<a href="#" target="_blank" rel="nofollow">关于果扑</a><span>|</span> 
+        <a href="#" target="_blank" rel="nofollow">About Tencent</a><span>|</span>
+        <a href="#" target="_blank" rel="nofollow">服务协议</a><span>|</span>
+        <a href="#" target="_blank" rel="nofollow">隐私权保护</a><span>|</span> 
+        <a href="#" target="_blank" rel="nofollow">开放平台</a><span>|</span>
+        <a href="#" target="_blank" rel="nofollow">广告服务</a><span>|</span>
+        <a href="#" target="_blank">关于我们</a><span>|</span>
+        <a href="#" target="_blank">联系方式</a><span>|</span>
+        <a href="#" target="_blank">版权声明</a><span>|</span>
+        <a href="#" target="_blank">招聘信息</a>
+     </div>
+    
+	<div class="en">Copyright @ 1998 - 2013 Tencent. All Rights Reserved</div>
+	
+	<div>
+		<a href="http://www.guop.cn/" target="_blank" rel="nofollow">果扑网络</a> <a href="http://www.tencent.com/zh-cn/le/copyrightstatement.shtml" target="_blank" rel="nofollow">版权所有</a>
+	
+	</div>
+
+  </div>
+
+</div>
+<script type="text/javascript">
+$(function() {
+	var $window = $(window),
+		$document = $(document),
+		$live = $("#junezx_live"),
+		$navTabs = $("#junezx_nav_tabs"),
+		$navTabsFixed = $("#junezx_nav_tabs_fixed"),
+		odLiveTop = $live.offset().top;
+	
+	$("#autoLogin").on("click", function(){
+		$(".labelCheckbox").toggleClass("not");
+	});
+	checkAutoLogin();
+	getUser();
+	$("#loginbutton").on("click", function() {
+			var username = $("#falname").val(),
+			password = $("#falpwd").val();
+			if(username==""){
+				tMessage("用户名不能为空！");
+			}else if(password==""){
+				tMessage("密码不能为空！");
+			}else{
+			$("#form_login").ajaxSubmit(function(m) {
+				var data = [false, ""], autoLogin = $("#autoLogin");
+				if(m != "") {
+					data = JSON.parse(m);
+				}
+				if(data[0]) {
+					setUser(data);
+					if(autoLogin.prop("checked")) {
+						setAutoLogin(data);
+					}
+				} else {
+					tMessage("用户名或者密码错误！");
+				}
+			});
+		}
+	});
+	$("#logged").on("click.forTitle", ".logged-title", function() {
+		var dataFor = "";
+		$("#logged").children(".logged-title.selected").removeClass("selected");
+		dataFor = $(this).addClass("selected").attr("data-for");
+		$("#logged").children(".logged-content").hide();
+		$("#"+dataFor).show();
+	});
+	
+	$("#tiles").on("click", "li p.sbtns span.slike", slikeToCollect);
+	
+	$("#tiles").on("click", "li p.sbtns span.sunlike", sunlikeToCollect);
+	
+	$("#regshow").on("click", function() {
+		//$("#nologin").hide();
+		$("#toreg").dialog("open");
+	});
+	$("#forgetshow").on("click", function() {
+		//$("#nologin").hide();
+		$("#forget").dialog("open");
+	});
+	$("#returnlogin").on("click", function() {
+		$("#toreg").dialog("close");
+		//$("#nologin").show();
+	});
+	$("#returnlogin1").on("click", function() {
+		$("#forget").dialog("close");
+		//$("#nologin").show();
+	});
+	
+	$("#toreg").dialog({
+		autoOpen: false,
+		width: 450,
+		height: 450,
+		modal: true,
+		title: "用户注册",
+		buttons: {
+			"关闭": function() {
+				$(this).dialog("close");
+			}
+		}
+	}).dialog("close");
+	
+	$("#forget").dialog({
+		autoOpen: false,
+		width: 450,
+		height: 450,
+		modal: true,
+		title: "密码找回",
+		buttons: {
+			"关闭": function() {
+				$(this).dialog("close");
+			}
+		}
+	}).dialog("close");
+	
+	$("#forget").on("click", ".forgetmethod", function(event) {
+		$(".forgetmethod").removeClass("selected");
+		var index = $(this).addClass("selected").index();
+		$(".forgetmethodlist").hide();
+		$("#forgetmethod"+index).show();
+	});
+	
+	$("#regbutton").on("click", function(event) {
+		var username = $("#rusername").val(),
+			password = $("#rpassword").val(),
+			password2 = $("#rpassword2").val(),
+			license = $("#rlicense").val();
+		if(username==""){
+			tMessage("用户名不能为空！");
+		}else if(password==""){
+			tMessage("密码不能为空！");
+		}else if(password!=password2){
+			tMessage("两次输入的密码不一致！");
+		}else{
+			$("#form_reg").ajaxSubmit(function(m) {
+				if(m=="true"){
+					tMessage("注册成功，请登录");
+					$("#rusername,#rpassword,#rpassword2,#rlicense").val("");
+					$("#returnlogin").trigger("click");
+				}else{
+					tMessage(m);
+				}
+			});
+		}
+	});
+	
+	$("#forgetbutton").on("click", function(event) {
+		var username = $("#fusername").val(),
+			password = $("#fpassword").val(),
+			password2 = $("#fpassword2").val(),
+			license = $("#flicense").val();
+		if(username==""){
+			tMessage("用户名不能为空！");
+		}else if(password==""){
+			tMessage("密码不能为空！");
+		}else if(password!=password2){
+			tMessage("两次输入的密码不一致！");
+		}else{
+			$("#form_forget").ajaxSubmit(function(m) {
+				if(m=="true"){
+					tMessage("密码重设成功，请登录");
+					$("#fusername,#fpassword,#fpassword2,#flicense").val("");
+					$("#returnlogin1").trigger("click");
+				}else{
+					tMessage(m);
+				}
+			});
+		}
+	});
+	
+	$live.on("click", ".nav li a", function(event) {
+		event.preventDefault();
+		var c = $(this).attr("href");
+		var _this = this;
+		if($(c).children(".junezx-tiles").length == 0 || $(c).children(".junezx-tiles").html() == "") {
+			if(c == "#j_case") {
+				$.ajax({
+					url: "tool/demo.html",
+					success:function(m) {
+						$(c).html(m);
+						navScroll(_this, c);
+					}
+				});
+			} else if(c == "#j_faq") {
+				if($("#faq_content").attr("data-loadType")) {
+					navScroll(this, c);
+				}
+			} else {
+				navScroll(this, c);
+				// if($live.offset().top - $document.scrollTop() < 0) {
+					// $document.scrollTop($(c).offset().top - 93);
+				// }
+			}
+		} else {
+			navScroll(this, c);
+		}
+	});
+	$document.on("scroll", function() {
+		var st = $live.offset().top - $document.scrollTop();
+		if(st >= 0) {
+			$navTabsFixed.hide();
+			$navTabsFixed.children().appendTo($navTabs);
+		} else {
+			$navTabsFixed.show();
+			$navTabs.children().appendTo($navTabsFixed);
+		}
+	});
+	manPicLoad(0, true);
+
+});
+</script>
+<script type="text/javascript">
+$(function() {
+	//代码处理
+	$(".jpb").each(function() {
+		var _t = $(this);
+		_t.addClass("ks-popup-hidden").attr("style", "z-index:99;display:block;visibility:hidden;").appendTo(_t.parent().children("div.rel"));
+	});
+	$(".japb").each(function() {
+		var _t = $(this);
+		_t.addClass("ks-popup-hidden").attr("style", "z-index:99;display:block;visibility:hidden;").appendTo(_t.parent().children("div.rel"));
+	});
+	$(".jplb").each(function() {
+		var plHtml = '<div class="sns-widget sns-comment sns-widget-ui" data-comment="{&quot;param&quot;:{&quot;type_id&quot;:&quot;1100035&quot;,&quot;rec_user_id&quot;:&quot;-1&quot;,&quot;moreurl&quot;:&quot;http://item.taobao.com/item.htm?id=123456&quot;,&quot;target_key&quot;:&quot;huodong_35614370&quot;,&quot;title&quot;:&quot;空中红秀阁&quot;,&quot;page_size&quot;:3,&quot;view&quot;:&quot;default_list&quot;},&quot;paramList&quot;:{&quot;view&quot;:&quot;list_trunPage&quot;}}"><div class="comment-widget"><div class="comment-edit">        <div class="comment-add"><div class="textarea-b"><textarea class="f-txt" resize="none" style="" placeholder="我也插句话..."></textarea>        </div><div style="display: none;" class="checkcode sns-nf">        <span>验证码：</span>        <input type="text" style="width: 5em;" tabindex="3" class="f-checkcode" maxlength="4" size="4" name="TPL_checkcode">        <img height="35" width="85" style="vertical-align: middle;">        <span style="margin: 0pt 10px 0pt 0pt;">(不区分大小写)</span>        <a class="newCheckCode" href="#">换一张</a>        </div>        <div class="act">        <span class="skin-blue"><em class="J_LetterCount">0/140</em><span class="btn"><a href="#" class="J_PostComment">评论</a></span></span>        <a href="#" class="face">表情</a>            <label>    <input type="checkbox" class="J_SycMB"> 同时转发到我的淘宝    </label>            </div>        </div></div><ul class="comment-list"></ul></div></div>';
+		$(this).html(plHtml);
+	});
+	$(".jib").children().each(function() {
+		var box = $(this);
+		box.children().each(function() {
+			var _t = $(this);
+			if(_t.attr("data-u")) {
+				_t.html(_t.attr("data-u"));
+			}
+		});
+	});
+	$(".jcb").each(function() {
+		var character = $(this);
+		if(character.attr("data-t") && character.attr("data-t") != "text") {
+			var temph = character.attr("data-h") || ";",
+				tempharr = temph.split(";");
+			character.children("a").html(tempharr[0]);
+		} 
+	});
+	var o = window.opener;
+	KISSY.use("node,button, dd,switchable, resizable,ua,event,overlay,ajax,countdown,dom", function (S, Node, Button, DD, Switchable, Resizable, UA, Event, Overlay, Ajax, Countdown) {
+		var DDM = DD.DDM, DOM = S.DOM;
+		S.ready(function () {
+			//var source = document.getElementById('main').innerHTML;
+			S.all('.J_TWidget').each(function (v, k) {
+				var t = v.attr('data-widget-type'),
+					cfg = S.JSON.parse(v.attr('data-widget-config').replace(/\'/g, "\""));
+				if (cfg) {
+					cfg.srcNode = v;
+					if (t == 'Popup') {
+						cfg.triggerType = 'mouse';
+						window.popup = new Overlay.Popup(cfg);
+					} else if (t == 'Carousel') {
+						window.popup = new Switchable.Carousel(v, cfg);
+					} else if (t == 'Slide') {
+						window.popup = new Switchable.Slide(v, cfg);
+					} else if(t=='Tabs'){
+						window.popup = new Switchable.Tabs(v,cfg);
+					} else if(t=='Countdown') {
+						new Countdown(v,cfg.endTime,cfg);
+					} else if(t=='Accordion') {
+						new Switchable.Accordion(v,cfg);
+					}
+				}
+			});
+			S.each(S.all('.sns-widget'),function(v){
+				SNS.active(v);
+			});
+		});
+	});
+});
+</script>
+<script type="text/javascript">
+$(".headMenuItem").hover(function() {  
+       $(this).find(".menuItem").css("display", "block").css("opacity", 0); 
+       $(this).find(".menuItem").stop().animate({  
+           marginTop:"50px",  
+           opacity:1  
+       }, 300); 
+   }, function() {  
+       $(this).find(".menuItem").stop().animate({  
+           marginTop:"100px",  
+           opacity:0  
+       }, 500, function() {  
+           $(this).css("display", "none"); 
+       }); 
+   });
+
+$(function() {
+	$(".reginputbox").tooltip({
+		position: {
+			my: "left top",
+			at: "left bottom+5"
+		},
+		show: {
+			duration: "fast"
+		},
+		hide: {
+			effect: "hide"
+		}
+	});
+});
+</script>
+
+</body>
+</html>

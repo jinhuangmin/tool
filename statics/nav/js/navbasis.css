@@ -1,0 +1,72 @@
+#hd{background-position:top;overflow:hidden;}
+.naveditor .custom-banner{text-align:center;color:#999;position:relative}
+.naveditor .custom-banner .title{font-family:微软雅黑;background:#fff;position:absolute;height:70px;left:50%;top:50%;margin-left:-150px;margin-top:-35px;padding:0;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;width:300px;opacity:80}
+h2,h5{margin:2px 0;color:inherit;font-family:inherit}
+.naveditor .custom-banner .title h2{font-size:26px;font-weight:700;line-height:40px}
+.naveditor .custom-banner .title h5{font-size:16px;font-weight:500;line-height:20px}
+h1,h2,h3,h4,h5,h6{font-weight:500}
+.tshop-pbsm-shop-nav-ch{margin:0 auto;width:990px!important;overflow:hidden;display:block!important;visibility:visible}
+.tshop-pbsm-shop-nav-ch:after{height:0;clear:both;display:block;content:"\20"}
+.tshop-pbsm-shop-nav-ch .skin-box-bd:after{clear:both;content:"\20";display:block;height:0}
+.tshop-pbsm-shop-nav-ch a:hover{text-decoration:none}
+.tshop-pbsm-shop-nav-ch .all-cats-popup { width:190px; border:none; } 
+.tshop-pbsm-shop-nav-ch .popup-content{background:#1A1A1A;border:none;left:-9999px;top:-9999px;width:190px;position:absolute;z-index:2}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree{margin:0 0 10px}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .cat-hd-hover{background:#ffffff}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .cat-hd-hover .fst-cat-icon{background-position:0 -110px}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .cat-hd-hover .fst-cat-name{color:#000000}
+
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .fst-cat{height:30px;line-height:30px}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .fst-cat-hd{height:30px;line-height:30px}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .fst-cat-hd:after{height:0;clear:both;display:block;content:"\20"}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .fst-cat-icon{display: none;}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .fst-cat-name{width:160px;height:26px;overflow:hidden;float:left;display: block; text-align:left;text-indent:15px}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-pop{left:-9999px;top:-9999px;position:absolute}
+
+
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-pop-inner{background:#1A1A1A;padding:10px 0;width:160px;height:auto;overflow:auto}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-cat-hd{height:30px;line-height:30px}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-cat-hd:after{height:0;clear:both;display:block;content:"\20"}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-cat-icon{display: none;}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-cat-name{width:160px;height:26px;overflow:hidden;float:left;display: block; text-align:left; text-indent:15px}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-cat-name:hover { color: #000; } 
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-cat-hd-hover{ background-color:#fff; }
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-cat-hd-hover .snd-cat-name{ color: #000; } 
+
+.tshop-pbsm-shop-nav-ch .all-cats-popup{width:160px}
+.tshop-pbsm-shop-nav-ch .menu-popup-cats{padding-top:10px}
+.tshop-pbsm-shop-nav-ch .menu-popup-cats .sub-cat{height:26px;line-height:26px;text-indent:10px;overflow:hidden;display:block}
+.tshop-pbsm-shop-nav-ch .menu-popup-cats .sub-cat a{width:190px;height:26px;overflow:hidden;display:block}
+.tshop-pbsm-shop-nav-ch .menu-popup-cats .sub-cat-hover{background:#b1c8d7}
+
+.tshop-pbsm-shop-nav-ch .skin-box-bd{border-width:0 0 1px;border-style:none none solid;border-color:currentColor currentColor #b1c8d7;border-image:none;height:33px}
+.tshop-pbsm-shop-nav-ch .skin-box-bd:after{height:0;clear:both;display:block;content:"\20"}
+.tshop-pbsm-shop-nav-ch .skin-box-bd a{color:#ffffff}
+.tshop-pbsm-shop-nav-ch .all-cats{float:left}
+.tshop-pbsm-shop-nav-ch .all-cats .link{width:160px;height:30px;color:#ffffff;line-height:30px;font-size:12px;display:block;position: relative;}
+.tshop-pbsm-shop-nav-ch .all-cats .link:after{height:0;clear:both;display:block;content:"\20"}
+.tshop-pbsm-shop-nav-ch .all-cats .link .title{display:block; width:100%;text-align:left;}
+.tshop-pbsm-shop-nav-ch .all-cats .link .popup-icon{background:url("http://img.alicdn.com/imgextra/i2/1026768645/TB2tGwzjXXXXXbtXXXXXXXXXXXX-1026768645.gif") no-repeat 0px 0px ;width:14px;height:14px;top:0px;right:0px; position:absolute; margin-top:8px;display:block}
+.tshop-pbsm-shop-nav-ch .all-cats .link:hover .popup-icon{background-position:0 -8px}
+
+
+.tshop-pbsm-shop-nav-ch .menu-list{float:left}
+.tshop-pbsm-shop-nav-ch .menu-list:after{height:0;clear:both;display:block;content:"\20"}
+.tshop-pbsm-shop-nav-ch .menu-list .menu{float:left}
+.tshop-pbsm-shop-nav-ch .menu-list .link .title,  .tshop-pbsm-shop-nav-ch.menu-list .menu-selected .link .title,.tshop-pbsm-shop-nav-ch .menu-list .menu{width:auto;} 
+.tshop-pbsm-shop-nav-ch .menu-list .link{background:none;padding:0 20px;height:30px;color:#ffffff;line-height:30px;font-size:12px;float:left;display:block}
+.tshop-pbsm-shop-nav-ch .menu-list .link:after{height:0;clear:both;display:block;content:"\20"}
+.tshop-pbsm-shop-nav-ch .menu-list .link .title{float:left;display:block}
+.tshop-pbsm-shop-nav-ch .menu-list .link .popup-icon{http://img.alicdn.com/imgextra/i2/1026768645/TB2tGwzjXXXXXbtXXXXXXXXXXXX-1026768645.gif) no-repeat center -6px;width:9px;height:6px;margin-top:8px;margin-left:8px;float:left;display:block;} 
+
+
+.tshop-pbsm-shop-nav-ch .menu-list .menu-hover .link{ background: none; background:#ffffff; color:#000000;}
+.tshop-pbsm-shop-nav-ch .menu-list .menu-hover .link .popup-icon{ background-position: center 0; }
+.tshop-pbsm-shop-nav-ch .menu-list .menu-selected{background:none}
+.tshop-pbsm-shop-nav-ch .menu-list .menu-selected .link{ background:none; color:#fff;border:none;}
+
+
+#page #content .tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-pop{left:188px;top:28px}
+#page #content .tshop-pbsm-shop-nav-ch .popup-content{left:auto;top:auto}
+.tshop-pbsm-shop-nav-ch .skin-box-bd{height:32px}
+#page #content .tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-pop-inner{height:220px}

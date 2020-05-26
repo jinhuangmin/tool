@@ -1,0 +1,85 @@
+{template "content","header"}
+<style type="text/css">
+/* 固定背景生成 */
+.quanpin {padding:25px;width:950px; border:1px solid #e2e2e2; margin:10px auto}
+
+.bigtxtbox {width:943px;height:100px;}
+.prompt {margin-top:0px;font-size:10px;line-height:20px;height:20px;overflow:hidden;}
+.behavior01 {margin-top:0px;height:30px;}
+.behavior02 {height:30px; position:relative}
+.quanpin .color-red {color:#cb0000;}
+.txt_inputdiv{ height:120px; margin-bottom:0px}
+.txt_inputdiv .bigtxtbox{ margin-bottom:0}
+.control-group{ margin-bottom:20px}
+.control-label{height:28px; line-height:28px; float:left}
+.control{ height:28px;}
+.control input{ height:26px; border:1px solid #e2e2e2; padding-left:4px; float:left}
+.control #btns_02{ height:28px; width:100px; border:1px solid #e2e2e2; line-height:26px; padding:0px; display:inline-block; margin:0; float:left; margin-left:10px; background:#f2f2f2; color:#666; cursor:pointer}
+.control #btns_02:hover{ background:#eee}
+#btns_03{height:28px; width:100px; border:1px solid #e2e2e2; line-height:26px; padding:0px; display:inline-block; margin:0; float:right;  background:#f2f2f2; color:#666; cursor:pointer; z-index:5; position:relative}
+#btns_03:hover{ background:#eee}
+.jiaocheng { width:1000px; margin:0 auto}
+
+</style>
+<div id="content">
+   <div id="position" style="display: block;">
+   <ul>
+      <li class="text">当前位置：</li>
+      <li class="site"><a href="/zxn" target="_top" title="首页">首页</a></li>
+      <li class="split"><em>&gt;</em></li><li class="site">固定背景</li>
+   </ul>
+</div>
+
+ <div class="quanpin">
+            <div class="control-group" style="height:30px;">
+                <label class="control-label" style="float:left;margin-right:10px;">背景图片地址</label>
+                <div class="control clear">
+                    <input class="input-box" type="text" autocomplete="off" id="shop_img" value="" style="width:300px;">
+                    <button id="btns_02">生成固定代码</button>
+                </div>
+            </div>
+            <div class="txt_inputdiv">
+                <textarea class="bigtxtbox" id="txt_input"></textarea>
+            </div>
+            <p class="prompt color-red" id="msg_prompt"></p>
+			<div class="behavior02">
+                <button id="btns_03">复制固定代码</button>
+			</div>
+        </div>
+<div class="jiaocheng">使用方法:<img src="/statics/grsc/guding.jpg"></div>
+</div>
+<script type="text/javascript" src="/statics/grsc/jquery.zclip.min.js"></script>
+<script type="text/javascript">
+(function(){
+	var signal = false;
+	function check(){
+        var imgVal = document.getElementById("shop_img").value;
+		if(imgVal!==''){
+		var css = 'body {background-image:url('+ imgVal +');background-repeat:no-repeat;background-attachment:fixed;background-position:center top;}';
+		document.getElementById("txt_input").value = css;
+			}else{
+		 $('#msg_prompt').text('请填写图片地址');
+	   setTimeout(function(){$('#msg_prompt').text('');}, 5000);	
+				}
+        
+	}
+	document.getElementById("btns_02").onclick = function(){
+		check();
+	}
+	
+})();
+$("#btns_03").zclip({
+	path: "/statics/grsc/ZeroClipboard.swf",
+	copy:function(){return $('#txt_input').val();},
+	beforeCopy:function(){
+		//$('.copyalert').text('请在文本框内全选复制代码使用（先[Ctrl + A]全选，再[Ctrl+C]复制）');
+	},
+	afterCopy:function(){
+
+	   $('#msg_prompt').text('复制成功,请粘贴到模板相应的位置');
+	   setTimeout(function(){$('#msg_prompt').text('');}, 5000);
+	   
+	}
+});
+</script>
+{template "content","footer"}

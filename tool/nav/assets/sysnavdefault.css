@@ -1,0 +1,67 @@
+@charset "gb2312";
+.tshop-pbsm-shop-nav-ch { font-family:Î¢ÈíÑÅºÚ, tahoma, arial; line-height: 120%; color: #000000; }
+.tshop-pbsm-shop-nav-ch a { color: #333333; text-decoration: none; }
+.tshop-pbsm-shop-nav-ch a:hover { color: #000000; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd { height: 30px; zoom: 1; border: 0px solid #e2e2e2; background: #272727; filter: mask(); }
+.tshop-pbsm-shop-nav-ch .skin-box-bd:after { content: "\20"; display: block; clear: both; height: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats a.link i.popup-icon,
+.tshop-pbsm-shop-nav-ch .skin-box-bd .menu-list .menu a.link i.popup-icon,
+.tshop-pbsm-shop-nav-ch .skin-box-bd .popup-content .menu-popup-cats .sub-cat a.cat-name,
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .fst-cat .fst-cat-hd i.fst-cat-icon { background: url("http://www.guanmeikj.com/gongju/daohang/images/sysnav/arrow.gif") no-repeat; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats,
+.tshop-pbsm-shop-nav-ch .skin-box-bd .menu-list { float: left;  *display: inline;
+height: 30px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats { width: 135px; height: 30px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats a.link { display: block; width: 115px; height: 30px; text-align: left; line-height: 30px; font-weight: bold; padding: 0px 10px; border-right: 0px; border: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats a.link span.title { float: left;  *display: inline;
+display: block; font-size: 12px; color: #ffffff; margin:0 5px 0 0; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats a.link i.popup-icon { float: left;  *display: inline;
+display: block; overflow: hidden; width: 23px; height: 100%; margin: 0px; background:url(https://img.alicdn.com/imgextra/i2/800803731/TB29cwdhpXXXXXyXXXXXXXXXXXX_!!800803731.png) no-repeat 0 center; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats .link:hover{ background: #000000; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats .link:hover span.title { color: #ffffff; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .menu-list { height: 30px; width: 855px; overflow: hidden; margin: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .menu-list .menu { float: left;  *display: inline;
+margin: 0px; padding: 0px; height: 30px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .menu-list .menu a.link { float: left;  *display: inline;
+display: block; height: 30px; line-height: 30px; padding: 0px 20px; background: none; border: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .menu-list .menu a.link span.title { float: left;  *display: inline;
+display: block; color: #ffffff; font-size: 12px; font-weight: normal; margin: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .menu-list .menu a.link i.popup-icon { float: left;  *display: inline;
+display: block; overflow: hidden; width: 9px; height: 30px; margin: 0px 0px 0px 5px; background-position: 0px -72px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .menu-list .menu-selected span.title { color: #ffffff; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .menu-list .menu:hover a.link span.title { color: #ffffff; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .menu-list .menu:hover a.link i.popup-icon { background-position: 0px -108px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .popup-content { border: 0px; background: none; width: 190px; padding-top: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .popup-content .menu-popup-cats { zoom: 1; background: #fff; width: 140px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .popup-content .menu-popup-cats:after { content: "\20"; display: block; clear: both; height: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .popup-content .menu-popup-cats .sub-cat { float: left;  *display: inline;display: block; height: 30px; border-bottom: 1px solid #E9E9E9; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .popup-content .menu-popup-cats .sub-cat a.cat-name { display: block; overflow: hidden; height: 30px; color: #555; padding-left: 18px; line-height: 30px; width: 125px; background:url(https://img.alicdn.com/imgextra/i2/800803731/TB2VpENdVXXXXbHXpXXXXXXXXXX-800803731.png) no-repeat 10px center; }
+.tshop-pbsm-shop-nav-ch .menu-popup-cats .sub-cat-hover, .tshop-pbsm-shop-nav-ch .menu-popup-cats .sub-cat:hover{background: #444;}
+.tshop-pbsm-shop-nav-ch .skin-box-bd .popup-content .menu-popup-cats .sub-cat a.cat-name:hover { color: #ffffff;text-decoration: none; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree { zoom: 1; width: 190px; background: #fff; margin: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree:after { content: "\20"; display: block; clear: both; height: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .fst-cat { float: left;  *display: inline;
+width: 190px; height: 30px; line-height: 30px; border-bottom: 1px solid #e9e9e9; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .fst-cat .fst-cat-hd { zoom: 1; overflow: hidden; height: 30px; border: 0px; margin: 0px; width: 170px; padding: 0px 10px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .fst-cat .fst-cat-hd:after { content: "\20"; display: block; clear: both; height: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .fst-cat .fst-cat-hd i.fst-cat-icon { display: none; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .fst-cat .fst-cat-hd a.fst-cat-name { float: left;  *display: inline;
+width: 160px; height: 30px; color: #333; text-decoration: none; line-height:30px; font-size:12px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .fst-cat .has-children i.fst-cat-icon { float: right;  *display: inline;
+display: block; overflow: hidden; width: 10px; height: 30px; position: static; margin: 0px; background:url(https://img.alicdn.com/imgextra/i1/800803731/TB2xLeCdVXXXXXOXpXXXXXXXXXX-800803731.png) no-repeat 0 center; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .cat-hd-hover { background: #444; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .cat-hd-hover .fst-cat-hd a.fst-cat-name { color: #ffffff; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .snd-pop .snd-pop-inner { background: #444; height: auto; overflow: visible; padding: 0px; width: 190px; filter: mask(); }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .snd-pop .snd-pop-inner .fst-cat-bd { zoom: 1; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .snd-pop .snd-pop-inner .fst-cat-bd:after { content: "\20"; display: block; clear: both; height: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .snd-pop .snd-pop-inner .fst-cat-bd .snd-cat { float: left;  *display: inline;
+zoom: 1; height: auto; line-height: 30px; margin-bottom: 1px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .snd-pop .snd-pop-inner .fst-cat-bd .snd-cat:after { content: "\20"; display: block; clear: both; height: 0px; }
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .snd-pop .snd-pop-inner .fst-cat-bd .snd-cat .snd-cat-hd { font-weight: normal; height: 30px; line-height: 30px; position: relative; padding: 0px; border-bottom:1px solid #333;}
+.tshop-pbsm-shop-nav-ch .skin-box-bd .all-cats-popup .cats-tree .snd-pop .snd-pop-inner .fst-cat-bd .snd-cat .snd-cat-hd i.snd-cat-icon {margin: 13px 5px 0 12px;width: 3px;height: 5px;background: url(//img.alicdn.com/imgextra/i2/800803731/TB2VpENdVXXXXbHXpXXXXXXXXXX-800803731.png) no-repeat;display: block;float: left;}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-cat-name { text-decoration: none; display: block; float: left;  *display: inline;overflow: hidden; width: 150px; height: 30px; padding:0 0 0 3px; color: #fff; font-size:12px; }
+
+
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-pop-inner .snd-cat-hd:hover{background: #ddd;}
+.tshop-pbsm-shop-nav-ch .popup-content .cats-tree .snd-cat-name:hover{color: #000;}
+

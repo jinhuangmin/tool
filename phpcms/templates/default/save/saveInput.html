@@ -1,0 +1,497 @@
+<div id="savelist">
+	<div id="savetree" class="savetree ztree" data-folderCount="{$count}"></div>
+	<div class="savebox">
+		<div class="saveposition" id="jSavePosition">{$mulu0['name']}</div>
+		<div class="saveconfigbar" id="jSaveConfigBar">
+			<span class="saveupclass"><i>&nbsp;</i>上一层</span>
+			<span class="savenewfile"><i>&nbsp;</i>新建文件夹</span>
+			<label style="display:none;">日期筛选：</label>
+			<input style="display:none;" type="text" id="savetimefrom" />
+			<input style="display:none;" type="text" id="savetimeto" />
+			<label>文件名查找：</label>
+			<input type="text" class="savesearch" name="jSearchKeyword" id="jSearchKeyword" />
+			<button class="savesearchbtn" id="jSearchBtn"></button>
+		</div>
+		<div class="savebtnbar" id="jSavevBtnBar">
+			<span class="saverename"><i>&nbsp;</i>重命名</span>
+			<span class="savemove"><i>&nbsp;</i>移动</span>
+			<span class="nofolder savecopy"><i>&nbsp;</i>复制</span>
+			<span class="savedel"><i>&nbsp;</i>删除</span>
+			<label class="savedxtip" style="float:right;margin-right:20px;color:#19c2d1;">按下Ctrl或Shift可多选存档</label>
+		</div>
+		<div class="saveelement" id="jSaveSortTh">
+			<span class="saveth" style="border-right:1px #dbe1e7 solid;color:#999;">保存名称 <i class="sort">&nbsp;</i></span>
+			<span class="saveth" style="color:#999;">最后保存时间 <i class="sort">&nbsp;</i></span>
+			<ul class="savetr" id="jSaveList">
+            {loop $listinfos $k $v}
+            	<li class="file" data-id="{$v['ID']}" data-name="{$v['Title']}">
+					<span class="savename"><i>&nbsp;</i>{$v['Title']}</span>
+					<span class="savetime">{date('Y-m-d H:i:s',$v['SaveTime'])}</span>
+					<span class="nofolder savepreview"><i>&nbsp;</i>预览</span>
+					<span class="nofolder saveedit"><i>&nbsp;</i>应用</span>
+				</li>
+               {/loop}
+                
+				<p style="display:none;"><b>(∵)nnn</b> 没有搜索到任何结果哦！</p>
+			</ul>
+		</div>
+		<div class="savepage"></div>
+	</div>
+</div>
+<!--
+<div id="saveControlBox" style="display:none;width:300px;height:200px;background:#F0F0F0;box-shadow: 1px 1px 8px #f3f6f9;">
+	<div class="scb-title"></div>
+	<div class="scb-content">
+		<span>文件夹名称：</span>
+		<input type="text" name="scbFolderName" id="scbFolderName" value="" placeholder="请输入文件夹名称" />
+	</div>
+	<div id="scbOk_addFolder">确定</div>
+	<div id="scbCancel">取消</div>
+</div>
+-->
+<div id="saveInputBox">
+	<label for="saveText">保存文档名：</label>
+	<input id="saveText" class="setinput" type="text" title="请输入需要保存的文档名" junezx_vali_str="true" name="saveText" value="" placeholder="15字以内" />
+</div>
+<div id="saveRightMenu">
+	<ul>
+		<li id="srm_add"><i></i>新建文件夹</li>
+		<li id="srm_rename"><i></i>重命名</li>
+		<li id="srm_move"><i></i>移动</li>
+		<li id="srm_del"><i></i>删除</li>
+	</ul>
+</div>
+<div id="saveRightMenuFile">
+	<ul>
+		<li id="srmf_rename"><i></i>重命名</li>
+		<li id="srmf_move"><i></i>移动</li>
+		<li id="srmf_clone"><i></i>复制</li>
+		<li id="srmf_del"><i></i>删除</li>
+	</ul>
+</div>
+<script type="text/javascript">
+$(function(){
+	function setTitleTree(json) {
+		if(!json) {return};
+		typeof json == "string" && (json = JSON.parse(json));
+		json["title"] = "点击鼠标右键可以对文件夹进行操作";
+		if(json["children"] && json["children"].length > 0) {
+			for(var i in json["children"]) {
+				setTitleTree(json["children"][i]);
+			}
+		}
+		return json;
+	}
+	setTimeout(function() {
+		if("{$_username}" == "") {
+			$("#userdialog").dialog("open");
+			$("#dialogForm_fsv").dialog("close");
+		}
+	},500);
+	var saveTree = '{$mulujson}', userName = '{$_username}', zNodes;
+	zNodes = setTitleTree(saveTree || "{}");
+	var firstLoad = false;
+	var saveRightMenu = $("#saveRightMenu"), saveRightMenuFile = $("#saveRightMenuFile");
+	
+	function OnRightClick(event, treeId, treeNode) {
+		if(!!treeNode) {
+			if(treeNode.fid == 0) {
+				showRMenu("saveRightMenu", "root", event.pageX+10, event.pageY);
+			} else {
+				if((!!treeNode.children && treeNode.children.length > 0)) {
+					showRMenu("saveRightMenu", "cFolder", event.pageX+10, event.pageY);
+				} else {
+					showRMenu("saveRightMenu", "node", event.pageX+10, event.pageY);
+				}
+			}
+			treeObj.cancelSelectedNode();
+			treeObj.selectNode(treeNode, false, true);
+			var str = getSavePosition(treeNode);
+			$("#jSavePosition").html(str);
+			if($("#savetree").attr("data-curfid") != (treeNode.fid+"")) {
+				getSaveFilesByAjax("jSaveList", treeNode.fid, userName, zNodes);
+				$("#savetree").attr("data-curfid", treeNode.fid+"");
+			}
+		}
+	}
+	
+	function OnRightClickFile(event) {
+		showRMenu("saveRightMenuFile", "file", event.pageX+10, event.pageY);
+	}
+	
+	function showRMenu(id, type, x, y) {
+		_menu = $("#"+id);
+		$("#"+id+" ul").show();
+		if (type=="root") {
+			$("#srm_move").hide();
+			$("#srm_del").hide();
+		} else if(type == "cFolder"){
+			$("#srm_move").show();
+			$("#srm_del").hide();
+		} else {
+			$("#srm_move").show();
+			$("#srm_del").show();
+		}
+		_menu.offset({"top":y, "left":x}).css({"visibility": "visible"});
+		$("body").bind("mousedown.tree_srm", onBodyMouseDown);
+	}
+	function hideRMenu() {
+		if (saveRightMenu) saveRightMenu.css({"visibility": "hidden"});
+		if (saveRightMenuFile) saveRightMenuFile.css({"visibility": "hidden"});
+		$("body").unbind("mousedown.tree_srm", onBodyMouseDown);
+	}
+	function onBodyMouseDown(event){
+		if (!(event.target.id == "saveRightMenu" || $(event.target).parents("#saveRightMenu").length>0)) {
+			saveRightMenu.css({"visibility" : "hidden"});
+		}
+		if (!(event.target.id == "saveRightMenuFile" || $(event.target).parents("#saveRightMenuFile").length>0)) {
+			saveRightMenuFile.css({"visibility" : "hidden"});
+		}
+	}
+	
+	function addTreeFolder(event) {
+		var checkNameRepeat = false;
+		dialogForPhp("saveControlForm.php", "新建文件夹", {}, function() {
+			_selected = treeObj.getSelectedNodes();
+			folderName = $("#scbFolderName").val();
+			if(!!_selected) { _selected = _selected[0]; } else { return false; }
+			if(folderName == "") { return false; }
+			$("#jSaveList").children(".folder").each(function() {
+				var _tn = $(this), oname = _tn.attr("data-name");
+				if(oname == folderName) {
+					checkNameRepeat = true;
+				}
+			});
+			if(!!checkNameRepeat) {return false;}
+			treeFid = _selected.fid;
+			controlSaveFolderByAjax("addFolder", folderName, _selected.fid, userName, function(treeJson) {
+				zNodes = setTitleTree(treeJson);
+				treeObj = $.fn.zTree.init($("#savetree"), setting, zNodes);
+				$("#savetree").attr("data-curfid", "");
+				$("#savetree_1_span").trigger("click");
+				_selected = treeObj.getNodeByParam("fid", treeFid);
+				treeObj.selectNode(_selected, false, true);
+				setTimeout(function() {$("#"+_selected.tId+"_span").trigger("click");}, 600);
+				treeObj.expandNode(_selected, true, false, true);
+			});
+			return true;
+		});
+	}
+	
+	function renameTreeFolder(event) {
+		var _t = $(this), _selected = treeObj.getSelectedNodes(), id, name, time, node, parentNode, treeFid, checkNameRepeat = false, newName = "";
+		if(!!_selected) { _selected = _selected[0]; } else { return false; }
+		id = _selected.fid;
+		name = _selected.name;
+		dialogForPhp("saveControlForm.php", "重命名文件夹", {dName: name, type: "renamefolder"}, function() {
+			node = treeObj.getSelectedNodes();
+			if(!!node) { node = node[0]; } else { return; }
+			newName = $("#scbFolderName").val();
+			if(newName == "") { return false; }
+			parentNode = node.getParentNode();
+			if(!!parentNode) {
+				for(var i in parentNode.children) {
+					if(parentNode.children[i]["name"] == newName) {
+						checkNameRepeat = true;
+					}
+				}
+			}
+			if(!!checkNameRepeat) {messageForPhp("当前目录下已存在相同名称的文件夹，请重新输入！");return false;}
+			treeFid = node.fid;
+			controlSaveFolderByAjax("renameFolder", newName, id, userName, function(treeJson) {
+				zNodes = setTitleTree(treeJson);
+				treeObj = $.fn.zTree.init($("#savetree"), setting, zNodes);
+				$("#savetree").attr("data-curfid", "");
+				$("#savetree_1_span").trigger("click");
+				node = treeObj.getNodeByParam("fid", treeFid);
+				treeObj.selectNode(node, false, true);
+				treeObj.expandNode(node, true, false, true);
+				setTimeout(function() {$("#"+node.tId+"_span").trigger("click");}, 600);
+			});
+			return true;
+		});
+	}
+	
+	function moveTreeFolder(event) {
+		var _t = $(this), _selected = treeObj.getSelectedNodes(), id, name, time, node, treeFid, checkNameRepeat = false, newName = "";
+		if(!!_selected) { _selected = _selected[0]; } else { return false; }
+		id = _selected.fid;
+		name = _selected.name;
+		dialogForPhp("saveControlForm.php", "移动", {type: "move", treeNode: JSON.stringify(zNodes)}, function() {
+			var pathTree = $.fn.zTree.getZTreeObj("scbFolderPath"), pathNode = pathTree.getSelectedNodes(), pid;
+			if(!!pathNode) { pathNode = pathNode[0]; } else { return; }
+			for(var i in pathNode.children) {
+				if(pathNode.children[i]["name"] == name) {
+					checkNameRepeat = true;
+				}
+			}
+			if(!!checkNameRepeat) {messageForPhp("当前目录下已存在相同名称的文件夹，请重新选择！");return false;}
+			pid = pathNode.fid;
+			controlMoveFolderByAjax("moveFolder", id, pid, userName, function(treeJson) {
+				zNodes = setTitleTree(treeJson);
+				treeObj = $.fn.zTree.init($("#savetree"), setting, zNodes);
+				$("#savetree").attr("data-curfid", "");
+				$("#savetree_1_span").trigger("click");
+				pathNode = treeObj.getNodeByParam("fid", pid);
+				treeObj.selectNode(pathNode);
+				treeObj.expandNode(pathNode, true, false, true);
+				setTimeout(function() {$("#"+pathNode.tId+"_span").trigger("click");}, 600);
+			});
+			return true;
+		});
+	}
+	
+	function deleteTreeFolder(event) {
+		var _t = $(this), _selected = treeObj.getSelectedNodes(), id, name, time, node, treeFid, checkNameRepeat = false, newName = "";
+		if(!!_selected) { _selected = _selected[0]; } else { return false; }
+		id = _selected.fid;
+		name = _selected.name;
+		confirmForPhp("是否确定删除此文件夹？<br /><i style=\"color:red;\">此操作将同时会删除此文件夹下的所有存档,请谨慎操作</i>", function(){
+			node = treeObj.getSelectedNodes();
+			if(!!node) { node = node[0]; } else { return; }
+			treeFid = node.fid;
+			controlDeleteFolderByAjax("deleteFolder", id, userName, function(treeJson) {
+				zNodes = setTitleTree(treeJson);
+				treeObj = $.fn.zTree.init($("#savetree"), setting, zNodes);
+				$("#savetree").attr("data-curfid", "");
+				$("#savetree_1_span").trigger("click");
+				node = treeObj.getNodeByParam("fid", treeFid);
+				treeObj.selectNode(node);
+				treeObj.expandNode(node, true, false, true);
+				setTimeout(function() {$("#"+node.tId+"_span").trigger("click");}, 600);
+			});
+		});
+	}
+	
+	function renameTreeFile() {
+		$("#jSavevBtnBar").children(".saverename").trigger("click");
+	}
+	function moveTreeFile() {
+		$("#jSavevBtnBar").children(".savemove").trigger("click");
+	}
+	function cloneTreeFile() {
+		$("#jSavevBtnBar").children(".savecopy").trigger("click");
+	}
+	function deleteTreeFile() {
+		$("#jSavevBtnBar").children(".savedel").trigger("click");
+	}
+	
+	$("#saveRightMenu").off("click").on("click", "li", function(event) {
+		var _t = $(this), id = _t.attr("id");
+		hideRMenu();
+		if(id == "srm_add") {addTreeFolder(event);}
+		else if(id == "srm_rename") {renameTreeFolder(event);}
+		else if(id == "srm_move") {moveTreeFolder(event);}
+		else if(id == "srm_del") {deleteTreeFolder(event);}
+	});
+	$("#saveRightMenuFile").off("click").on("click", "li", function(event) {
+		var _t = $(this), id = _t.attr("id");
+		hideRMenu();
+		if(id == "srmf_rename") {renameTreeFile(event);}
+		else if(id == "srmf_move") {moveTreeFile(event);}
+		else if(id == "srmf_clone") {cloneTreeFile(event);}
+		else if(id == "srmf_del") {deleteTreeFile(event);}
+	});
+	var setting = {
+		data: {
+			key: {
+				title: "title"
+			}
+		},
+		view: {
+			selectedMulti: false,
+			showTitle: true
+		},
+		callback: {
+			beforeClick: function (treeId, treeNode) {
+				if (!treeNode.isParent) {
+					alert("请选择父节点");
+					return false;
+				} else {
+					return true;
+				}
+			},
+			onClick: function(event, treeId, treeNode) {
+				if(!firstLoad) {
+					firstLoad = true;
+				} else {
+					var str = getSavePosition(treeNode);
+					$("#jSavePosition").html(str);
+					if($("#savetree").attr("data-curfid") != (treeNode.fid+"")) {
+						getSaveFilesByAjax("jSaveList", treeNode.fid, userName, zNodes);
+						$("#savetree").attr("data-curfid", treeNode.fid+"");
+					}
+				}
+			},
+			onRightClick: OnRightClick
+		}
+	};
+	var treeObj = $.fn.zTree.init($("#savetree"), setting, zNodes);
+	$("#savetree_1_span").trigger("click");
+	//列表排序
+	$("#jSaveSortTh").off("click").on("click", ".saveth", function(event) {
+		var _t = $(this), index = _t.index(), saveList = $("#jSaveList");
+		if(index == 0) {
+			$.jSort(saveList, "savename", "file", _t.children(".sort"));
+		} else if(index == 1) {
+			$.jSort(saveList, "savetime", "file", _t.children(".sort"));
+		}
+	});
+	//点击列表
+	$("#jSaveList").off("click.saveli").on("click.saveli", "li", function(event) {
+		var _t = $(this), ti = _t.index(), btnBar = $("#jSavevBtnBar"), ctrlKey = event.ctrlKey, shiftKey = event.shiftKey, lastIndex = $("#jSaveList").children(".last-active").index();
+		if(lastIndex == -1) {lastIndex = 0;}
+		if(!!shiftKey) {
+			$("#jSaveList").children(".active").removeClass("active");
+			if(ti > lastIndex) {
+				if(lastIndex - 1 < 0) {
+					$("#jSaveList").children(":lt("+(ti - lastIndex + 1)+")").addClass("active");
+				} else {
+					$("#jSaveList").children(":gt("+(lastIndex - 1)+"):lt("+(ti - lastIndex + 1)+")").addClass("active");
+				}
+			} else {
+				$("#jSaveList").children(":gt("+(ti-1)+"):lt("+(lastIndex - ti + 1)+")").addClass("active");
+			}
+		} else {
+			if(!!ctrlKey) {
+				_t.hasClass("active") ? _t.removeClass("active") : _t.addClass("active");
+			} else {
+				$("#jSaveList").children(".active").removeClass("active");
+				_t.addClass("active");
+			}
+			$("#jSaveList").children(".last-active").removeClass("last-active");
+			_t.addClass("last-active");
+		}
+		if(_t.hasClass("folder")) {
+			$("#saveText").attr({
+				"data-choosefolderid": _t.attr("data-id") || "0",
+				"data-choosesaveid": ""
+			}).val("");
+			btnBar.children(".nofolder").hide();
+		} else {
+			$("#saveText").attr("data-choosesaveid", _t.attr("data-id") || "").val(_t.attr("data-name") || "");
+			btnBar.children(".nofolder").show();
+		}
+	}).off("click.savebtnspan").on("click.savebtnspan", "span", function(event) {
+		var _t = $(this), id = _t.parent().attr("data-id"), name = _t.parent().attr("data-name"), moduleManage = require("scripts/moduleManage");
+		if(_t.hasClass("savepreview")) {//预览
+			window.open("/3.0/previewZ"+id);
+		} else if(_t.hasClass("saveedit")) {//应用
+			time = _t.parent().children(".savetime").html();
+			$.ajax({
+				type: "POST",
+				url: "load.php",
+				data: {ID: id, type: "search"},
+				dataType: "json",
+				success: function(m) {
+					if(m.length > 0) {
+						moduleManage.showSave(m[0], name, time, id);
+						$("#dialogForm_fsv").dialog("close");
+					} else {
+						messageForPhp("应用失败，请截图给旺旺客服与我们联系，错误ID("+id || "空"+")！");
+					}
+				}
+			});
+		}
+	}).off("contextmenu.rightmenuli").on("contextmenu.rightmenuli", "li", function(event) {
+		$(this).trigger("click.saveli");
+		OnRightClickFile(event);
+		event.preventDefault();
+		event.stopPropagation();
+	});
+	//列表操作
+	$("#jSavevBtnBar").off("click").on("click", "span", function(event) {
+		var _t = $(this), _selected = $("#jSaveList").children(".active"), id = _selected.attr("data-id"), name = _selected.attr("data-name"), time, node, treeFid, checkNameRepeat = false, newName = "", idArr = [];
+		if(_selected.length < 1) {messageForPhp("请选中存档后进行操作！");return;}
+		if(_selected.length > 1 && !_t.hasClass("savemove") && !_t.hasClass("savedel")) {messageForPhp("请选中单个存档进行此操作！");return;}
+		_selected.each(function() {
+			var _s = $(this), sid = _s.attr("data-id");
+			idArr.push(sid);
+		});
+		if(_t.hasClass("saverename")) {//重命名
+			dialogForPhp("saveControlForm.php", "重命名存档", {dName: _selected.attr("data-name"), type: "renamefile"}, function() {
+				node = treeObj.getSelectedNodes();
+				if(!!node) { node = node[0]; } else { return; }
+				newName = $("#scbFolderName").val();
+				if(newName == "") { return false; }
+				checkNameRepeat = false;
+				$("#jSaveList").children(".file").each(function() {
+					var _tn = $(this), oname = _tn.attr("data-name");
+					if(oname == newName) {
+						checkNameRepeat = true;
+					}
+				});
+				if(!!checkNameRepeat) {messageForPhp("当前目录下已存在相同名称的存档，请重新输入！");return false;}
+				controlSaveFolderByAjax("renameFile", newName, id, userName, function() {
+					$("#savetree").attr("data-curfid", "");
+					_selected.attr("data-name", newName).children(".savename").html("<i>&nbsp;</i>"+newName);
+				});
+				return true;
+			});
+		} else if(_t.hasClass("savemove")) {//移动
+			dialogForPhp("saveControlForm.php", "移动", {type: "move", treeNode: JSON.stringify(zNodes)}, function() {
+				var pathTree = $.fn.zTree.getZTreeObj("scbFolderPath"), pathNode = pathTree.getSelectedNodes(), pid;
+				if(!!pathNode) { pathNode = pathNode[0]; } else { return; }
+				pid = pathNode.fid;
+				controlMoveFolderByAjax("moveFile", idArr, pid, userName, function(treeJson) {
+					pathNode = treeObj.getNodeByParam("fid", pid);
+					treeObj.selectNode(pathNode, false, true);
+					$("#savetree").attr("data-curfid", "");
+					treeObj.expandNode(pathNode, true, false, true);
+					setTimeout(function() {$("#"+pathNode.tId+"_span").trigger("click");}, 600);
+				});
+				return true;
+			});
+		} else if(_t.hasClass("savecopy")) {//复制
+			confirmForPhp("是否确定复制此文档？", function(){
+				name = copyFileNameCheck(name);
+				node = treeObj.getSelectedNodes();
+				if(!!node) { node = node[0]; } else { return; }
+				treeFid = node.fid;
+				controlCopyFolderByAjax("copyFile", id, treeFid, userName, function(treeJson) {
+					$("#savetree").attr("data-curfid", "");
+					$("#"+node.tId+"_span").trigger("click");
+				}, name);
+			});
+		} else if(_t.hasClass("savedel")) {//删除
+			confirmForPhp("是否确定删除选中的存档？", function(){
+				node = treeObj.getSelectedNodes();
+				if(!!node) { node = node[0]; } else { return; }
+				controlDeleteFolderByAjax("deleteFile", idArr, userName, function() {
+					$("#savetree").attr("data-curfid", "");
+					setTimeout(function() {$("#"+node.tId+"_span").trigger("click");}, 600);
+				});
+			});
+		}
+	});
+	
+	$("#jSaveConfigBar").off("click").on("click", "span", function(event) {
+		var _t = $(this), _selected = treeObj.getSelectedNodes(), _ps, folderName = "", checkNameRepeat = false, treeFid,
+			_box = $("#saveControlBox"),
+			_dialog = $("#dialogForm_fsv");
+		if(!!_selected) { _selected = _selected[0]; } else { return; }
+		if(_t.hasClass("saveupclass")) {
+			_ps = _selected.getParentNode();
+			if(!_ps) { return; }
+			//treeObj.selectNode(_ps);
+			$("#"+_ps.tId+"_span").trigger("click");
+			$("#jSaveList").children(".active").removeClass("active");
+		} else if(_t.hasClass("savenewfile")){
+			addTreeFolder(event);
+		}
+	});
+	
+	$("#jSearchBtn").off("click").on("click", function(event) {
+		var searchVal = $("#jSearchKeyword").val(), folderID = 0;
+		$("#savetree_1_span").trigger("click");
+		getSearchFilesByAjax(searchVal, "jSaveList", folderID, userName, zNodes, function(m) {
+			if(!m || m.length == 0) {
+				$("#jSaveList").children("p").show();
+			} else {
+				$("#jSaveList").children("p").hide();
+			}
+		});
+	});
+	
+});
+</script>

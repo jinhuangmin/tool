@@ -1,0 +1,42 @@
+<form id="scbForm" method="post" >
+<div class="form-tabs-title">
+	<div class="formlayout" style="height:360px;">
+		<div class="form-tabs-content">
+			<div style="height:100%;">
+				<ul class="setform">
+					<li>
+						<label for="scbFolderPath">请选择存档路径：</label>
+						<div id="scbFolderPath" class="savetree ztree"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+<script type="text/javascript">
+$(function() {
+	var saveTree = '{$_POST['treeNode']}', zNodes;
+	zNodes = JSON.parse(saveTree || "{}");
+	var firstLoad = false;
+	var setting = {
+		view: {
+			selectedMulti: false,
+			showTitle:false
+		},
+		callback: {
+			beforeClick: function (treeId, treeNode) {
+				if (!treeNode.isParent) {
+					alert("请选择父节点");
+					return false;
+				} else {
+					return true;
+				}
+			},
+			onClick: function(event, treeId, treeNode) {
+			}
+		}
+	};
+	$.fn.zTree.init($("#scbFolderPath"), setting, zNodes);
+});
+</script>

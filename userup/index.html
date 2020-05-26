@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div class="start" id="start">开始</div>
+<script type="text/javascript">
+
+$("#start").click(function(){
+  $.ajax({
+	 type: "post",
+	 url: "./user.php",
+	 data: {dosubmit:"dosubmit",type:'all'},
+	 dataType: "json",
+	 success: function(msg){
+		 if(msg){
+			 msg.forEach(function(val,index){
+			$("#start").append(index+'*');
+			gdata=newzhuce(val);
+				})
+				}
+	 }
+})
+});
+function delold(id){
+	$.ajax({
+	 type: "post",
+	 url: "/index.php?m=zxn&c=com&a=olddel&act="+id,
+	 data: {"ID":id},
+	 dataType: "json",
+	 success: function(fdata){
+		 if(fdata[0]==true){ $("#start").append('---del:'+id+'(yes)---');	}else{$("#start").append('---del:'+id+'(no)---');}
+	 }
+	})
+}
+function newzhuce(data){
+	$.ajax({
+	 type: "post",
+	 url: "/index.php?m=member&c=ajax&a=register&s=t3",
+	 data: {username:data['UserName'],nickname:data['UserName'],password:data['PassWord'],password2:data['PassWord'],email:data['email'],license:data['license']},
+	 dataType: "json",
+	 success: function(fdata){ var pd=$.trim(fdata);
+		 if(pd=="true"){ delold(data['ID']);$("#start").append('-'+data['ID']+'ok-');	}else{$("#start").append('---@'+data['UserName']+'(is:'+fdata+')---');}
+	 }
+	})
+}
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+﻿
+<!DOCTYPE html>
+<html style="min-width:1240px;">
+<head>
+<meta charset="UTF-8">
+<title>沃姆设计 模板装修辅助工具-方便智能的淘宝装修代码生成工具</title>
+<meta name="keywords" content="沃姆设计 淘宝装修工具  装修辅助工具  淘宝全屏代码  淘宝特效  淘宝助手  码工助手">
+<meta name="description" content="沃姆设计 模板装修辅助工具  店铺定制设计">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="renderer" content="webkit">
+
+
+<link href="http://www.cnzoom.com/statics/css/default_blue.css" rel="stylesheet" type="text/css">
+<link href="http://www.cnzoom.com/statics/css/reset.css" rel="stylesheet" type="text/css">
+<link href="http://www.cnzoom.com/statics/css/Common.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    @charset "utf-8";
+html{color:#000;background:#f1f1f1;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,textarea,select{*font-size:100%;}
+legend{color:#000;}
+body {font-family:'微软雅黑',tahoma,arial,\5b8b\4f53,'宋体';}
+.clear{clear: both;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}.clearfix{display:inline-block;*zoom:1;}
+/* 主体部分(画布和表单) */
+#section{width: 100%; height: 100%; -webkit-user-select:   none; -moz-user-select:   none;user-select: none; margin: 150px 0;}
+#section .alert{width: 100%;color: #ff8a00;line-height: 40px; text-indent: 500px;font-size: 12px;}
+/*视图部分*/
+#section .canvas{width: 440px; height: 656px; float: left; margin-bottom: 30px; background-color: #fff; margin-left: 30px; border-radius: 40px; box-sizing: border-box;}
+#section .canvas-container{position: relative;height: 576px; width: 440px; overflow: hidden; background-color: #fff;margin-top: 40px;}
+#section .canvas-container .mobileview{height: 576px; width: 440px; border: none}
+/*表单部分*/
+#section .canvas-form{width: 600px; height: 656px; float: left; border-radius: 5px; background-color: #ffffff; margin-left: 30px; overflow: hidden;}
+#section .canvas-form h3{ background-color: #1a7ce9; height: 50px; line-height: 50px; border-top-left-radius: 10px; border-top-right-radius: 10px; text-indent: 20px; color: #fff; font-size: 12px; font-weight: 600;}
+#section .canvas-form .nav{width:600px;height: 50px;overflow: hidden; }
+#section .canvas-form .nav-container{width:600px;height: 50px;overflow: hidden; background-color: #f8f8f8;position: relative; }
+#section .canvas-form .nav-container:after{content: "";position: absolute; bottom: 0; left: 0; width: 100% ; z-index: 1; height: 3px; background:-webkit-linear-gradient(top, #f3f3f4, #f0f0f1);background:-moz-linear-gradient(top, #f3f3f4, #f0f0f1) }
+#section .canvas-form .nav-slide{width: 85px; height: 50px; float: left;color: #6a717b; font-size: 12px; font-family: '宋体'; line-height: 50px; text-align: center; cursor: pointer; position: relative; z-index: 2;}
+#section .canvas-form .nav-slide:last-child{float: right;}
+#section .canvas-form .nav-slide:hover,#section .canvas-form .nav-slide.active{background-color: #1a7ce9; color: #fff; font-weight: 600; border-top-right-radius: 5px; border-top-left-radius: 5px;}
+#section .canvas-form .nav-slide:hover:after,#section .canvas-form .nav-slide.active:after{ position: absolute;bottom: 0; left: 50%; content: '';  width:0;  height:0; margin-left: -5px;  border-left:5px solid transparent;  border-right:5px solid transparent;  border-bottom:5px solid #fff;}
+#section .canvas-form .pic_group_list{width: 100%;padding-top: 10px; padding: 40px 25px 0 25px; overflow: hidden;box-sizing: border-box;}
+#section .canvas-form .fm-section {padding-left:100px;margin-bottom:20px; }
+#section .canvas-form .fm-control {display:table;width:100%;}
+#section .canvas-form .fm-control .tds {display:table-cell;}
+#section .canvas-form .fm-label {overflow:hidden;float:left;width:100px;height:40px;margin-left:-100px;line-height:40px;text-align:right;color:#6a717b; font-size:14px;vertical-align:middle;font-family: 'SimSun';}
+#section .canvas-form .fm-control input,
+#section .canvas-form .fm-control textarea,
+#section .canvas-form .fm-control select { display: inline-block; }
+#section .canvas-form .fm-control input[type="text"],
+#section .canvas-form .fm-control select {display:inline-block;height:40px;line-height:40px; color:#363636;vertical-align:middle; border:1px solid #e7e8e8;background:#f2f3f3;outline:0;box-sizing:border-box; }
+#section .canvas-form .fm-control input.long {width:100%;padding:0 5px;}
+#section .canvas-form .fm-control input:focus,
+#section .canvas-form .fm-control textarea:focus,
+#section .canvas-form .fm-control select:hover {  border: 1px solid #ffa030; outline:1px solid #ffa030;  background:#fff; border-radius: 3px;}
+#section .canvas-form .fm-control select.long {width:100%;}
+#section .canvas-form .fm-control textarea {width:100%;height:80px;line-height:18px;padding:5px;border:1px solid #e7e8e8;background:#f2f3f3;outline:0;box-sizing:border-box;resize: none;}
+#section .canvas-form .fm-control textarea:focus{height: 80px;line-height: 18px;}
+#section .canvas-form .fm-control .operation{padding-left: 10px; width: 60px;}
+#section .canvas-form .fm-control .operation .ico{ display:inline-block;width: 16px; height: 16px; background-image: url(../images/del-btn.png);background-repeat: no-repeat; vertical-align: middle; cursor: pointer;}
+#section .canvas-form .fm-control .operation .ico:hover{background-image: url(../images/del-btn-hover.png);}
+#section .canvas-form .fm-control .operation .ico.prev{background-position: 0 -16px;}
+#section .canvas-form .fm-control .operation .ico.next{background-position: 0 -32px;}
+#section .canvas-form .fm-control .operation .ico.del{background-position: 0 -48px;}
+#section .canvas-form .fm-control .button{height: 45px; line-height: 45px; font-size: 14px; border-radius: 2px; background-color: #ea3838; color: #fff; font-weight: bold; text-align: center; padding: 0 16px; display: inline-block; cursor: pointer; margin: 0 auto;}
+#section .canvas-form .fm-control .button:hover{background-color: #1a7ce9;}
+#section .canvas-form .fm-control .button.copy{background-color: #cccccc;width: 100px;}
+#section .canvas-form .fm-control .button.copy.checked{background-color: #ffa030;}
+#section .canvas-form .fm-control .button.copy:hover{background-color: #ffa030;}
+#section .canvas-form .fm-control .module-height{display: inline-block; vertical-align: middle;line-height: 32px; font-weight: 600; color: #6b6c6c; font-size: 14px; font-family: '宋体'}
+#section .canvas-form .fm-control .ewm-size{width: 165px;}
+#section .canvas-form .fm-control .ewm-size .title{font-size: 12px;color: #6a717b;}
+#section .canvas-form .fm-control input[type=radio]:focus{outline: none;border: none}
+.alert_popup{
+    position: fixed;
+    left: 50%;
+    top: 550px;
+    z-index: 99999;
+    min-width: 100px;
+    height: 40px;
+    margin-left: -20px;
+    padding: 0 20px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    opacity: 0.9;
+    font-family: 微软雅黑;
+}
+.alert_popup.closed{
+    display: none;
+}
+@-webkit-keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+.zoomIn {
+    -webkit-animation: zoomIn 0.2s ease-in-out alternate both;
+    animation: zoomIn 0.2s ease-in-out alternate both;
+}
+
+</style>
+<script type="text/javascript" src="http://www.cnzoom.com/statics/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.cnzoom.com/statics/js/Common.js"></script>
+<script type="text/javascript" src="./js/clipboard.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="head">
+        <div class="logo2">
+            <a href="http://www.cnzoom.com">
+                <img src="https://img.alicdn.com/imgextra/i3/800803731/TB2UkM7nyRnpuFjSZFCXXX2DXXa_!!800803731.png"></a>
+        </div>
+        <div class="nnnna">
+            <ul id="ddmenu">
+                <li class="dflli home"><a target="_blank" class="d-menu" href="http://www.cnzoom.com"><span></span><em>首页</em></a></li>
+                <li class="dflli submenu new3">
+                    <a target="_blank" href="http://www.cnzoom.com/3.0" class="d-menu"><span></span><em>装修工具</em></a>
+                    <ul class="xflul" style="display: none;">                       
+                        <li class="xflli">
+                            <a target="_blank" href="http://www.cnzoom.com/3.0" class="x-menu">新版工具3.0</a>
+                        </li>
+                        <li class="xflli">
+                            <a target="_blank" href="http://www.cnzoom.com/new" class="x-menu">旧版工具2.0</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dflli"><a target="_blank" href="http://www.cnzoom.com/guide/tool.html" class="d-menu">教程帮助</a></li>
+                <li class="dflli submenu">
+                    <a target="_blank" class="d-menu"><em>其他工具</em><span></span></a>
+                    <ul class="xflul" style="display: none;">
+                        
+                        <li class="xflli">
+                            <a target="_blank" href="http://www.cnzoom.com/gm" class="x-menu">手机端链接转换工具</a>
+                        </li>
+                        <li class="xflli">
+                            <a target="_blank" href="http://www.cnzoom.com/shouji" class="x-menu">手机端装修工具</a>
+                        </li>       
+                        <li class="xflli">
+                            <a target="_blank" href="http://www.cnzoom.com/tool/gif" class="x-menu">手机端Gif转换工具</a>
+                        </li>
+                        <li class="xflli">
+                            <a target="_blank" href="http://www.cnzoom.com/tool/nav" class="x-menu">导航样式修改工具</a>
+                        </li>
+                        <li class="xflli">
+                            <a target="_blank" href="http://www.cnzoom.com/zxn/color" class="x-menu">色码值获取工具</a>
+                        </li>
+                        <li class="xflli">
+                            <a target="_blank" href="http://www.cnzoom.com/tool/bgfixed.html" class="x-menu">固定背景生成工具</a>
+                        </li>
+                        <li class="xflli">
+                            <a target="_blank" href="http://www.cnzoom.com/zxd/index.php" class="x-menu">京东装修工具</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li class="dflli submenu">
+                    <a target="_blank" href="https://zxn.taobao.com/designer_detail.htm?spm=a215h.7721252.0.0.Oo0wVD&designerId=1016893" class="d-menu"><em>全部模板</em><span></span></a>
+                    <ul class="xflul" style="display: none;">
+                        <li class="xflli">
+                            <a target="_blank" href="https://zxn.taobao.com/designer_detail.htm?&amp;designerId=1016893&amp;productType=0&amp;site=3" class="x-menu">天猫模板</a>
+                        </li>
+                        <li class="xflli">
+                            <a target="_blank" href="https://zxn.taobao.com/designer_detail.htm?&amp;designerId=1016893&amp;productType=0&amp;site=2" class="x-menu">C店模板</a>
+                        </li>
+                        <li class="xflli">
+                            <a target="_blank" href="https://zxn.taobao.com/designer_detail.htm?spm=a215h.7721252.1998546510.6.qvSIcI&designerId=1016893&productType=0&site=1003" class="x-menu">手机模板</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dflli" style="display: none;"><a target="_blank" href="" class="d-menu">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section id="section">
+        <div id="canvas-form" class="canvas-form" style="float: inherit; margin: 0 auto;height: 419px;">
+            <div class="nav">
+                <div style="width:100%;height:50px;line-height: 50px;font-weight: 600;background:#1a7ce9;text-indent: 25px;"><a target="_blank" href="https://zx.taobao.com/detail.html?articleCode=zx_54377981&tracelog=category&qq-pf-to=pcqq.c2c" style="color:#fff;float:left;text-decoration: none;">此效果需配合沃姆无线模板，请点此订购</a><a target="_blank" href="http://www.cnzoom.com/doc/wxaddgif/" style="color:#fff;float:right;padding-right: 25px;text-decoration: none;">使用教程</a></div>
+            </div>
+            <div class="pic_group_list">
+                <div class="fm-section">
+                    <label class="fm-label" id="pcTitle">GIF图片地址：</label>
+                    <div class="fm-control">
+                        <span class="tds">
+                            <input class="long" type="text" id="pUrl" style="display: inline-block;">
+                        </span>
+                    </div>
+                </div>
+                <div class="fm-section">
+                    <label class="fm-label"></label>
+                    <div class="fm-control">
+                        <span class="tds" style="text-align: center;">
+                            <span class="button" id="getPhoneUrl" style="width: 140px;">立即转换</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="fm-section">
+                    <label class="fm-label">转换后地址：</label>
+                    <div class="fm-control">
+                        <span class="tds">
+                            <textarea class="long" id="mUrl"></textarea>
+                        </span>
+                    </div>
+                </div>
+                <div class="fm-section">
+                    <label class="fm-label"></label>
+                    <div class="fm-control">
+                        <span class="tds" style="text-align: center;">
+                            <span class="button copy copyUrl" id="copyUrl">复制</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+
+<div id="footer">
+<div class="fcontent">
+  <div>专注天猫淘宝模板创意设计与开发,用心做好模板&nbsp;—&nbsp;沃姆设计</div>
+    <div><a href="http://www.cnzoom.com/" target="_blank" rel="nofollow">沃姆设计</a> <a href="http://www.tencent.com/zh-cn/le/copyrightstatement.shtml" target="_blank" rel="nofollow">版权所有</a></div>
+    <div style="width:300px;margin:0 auto; padding:3px 0;">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802005272" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="" style="float:left;"><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">浙公网安备 33010802005272号</p></a>
+    </div>
+</div>
+</div>
+
+
+<script>
+
+window.alert = function (t) {
+    var thisNode=document.getElementsByClassName("alert_popup");
+    if(thisNode.length>0){
+        for(var i=0;i<thisNode.length;i++){
+            document.body.removeChild(thisNode[i]);
+        }
+    }
+    var dialog = document.createElement('div');
+    dialog.className = 'alert_popup zoomIn';
+    dialog.innerHTML = t;
+    document.body.appendChild(dialog)
+    setTimeout(function () {
+        dialog.className = 'alert_popup closed';
+    }, 3000);
+
+};
+$(function(){
+    var pageData={
+        "pUrlEle":$('#pUrl'),
+        "murl":""
+    }
+    var getPhoneUrlEle=$('#getPhoneUrl');
+    var copyUrlEle=$('#copyUrl');
+    getPhoneUrlEle.on('click',function(){
+        var url=pageData.pUrlEle.val();
+        var data= {
+            "action": "geturl",
+            "url": url
+        }
+         var passToUrl='http://www.cnzoom.com/tool/gif/code.php';
+         var patt1 = new RegExp("http");
+         var result1 = patt1.test(url);
+         var patt2 = new RegExp("gif");
+         var result2 = patt2.test(url);
+         if(url==''){
+            alert("链接不能为空")
+        }else if(result1&&result2){
+            $.post(passToUrl,data,function(res){
+                $('#mUrl').val(res);
+                 pageData.murl=res;
+            })
+        }else{
+           alert("请输入正确的图片地址");
+        }
+    })
+    copyUrlEle.on('click',function(){
+        if(pageData.murl){
+            var classname='copyUrl';
+            var clipboard = new Clipboard('.'+classname,{text: function(trigger) {
+                return pageData.murl;
+            }});
+            clipboard.on('success', function(e) {
+                alert('复制成功');
+                e.clearSelection();
+            });
+            clipboard.on('error', function(e) {
+                alert('复制失败');
+            });
+        }else{
+            alert('请填写gif地址转换');
+        }
+
+    })
+})
+</script>
+</body>
+</html>

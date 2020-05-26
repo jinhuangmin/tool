@@ -1,0 +1,363 @@
+﻿<?
+$data=$_POST;
+$sliderSrc=$data['sliderSrc'];
+$sliderHref=$data['sliderHref'];
+$smallImgSrcT=$data['smallImgSrcT'];
+$smallHoverSrcT=$data['smallHoverSrcT'];
+$smallImgSrc=$data['smallImgSrc'];
+$smallHoverSrc=$data['smallHoverSrc'];
+$customContent=$data['customContent'];
+$contentType=$data['contentType'];
+$childConfigx=$data['childConfig'];
+
+$numg=count($sliderSrc);
+$childConfig=$childConfigx['0'];
+?>
+<form id="tForm" form-data="jfsb" method="post" >
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">内容设置</a></li>
+		<li><a href="#tabs-2">样式设置</a></li>
+		<li><a href="#tabs-3">高级设置</a></li>
+		<li><a href="#tabs-4">箭头设置</a></li>
+	</ul>
+	<div id="tabs-1">
+		<ul class="setform">
+			<li>
+				<label for="i1">应用ID：</label>
+				<input id="i1" class="setinput disabled" type="text" title="自动生成，无需填写" readonly name="appID" value="<?=$data['appID']?>" />
+			</li>
+			<li style="height:auto;">
+				<ul id="sliderContentUl" style="padding-left:0px;list-style:none;">
+					
+                    <? $num=0;  foreach($contentType as $i=>$item){ $num=$num+1;  ?>   
+                    <li class="sliderContent" style="clear:both;height:auto;">
+						<label for="sc<?=$i?>rd1">轮播内容：</label>
+						<div id="sc<?=$i?>rd1">
+                            <input type="radio" id="sc<?=$i?>_r1" name="contentType[<?=$i?>]" value="imgContent" <? if($contentType[$i]=='imgContent'){echo'checked="checked"';} ?> />
+							<label for="sc<?=$i?>_r1" title="轮播内容为图片加链接" style="width:100px;">图片轮播</label>
+							<input type="radio" id="sc<?=$i?>_r2" name="contentType[<?=$i?>]" value="customContent" <? if($contentType[$i]=='customContent'){echo'checked="checked"';} ?> />
+							<label for="sc<?=$i?>_r2" title="轮播内容为自定义HTML" style="width:100px;">自定义轮播</label>
+						</div>
+						<ul style="padding-left:0px;list-style:none;">
+							<li class="imgContent contentType" style="clear:both;padding-top:10px;">
+								<label for="sc<?=$i?>_i2">轮播图片1：</label>
+								<input id="sc<?=$i?>_i2" class="setinput" type="text" title="请输入图片空间里的图片链接" name="sliderSrc[]" value="<?=$sliderSrc[$i]?>" />
+							</li>
+							<li class="imgContent contentType" style="clear:both;">
+								<label for="sc<?=$i?>_i3">链接地址1：</label>
+								<input id="sc<?=$i?>_i3" class="setinput" type="text" title="请输入图片链接" name="sliderHref[]" value="<?=$sliderHref[$i]?>" />
+							</li>
+							<li class="imgContent contentType" style="clear:both;">
+								<label for="sc<?=$i?>_i4">缩略图1：</label>
+								<input id="sc<?=$i?>_i4" class="setinput" type="text" title="轮播的缩略图，请输入图片空间里的图片链接" name="smallImgSrcT[]" value="<?=$smallImgSrcT[$i]?>" />
+							</li>
+							<li class="imgContent contentType" style="clear:both;">
+								<label for="sc<?=$i?>_i5">切换缩略图1：</label>
+								<input id="sc<?=$i?>_i5" class="setinput" type="text" title="轮播切换时缩略图变换的图片，请输入图片空间里的图片链接" name="smallHoverSrcT[]" value="<?=$smallHoverSrcT[$i]?>" />
+							</li>
+							<li class="customContent contentType" style="clear:both;padding-top:10px;height:auto;">
+								<label for="sc<?=$i?>_i6">自定义内容1：</label>
+								<textarea id="sc<?=$i?>_i6" name="customContent[]"><?=stripslashes($customContent[$i])?></textarea>
+							</li>
+							<li class="customContent contentType" style="clear:both;">
+								<label for="sc<?=$i?>_i7">缩略图1：</label>
+								<input id="sc<?=$i?>_i7" class="setinput" type="text" title="轮播的缩略图，请输入图片空间里的图片链接" name="smallImgSrc[]" value="<?=$smallImgSrc[$i]?>" />
+							</li>
+							<li class="customContent contentType" style="clear:both;">
+								<label for="sc<?=$i?>_i8">切换缩略图1：</label>
+								<input id="sc<?=$i?>_i8" class="setinput" type="text" title="轮播切换时缩略图变换的图片，请输入图片空间里的图片链接" name="smallHoverSrc[]" value="<?=$smallHoverSrc[$i]?>" />
+							</li>
+						</ul>
+					</li>
+					<? } ?>		
+					
+								</ul>
+			</li>
+			<li>
+				<div id="contentPage" style="width:500px;margin:0 auto;">
+				</div>
+			</li>
+			<li>
+				<div id="pageManager" style="width:500px;margin:0 auto;">
+					<span><i class="ui-icon ui-icon-circle-plus" style="display:inline-block;"></i> 添加一页</span>
+					<span><i class="ui-icon ui-icon-circle-close" style="display:inline-block;"></i> 删除当前页</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div id="tabs-2">
+		<ul class="setform">
+			<li>
+				<label for="ii1">应用宽度：</label>
+				<input id="ii1" class="setinput" type="text" title="应用的宽度，如需精确调整，请在此处输入数值。" name="width" value="<?=$data['width']?>" />
+			</li>
+			<li>
+				<label for="ii2">应用高度：</label>
+				<input id="ii2" class="setinput" type="text" title="应用的高度，如需精确调整，请在此处输入数值。" name="height" value="<?=$data['height']?>" />
+			</li>
+			<li>
+				<label for="ii3">应用上边距：</label>
+				<input id="ii3" class="setinput" type="text" title="应用的上边距，如需精确调整，请在此处输入数值。" name="top" value="<?=$data['top']?>" />
+			</li>
+			<li>
+				<label for="ii4">应用左边距：</label>
+				<input id="ii4" class="setinput" type="text" title="应用的左边距，如需精确调整，请在此处输入数值。" name="left" value="<?=$data['left']?>" />
+			</li>
+			<li>
+				<label for="ii1">缩略图宽度：</label>
+				<input id="ii1" class="setinput" type="text" title="统一设置缩略图的宽度" name="sWidth" value="<?=$data['sWidth']?>" />
+			</li>
+			<li>
+				<label for="ii2">缩略图高度：</label>
+				<input id="ii2" class="setinput" type="text" title="统一设置缩略图的高度" name="sHeight" value="<?=$data['sHeight']?>" />
+			</li>
+			<li>
+				<label for="kuandukz">宽度控制：</label>
+				<select id="kuandukz" name="kuandukz">
+					<option value="zdy" <? if($data['kuandukz']=='zdy'){echo'selected="selected"';} ?>>自定义宽度</option>
+					<option value="qp" <? if($data['kuandukz']=='qp'){echo'selected="selected"';} ?>>全屏</option>
+				</select>
+			</li>
+		</ul>
+	</div>
+	<div id="tabs-3">
+		<ul class="setform">
+			<li>
+				<label for="sliderMode">轮播方式：</label>
+				<select id="sliderMode" name="sliderMode">
+					<option value="top" <? if($data['sliderMode']=='top'){echo'selected="selected"';} ?>>上下滚动</option>
+					<option value="left" <? if($data['sliderMode']=='left'){echo'selected="selected"';} ?>>横向滚动</option>
+					<option value="fade" <? if($data['sliderMode']=='fade'){echo'selected="selected"';} ?>>淡入淡出</option>
+				</select>
+			</li>
+			<li>
+				<label for="kgdSwitch">缩略图开关灯：</label>
+				<select id="kgdSwitch" name="kgdSwitch">
+					<option value="white" <? if($data['kgdSwitch']=='white'){echo'selected="selected"';} ?>>白色开关灯</option>
+					<option value="black" <? if($data['kgdSwitch']=='black'){echo'selected="selected"';} ?>>黑色开关灯</option>
+					<option value="transparent" <? if($data['kgdSwitch']=='transparent'){echo'selected="selected"';} ?>>关闭开关灯</option>
+				</select>
+			</li>
+			<li>
+				<label for="hrefMode">链接打开方式：</label>
+				<select id="hrefMode" name="hrefMode">
+                    <option value="_self" <? if($data['hrefMode']=='_self'){echo'selected="selected"';} ?>>原窗口打开</option>
+					<option value="_blank" <? if($data['hrefMode']=='_blank'){echo'selected="selected"';} ?>>新窗口打开</option>
+				</select>
+			</li>
+			<li>
+				<label for="sliderTime">轮播停留时间：</label>
+				<select id="sliderTime" name="sliderTime">
+                    <option value="1" <? if($data['sliderTime']=='1'){echo'selected="selected"';} ?>>1秒</option>
+					<option value="2" <? if($data['sliderTime']=='2'){echo'selected="selected"';} ?>>2秒</option>
+					<option value="3" <? if($data['sliderTime']=='3'){echo'selected="selected"';} ?>>3秒</option>
+					<option value="4" <? if($data['sliderTime']=='4'){echo'selected="selected"';} ?>>4秒</option>
+					<option value="5" <? if($data['sliderTime']=='5'){echo'selected="selected"';} ?>>5秒</option>
+					<option value="6" <? if($data['sliderTime']=='6'){echo'selected="selected"';} ?>>6秒</option>
+					<option value="7" <? if($data['sliderTime']=='7'){echo'selected="selected"';} ?>>7秒</option>
+					<option value="8" <? if($data['sliderTime']=='8'){echo'selected="selected"';} ?>>8秒</option>
+					<option value="9" <? if($data['sliderTime']=='9'){echo'selected="selected"';} ?>>9秒</option>
+					<option value="10" <? if($data['sliderTime']=='10'){echo'selected="selected"';} ?>>10秒</option>
+				</select>
+			</li>
+			<li>
+				<label for="sliderSwitch">轮播切换方式：</label>
+				<select id="sliderSwitch" name="sliderSwitch">
+                    <option value="mouse" <? if($data['sliderSwitch']=='mouse'){echo'selected="selected"';} ?>>鼠标经过切换</option>
+					<option value="click" <? if($data['sliderSwitch']=='click'){echo'selected="selected"';} ?>>鼠标点击切换</option>
+				</select>
+			</li>
+		</ul>
+	</div>
+		<div id="tabs-4">
+		<ul class="setform">
+			<input id="child0h1" class="setinput" type="hidden" title="" name="childConfig[0].attachID" value="" />
+			<li>
+				<label for="sliderArrow">轮播箭头：</label>
+				<select id="sliderArrow" name="sliderArrow">
+					<option value="no" <? if($data['sliderArrow']=='no'){echo'selected="selected"';} ?>>无</option>
+					<option value="yes" <? if($data['sliderArrow']=='yes'){echo'selected="selected"';} ?>>有</option>
+				</select>
+			</li>
+			<li>
+				<label for="displayMode">鼠标经过主图时：</label>
+				<select id="displayMode" name="displayMode">
+					<option value="" <? if($data['displayMode']==''){echo'selected="selected"';} ?>>始终显示</option>
+					<option value="june-box-fadein" <? if($data['displayMode']=='june-box-fadein'){echo'selected="selected"';} ?>>淡入淡出</option>
+				</select>
+			</li>
+			<li>
+				<label for="css3Mode">鼠标经过主图时：</label>
+				<select id="css3Mode" name="css3Mode">
+
+					<option value="" <? if($data['css3Mode']==''){echo'selected="selected"';} ?>>无效果</option>
+					<option value="moveout10" <? if($data['css3Mode']=='moveout10'){echo'selected="selected"';} ?>>向外移动10</option>
+					<option value="moveout20" <? if($data['css3Mode']=='moveout20'){echo'selected="selected"';} ?>>向外移动20</option>
+					<option value="moveout30" <? if($data['css3Mode']=='moveout30'){echo'selected="selected"';} ?>>向外移动30</option>
+					<option value="moveout40" <? if($data['css3Mode']=='moveout40'){echo'selected="selected"';} ?>>向外移动40</option>
+					<option value="moveout50" <? if($data['css3Mode']=='moveout50'){echo'selected="selected"';} ?>>向外移动50</option>
+					<option value="moveout60" <? if($data['css3Mode']=='moveout60'){echo'selected="selected"';} ?>>向外移动60</option>
+					<option value="moveout70" <? if($data['css3Mode']=='moveout70'){echo'selected="selected"';} ?>>向外移动70</option>
+					<option value="moveout80" <? if($data['css3Mode']=='moveout80'){echo'selected="selected"';} ?>>向外移动80</option>
+					<option value="moveout90" <? if($data['css3Mode']=='moveout90'){echo'selected="selected"';} ?>>向外移动90</option>
+					<option value="moveout100" <? if($data['css3Mode']=='moveout100'){echo'selected="selected"';} ?>>向外移动100</option>
+					<option value="movein10" <? if($data['css3Mode']=='movein10'){echo'selected="selected"';} ?>>向内移动10</option>
+					<option value="movein20" <? if($data['css3Mode']=='movein20'){echo'selected="selected"';} ?>>向内移动20</option>
+					<option value="movein30" <? if($data['css3Mode']=='movein30'){echo'selected="selected"';} ?>>向内移动30</option>
+					<option value="movein40" <? if($data['css3Mode']=='movein40'){echo'selected="selected"';} ?>>向内移动40</option>
+					<option value="movein50" <? if($data['css3Mode']=='movein50'){echo'selected="selected"';} ?>>向内移动50</option>
+					<option value="movein60" <? if($data['css3Mode']=='movein60'){echo'selected="selected"';} ?>>向内移动60</option>
+					<option value="movein70" <? if($data['css3Mode']=='movein70'){echo'selected="selected"';} ?>>向内移动70</option>
+					<option value="movein80" <? if($data['css3Mode']=='movein80'){echo'selected="selected"';} ?>>向内移动80</option>
+					<option value="movein90" <? if($data['css3Mode']=='movein90'){echo'selected="selected"';} ?>>向内移动90</option>
+					<option value="movein100" <? if($data['css3Mode']=='movein100'){echo'selected="selected"';} ?>>向内移动100</option>
+									</select>
+			</li>
+			<li>
+				<label for="css3Speed">动画速度：</label>
+				<select id="css3Speed" name="css3Speed">
+                    <option value="trans05s" <? if($data['css3Speed']=='trans05s'){echo'selected="selected"';} ?>>快速</option>
+					<option value="trans1s" <? if($data['css3Speed']=='trans1s'){echo'selected="selected"';} ?>>中速</option>
+					<option value="trans2s" <? if($data['css3Speed']=='trans2s'){echo'selected="selected"';} ?>>慢速</option>
+				</select>
+			</li>
+			<li>
+                <label for="child0i1">左箭头图片：</label>
+				<input id="child0i1" class="setinput" type="text" title="请输入左箭头的图片地址" name="childConfig[0].oSrc" value="<?=$childConfig['oSrc']?>" />
+				<input id="child0autoSize" class="chkBox" type="checkbox" name="childConfig[0].autoSize" value="yes" <? if($childConfig['autoSize']=='yes'){echo'checked="checked"';} ?> />
+				<label for="child0autoSize" class="chkLabel">自动高宽</label>
+			</li>
+			<li>
+                <label for="child0i2">右箭头图片：</label>
+				<input id="child0i2" class="setinput" type="text" title="请输入左箭头的图片地址" name="childConfig[0].tSrc" value="<?=$childConfig['tSrc']?>" />
+				<input id="child0autoSize1" class="chkBox" type="checkbox" name="childConfig[0].autoSize1" value="yes" <? if($childConfig['autoSize1']=='yes'){echo'checked="checked"';} ?> />
+				<label for="child0autoSize1" class="chkLabel">自动高宽</label>
+			</li>
+		</ul>
+	</div>
+	</div>
+</form>
+<script type="text/javascript">
+$(function() {
+//加载表单样式
+	$("#tabs").tabs({active: <?=$data['active']?>});
+	$(".setform").tooltip({
+		position: {
+			my: "left top",
+			at: "left bottom+5"
+		},
+		show: {
+			duration: "fast"
+		},
+		hide: {
+			effect: "hide"
+		}
+	});
+	$("input, .sliderContent > div, textarea").buttonset();
+	$("#tForm select").selectmenu();
+	$(".contentType").hide();
+	$(".sliderContent").hide();
+	$("#sliderContentUl .sliderContent:eq(0)").show();
+	var contentType = "imgContent";
+	$(".sliderContent:eq(0)").find("."+contentType).show();
+	
+	$("#sliderContentUl").on("click", "input[type='radio']", function(event) {
+		var val = $(this).val();
+		$(this).parent().parent().find(".contentType").hide();
+		$(this).parent().parent().find("."+val).show();
+	});
+	
+	setPage(document.getElementById("contentPage"),<?=$numg?>, 1);
+	$("#contentPage").click(function() {
+		var num = parseInt($(this).children("a.on").html(), 10) - 1, 
+		contentType = $(".sliderContent:eq("+num+")").find("input[type='radio']:checked").val();
+		$(".contentType").hide();
+		$(".sliderContent").hide();
+		$("#sliderContentUl .sliderContent:eq("+num+")").show();
+		$(".sliderContent:eq("+num+")").find("."+contentType).show();
+	});
+	var startNum = <?=$numg?>;
+	$("#pageManager").on("click", "span", function(event) {
+		var t = $(this),
+		num = parseInt($("#contentPage").children("a.on").html(), 10) - 1,
+		len,
+		index = t.index();
+		if(index == 0) {
+			$('<li class="sliderContent" style="clear:both;height:auto;">'+
+						'<label for="sc'+startNum+'rd1">轮播内容：</label>'+
+						'<div id="sc'+startNum+'rd1">'+
+							'<input type="radio" id="sc'+startNum+'_r1" name="contentType['+startNum+']" value="imgContent" checked="checked"/>'+
+							'<label for="sc'+startNum+'_r1" title="轮播内容为图片加链接" style="width:100px;">图片轮播</label>'+
+							'<input type="radio" id="sc'+startNum+'_r2" name="contentType['+startNum+']" value="customContent" />'+
+							'<label for="sc'+startNum+'_r2" title="轮播内容为自定义HTML" style="width:100px;">自定义轮播</label>'+
+						'</div>'+
+						'<ul style="padding-left:0px;list-style:none;">'+
+							'<li class="imgContent contentType" style="clear:both;padding-top:10px;">'+
+								'<label for="sc'+startNum+'_i2">轮播图片：</label>'+
+								'<input id="sc'+startNum+'_i2" class="setinput" type="text" title="请输入图片空间里的图片链接" name="sliderSrc[]" value="" />'+
+							'</li>'+
+							'<li class="imgContent contentType" style="clear:both;">'+
+								'<label for="sc'+startNum+'_i3">链接地址>：</label>'+
+								'<input id="sc'+startNum+'_i3" class="setinput" type="text" title="请输入图片链接" name="sliderHref[]" value="" />'+
+							'</li>'+
+							'<li class="imgContent contentType" style="clear:both;">'+
+								'<label for="sc'+startNum+'_i4">缩略图>：</label>'+
+								'<input id="sc'+startNum+'_i4" class="setinput" type="text" title="轮播的缩略图，请输入图片空间里的图片链接" name="smallImgSrcT[]" value="" />'+
+							'</li>'+
+							'<li class="imgContent contentType" style="clear:both;">'+
+								'<label for="sc'+startNum+'_i5">切换缩略图：</label>'+
+								'<input id="sc'+startNum+'_i5" class="setinput" type="text" title="轮播切换时缩略图变换的图片，请输入图片空间里的图片链接" name="smallHoverSrcT[]" value="" />'+
+							'</li>'+
+							'<li class="customContent contentType" style="clear:both;padding-top:10px;height:auto;">'+
+								'<label for="sc'+startNum+'_i6">自定义内容：</label>'+
+								'<textarea id="sc'+startNum+'_i6" name="customContent[]"></textarea>'+
+							'</li>'+
+							'<li class="customContent contentType" style="clear:both;">'+
+								'<label for="sc'+startNum+'_i7">缩略图：</label>'+
+								'<input id="sc'+startNum+'_i7" class="setinput" type="text" title="轮播的缩略图，请输入图片空间里的图片链接" name="smallImgSrc[]" value="" />'+
+							'</li>'+
+							'<li class="customContent contentType" style="clear:both;">'+
+								'<label for="sc'+startNum+'_i8">切换缩略图：</label>'+
+								'<input id="sc'+startNum+'_i8" class="setinput" type="text" title="轮播切换时缩略图变换的图片，请输入图片空间里的图片链接" name="smallHoverSrc[]" value="" />'+
+							'</li>'+
+						'</ul>'+
+					'</li>').appendTo($("#sliderContentUl"));
+					$("#sliderContentUl").children("li.sliderContent").each(function(i, e) {
+						var ul = $(this).children("ul");
+						ul.find("label:eq(0)").html("轮播图片"+(i+1)+"：");
+						ul.find("label:eq(1)").html("链接地址"+(i+1)+"：");
+						ul.find("label:eq(2)").html("缩略图"+(i+1)+"：");
+						ul.find("label:eq(3)").html("切换缩略图："+(i+1)+"：");
+						ul.find("label:eq(4)").html("自定义内容："+(i+1)+"：");
+						ul.find("label:eq(5)").html("缩略图"+(i+1)+"：");
+						ul.find("label:eq(6)").html("切换缩略图："+(i+1)+"：");
+					});
+					$("input, .sliderContent > div, textarea").buttonset();
+					$(".contentType").hide();
+					$(".sliderContent").hide();
+					len = $("#sliderContentUl").children("li").length;
+					$("#contentPage").html("");
+					setPage(document.getElementById("contentPage"), len, len);
+					$("#contentPage").children("a.on").trigger("click");
+					startNum++;
+		} else if(index == 1) {
+			if($("#sliderContentUl").children("li").length == 1) {
+				return;
+			}
+			$("#sliderContentUl").children("li.sliderContent:eq("+num+")").remove();
+			$("#sliderContentUl").children("li.sliderContent").each(function(i, e) {
+				var ul = $(this).children("ul");
+				ul.find("label:eq(0)").html("轮播图片"+(i+1)+"：");
+				ul.find("label:eq(1)").html("链接地址"+(i+1)+"：");
+				ul.find("label:eq(2)").html("自定义内容"+(i+1)+"：");
+			});
+			len = $("#sliderContentUl").children("li").length;
+			if(num+1 > len) { num = len - 1;}
+			$("#contentPage").html("");
+			setPage(document.getElementById("contentPage"), len, num+1);
+			$("#contentPage").children("a.on").trigger("click");
+		}
+	});
+});
+</script>

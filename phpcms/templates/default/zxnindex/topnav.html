@@ -1,0 +1,71 @@
+<div class="header">
+	<div class="navbg">
+		<div class="colcon">
+			<a href="/zxn" target="_blank" class="logo"></a>
+			<ul id="navul" class="cl clear">
+				<li class="navhome"><a href="/">首页</a></li>
+				
+				<li>
+				<a target="_blank" href="/zxn" style="position:relative; color:#f60">装修工具<span style="position:absolute; top:22px; right:16px; "><img src="/statics/images/n1.png"></span></a>
+				</li>
+				<li>
+				<a href="/zxn#j_ties">模块库</a>
+				</li>
+				<li>
+				<a href="#">配套工具</a>
+				<ul>
+					<li><a target="_blank" href="/zxn/dz">店招工具</a></li>
+					<li><a target="_blank" href="/zxn/nav">导航工具</a></li>
+					<li><a target="_blank" href="/zxn/gm">手机连接</a></li>
+					<li><a target="_blank" href="/zxn/bg">固定背景</a></li>
+					<li><a target="_blank" href="/zxn/color">色值获取</a></li>
+					<li><a target="_blank" href="/zxn/ps">在线ps</a></li>
+					<li><a target="_blank" href="/zxd">京东工具</a></li>
+				</ul>
+				</li>
+				<li>
+				<a href="#">通用热点</a>
+				<ul>
+					<li><a href="#">帝国cms</a></li>
+					<li><a href="#">电脑技巧</a></li>
+					<li><a href="#">随笔杂谈</a></li>
+				</ul>
+				</li>
+				<li>
+				<a href="#">帮助中心</a>
+				<ul>
+					<li><a href="#">Jquery</a></li>
+					<li><a href="#">Js学习</a></li>
+					<li><a href="#">Js教程</a></li>
+				</ul>
+				</li>
+				<li>
+				<a href="#">资源下载</a>
+				<ul>
+					<li><a href="#">SEO杂谈</a></li>
+					<li><a href="#">站长工具</a></li>
+					<li><a href="#">经验分享</a></li>
+				</ul>
+				</li>
+                <li>
+				<a target="_blank" href="https://zxn.taobao.com/designer_detail.htm?designerId=1022650">模板选购</a>
+				<ul>
+					<li><a target="_blank" href="https://zxn.taobao.com/designer_detail.htm?designerId=1022650&productType=0&site=2">淘宝模板</a></li>
+                    <li><a target="_blank" href="https://zxn.taobao.com/designer_detail.htm?designerId=1022650&productType=0&site=3">天猫模板</a></li>
+
+				</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script>
+$(document).ready(function(){
+   $(".navbg").capacityFixed();
+   $("#navul > li").not(".navhome").hover(function(){
+      $(this).addClass("navmoon");
+      },function(){
+      $(this).removeClass("navmoon");
+       });
+});
+</script>

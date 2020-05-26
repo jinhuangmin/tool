@@ -1,0 +1,221 @@
+﻿<?
+$data=$_POST;
+$childConfig=$data['childConfig'];
+?>
+<form id="tForm" form-data="jcdb" method="post" >
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">基本设置</a></li>
+				<li><a href="#tabs-2">天设置</a></li>
+				<li><a href="#tabs-3">时设置</a></li>
+				<li><a href="#tabs-4">分设置</a></li>
+				<li><a href="#tabs-5">秒设置</a></li>
+			</ul>
+	<div id="tabs-1">
+		<ul class="setform">
+			<li>
+				<label for="i1">应用ID：</label>
+				<input id="i1" class="setinput disabled" type="text" title="自动生成，无需填写" readonly="readonly" name="appID" value="<?=$data['appID']?>" />
+			</li>
+			<li>
+				<label for="i2">倒计时背景图片：</label>
+				<input id="i2" class="setinput" type="text" title="倒计时的计时牌背景图片，请输入图片空间的图片链接。" name="pSrc" value="<?=$data['pSrc']?>" />
+				<input id="autoSize" class="chkBox" type="checkbox" name="autoSize" value="yes" <? if($data['autoSize']=='yes'){echo'checked="checked"';} ?> />
+				<label for="autoSize" class="chkLabel">自动高宽</label>
+			</li>
+			<li>
+				<label for="i3">倒计时结束时间：</label>
+				<input id="i3" class="setinput" type="text" title="" name="endTime" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" value="<?=$data['appID']?>" />
+			</li>
+			<li>
+				<label for="ii1">应用宽度：</label>
+				<input id="ii1" class="setinput" type="text" title="应用的宽度，如需精确调整，请在此处输入数值。" name="width" value="<?=$data['width']?>" />
+			</li>
+			<li>
+				<label for="ii2">应用高度：</label>
+				<input id="ii2" class="setinput" type="text" title="应用的高度，如需精确调整，请在此处输入数值。" name="height" value="<?=$data['height']?>" />
+			</li>
+			<li>
+				<label for="ii3">应用上边距：</label>
+				<input id="ii3" class="setinput" type="text" title="应用的上边距，如需精确调整，请在此处输入数值。" name="top" value="<?=$data['top']?>" />
+			</li>
+			<li>
+				<label for="ii4">应用左边距：</label>
+				<input id="ii4" class="setinput" type="text" title="应用的左边距，如需精确调整，请在此处输入数值。" name="left" value="<?=$data['left']?>" />
+			</li>
+		</ul>
+	</div>
+		<div id="tabs-2">
+		<ul class="setform">
+			<input id="child0h1" class="setinput" type="hidden" title="" name="childConfig[0].attachID" value="<?=$childConfig['0']['attachID']?>" />
+			<li>
+				<label for="child0rd1">是否显示天：</label>
+				<div id="child0rd1">
+                    <input type="radio" id="child0r1" name="childConfig[0].displayMode" value="yes" <? if($childConfig['0']['displayMode']=='yes'){echo'checked="checked"';} ?> />
+					<label for="child0r1" title="">显示</label>
+					<input type="radio" id="child0r2" name="childConfig[0].displayMode" value="no" <? if($childConfig['0']['displayMode']=='no'){echo'checked="checked"';} ?> />
+					<label for="child0r2" title="" style="width:80px;text-align:center;">不显示</label>
+				</div>
+			</li>
+			<li>
+				<label for="child0i1">数字颜色：</label>
+				<input id="child0i1" class="setinput tColorPicker" type="text" title="" name="childConfig[0].numberColor" value="<?=$childConfig['0']['numberColor']?>" />
+			</li>
+			<li>
+				<label for="child0i2">数字大小：</label>
+				<input id="child0i2" class="setinput" type="text" title="请输入数字的大小，无需加px" name="childConfig[0].numberSize" value="<?=$childConfig['0']['numberSize']?>" />
+			</li>
+			<li>
+				<label for="child0numberWeight">数字粗细：</label>
+				<select id="child0numberWeight" name="childConfig[0].numberWeight">
+                    <option value="normal" <? if($childConfig['0']['numberWeight']=='normal'){echo'selected="selected"';} ?>>正常</option>
+					<option value="bold" <? if($childConfig['0']['numberWeight']=='bold'){echo'selected="selected"';} ?>>粗体</option>
+				</select>
+			</li>
+			<li>
+				<label for="child0numberFamily">数字字体：</label>
+				<select id="child0numberFamily" name="childConfig[0].numberFamily">
+                    <option value="宋体" <? if($childConfig['0']['numberFamily']=='宋体'){echo'selected="selected"';} ?>>宋体</option>
+					<option value="黑体" <? if($childConfig['0']['numberFamily']=='黑体'){echo'selected="selected"';} ?>>黑体</option>
+					<option value="微软雅黑" <? if($childConfig['0']['numberFamily']=='微软雅黑'){echo'selected="selected"';} ?>>雅黑</option>
+					<option value="楷体" <? if($childConfig['0']['numberFamily']=='楷体'){echo'selected="selected"';} ?>>楷体</option>
+				</select>
+			</li>
+		</ul>
+	</div>
+		<div id="tabs-3">
+		<ul class="setform">
+			<input id="child1h1" class="setinput" type="hidden" title="" name="childConfig[1].attachID" value="<?=$childConfig['1']['attachID']?>" />
+			<li>
+				<label for="child1rd1">是否显示时：</label>
+				<div id="child1rd1">
+                    <input type="radio" id="child1r1" name="childConfig[1].displayMode" value="yes" <? if($childConfig['1']['displayMode']=='yes'){echo'checked="checked"';} ?> />
+					<label for="child1r1" title="">显示</label>
+					<input type="radio" id="child1r2" name="childConfig[1].displayMode" value="no" <? if($childConfig['1']['displayMode']=='no'){echo'checked="checked"';} ?> />
+					<label for="child1r2" title="" style="width:80px;text-align:center;">不显示</label>
+				</div>
+			</li>
+			<li>
+				<label for="child1i1">数字颜色：</label>
+				<input id="child1i1" class="setinput tColorPicker" type="text" title="" name="childConfig[1].numberColor" value="<?=$childConfig['1']['numberColor']?>" />
+			</li>
+			<li>
+				<label for="child1i2">数字大小：</label>
+				<input id="child1i2" class="setinput" type="text" title="请输入数字的大小，无需加px" name="childConfig[1].numberSize" value="<?=$childConfig['1']['numberSize']?>" />
+			</li>
+			<li>
+				<label for="child1numberWeight">数字粗细：</label>
+				<select id="child1numberWeight" name="childConfig[1].numberWeight">
+                    <option value="normal" <? if($childConfig['1']['numberWeight']=='normal'){echo'selected="selected"';} ?>>正常</option>
+					<option value="bold" <? if($childConfig['1']['numberWeight']=='bold'){echo'selected="selected"';} ?>>粗体</option>
+				</select>
+			</li>
+			<li>
+				<label for="child1numberFamily">数字字体：</label>
+				<select id="child1numberFamily" name="childConfig[1].numberFamily">
+                    <option value="宋体" <? if($childConfig['1']['numberFamily']=='宋体'){echo'selected="selected"';} ?>>宋体</option>
+					<option value="黑体" <? if($childConfig['1']['numberFamily']=='黑体'){echo'selected="selected"';} ?>>黑体</option>
+					<option value="微软雅黑" <? if($childConfig['1']['numberFamily']=='微软雅黑'){echo'selected="selected"';} ?>>雅黑</option>
+					<option value="楷体" <? if($childConfig['1']['numberFamily']=='楷体'){echo'selected="selected"';} ?>>楷体</option>
+				</select>
+			</li>
+		</ul>
+	</div>
+		<div id="tabs-4">
+		<ul class="setform">
+			<input id="child2h1" class="setinput" type="hidden" title="" name="childConfig[2].attachID" value="aLdMC-Y2aV" />
+			<li>
+				<label for="child2rd1">是否显示分：</label>
+				<div id="child2rd1">
+                    <input type="radio" id="child2r1" name="childConfig[2].displayMode" value="yes" <? if($childConfig['2']['displayMode']=='yes'){echo'checked="checked"';} ?> />
+					<label for="child2r1" title="">显示</label>
+					<input type="radio" id="child2r2" name="childConfig[2].displayMode" value="no" <? if($childConfig['2']['displayMode']=='no'){echo'checked="checked"';} ?> />
+					<label for="child2r2" title="" style="width:80px;text-align:center;">不显示</label>
+				</div>
+			</li>
+			<li>
+				<label for="child2i1">数字颜色：</label>
+				<input id="child2i1" class="setinput tColorPicker" type="text" title="" name="childConfig[2].numberColor" value="<?=$childConfig['2']['numberColor']?>" />
+			</li>
+			<li>
+				<label for="child2i2">数字大小：</label>
+				<input id="child2i2" class="setinput" type="text" title="请输入数字的大小，无需加px" name="childConfig[2].numberSize" value="<?=$childConfig['2']['numberSize']?>" />
+			</li>
+			<li>
+				<label for="child2numberWeight">数字粗细：</label>
+				<select id="child2numberWeight" name="childConfig[2].numberWeight">
+                    <option value="normal" <? if($childConfig['2']['numberWeight']=='normal'){echo'selected="selected"';} ?>>正常</option>
+					<option value="bold" <? if($childConfig['2']['numberWeight']=='bold'){echo'selected="selected"';} ?>>粗体</option>
+				</select>
+			</li>
+			<li>
+				<label for="child2numberFamily">数字字体：</label>
+				<select id="child2numberFamily" name="childConfig[2].numberFamily">
+                    <option value="宋体" <? if($childConfig['2']['numberFamily']=='宋体'){echo'selected="selected"';} ?>>宋体</option>
+					<option value="黑体" <? if($childConfig['2']['numberFamily']=='黑体'){echo'selected="selected"';} ?>>黑体</option>
+					<option value="微软雅黑" <? if($childConfig['2']['numberFamily']=='微软雅黑'){echo'selected="selected"';} ?>>雅黑</option>
+					<option value="楷体" <? if($childConfig['2']['numberFamily']=='楷体'){echo'selected="selected"';} ?>>楷体</option>
+				</select>
+			</li>
+		</ul>
+	</div>
+		<div id="tabs-5">
+		<ul class="setform">
+			<input id="child3h1" class="setinput" type="hidden" title="" name="childConfig[3].attachID" value="<?=$childConfig['3']['attachID']?>" />
+			<li>
+				<label for="child3rd1">是否显示秒：</label>
+				<div id="child3rd1">
+                    <input type="radio" id="child3r1" name="childConfig[3].displayMode" value="yes" <? if($childConfig['3']['displayMode']=='yes'){echo'checked="checked"';} ?> />
+					<label for="child3r1" title="">显示</label>
+					<input type="radio" id="child3r2" name="childConfig[3].displayMode" value="no" <? if($childConfig['3']['displayMode']=='no'){echo'checked="checked"';} ?> />
+					<label for="child3r2" title="" style="width:80px;text-align:center;">不显示</label>
+				</div>
+			</li>
+			<li>
+				<label for="child3i1">数字颜色：</label>
+				<input id="child3i1" class="setinput tColorPicker" type="text" title="" name="childConfig[3].numberColor" value="<?=$childConfig['3']['numberColor']?>" />
+			</li>
+			<li>
+				<label for="child3i2">数字大小：</label>
+				<input id="child3i2" class="setinput" type="text" title="请输入数字的大小，无需加px" name="childConfig[3].numberSize" value="<?=$childConfig['3']['numberSize']?>" />
+			</li>
+			<li>
+				<label for="child3numberWeight">数字粗细：</label>
+				<select id="child3numberWeight" name="childConfig[3].numberWeight">
+					<option value="normal" <? if($childConfig['3']['numberWeight']=='normal'){echo'selected="selected"';} ?>>正常</option>
+					<option value="bold" <? if($childConfig['3']['numberWeight']=='bold'){echo'selected="selected"';} ?>>粗体</option>
+				</select>
+			</li>
+			<li>
+				<label for="child3numberFamily">数字字体：</label>
+				<select id="child3numberFamily" name="childConfig[3].numberFamily">
+					<option value="宋体" <? if($childConfig['3']['numberFamily']=='宋体'){echo'selected="selected"';} ?>>宋体</option>
+					<option value="黑体" <? if($childConfig['3']['numberFamily']=='黑体'){echo'selected="selected"';} ?>>黑体</option>
+					<option value="微软雅黑" <? if($childConfig['3']['numberFamily']=='微软雅黑'){echo'selected="selected"';} ?>>雅黑</option>
+					<option value="楷体" <? if($childConfig['3']['numberFamily']=='楷体'){echo'selected="selected"';} ?>>楷体</option>
+				</select>
+			</li>
+		</ul>
+	</div>
+	</div>
+</form>
+<script type="text/javascript">
+$(function() {
+//加载表单样式
+	$("#tabs").tabs({active: <?=$data['active']?>});
+	$("input, .setform > li > div").buttonset();
+	$("#tForm select").selectmenu();
+	$(".setform").tooltip({
+		position: {
+			my: "left top",
+			at: "left bottom+5"
+		},
+		show: {
+			duration: "fast"
+		},
+		hide: {
+			effect: "hide"
+		}
+	});
+});
+</script>

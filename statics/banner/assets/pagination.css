@@ -1,0 +1,84 @@
+@charset "gb2312";      
+#Searchresult{ width:1098px;}
+#Searchresult {
+padding: 5px 0;
+border: 1px solid #e2e2e2;
+min-height: 200px;
+}
+.hdd {
+padding: 3px 10px; margin-top:15px;
+border: 1px solid #e2e2e2;
+border-bottom: 0 none;
+background: #f3f3f3;
+position: relative;
+font-size: 0; border:1px solid #e2e2e2; border-bottom:none
+}
+.um-btn {
+background: 0;
+border: 1px solid transparent;
+_border-color: #f3f3f3;
+height: 20px;
+line-height: 20px;
+display: inline-block;
+text-decoration: none;
+cursor: pointer;
+text-align: center;
+vertical-align: middle;
+margin-right: 2px;
+}
+.hdd .um-btn {
+font-size: 12px;
+vertical-align: middle;
+margin-right: 5px;
+padding: 0 5px;
+color: #616161;
+}
+.hdd .um-btn:hover,.hdd .um-btn.hover {
+border-color: #d2d5da;
+text-decoration: none;
+background: #e7f1f8;
+}
+#Pagination{ margin-top:10px; text-align:right}
+.pagination a {
+    text-decoration: none;
+	border: 1px solid #666;
+	color: #666;
+}
+
+.pagination a, .pagination span {
+    display: inline-block;
+    padding: 0.1em 0.4em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+.pagination .current {
+    background:#666;
+    color: #fff;
+	border: 1px solid #AAE;
+}
+
+.pagination .current.prev, .pagination .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
+}
+.item{ text-align:center}
+.item .title{padding: 20px 0 10px;
+font-weight: 700;
+font-size: 14px;
+color: #000;}
+.item a {
+color: #0a8cd2;
+text-decoration: none;
+}
+.picdiv{ border-bottom:1px solid #e2e2e2}
+.picdiv .pic{position: relative;}
+.picdiv .pic a{ text-align:center}
+.picdiv .pic img {vertical-align: middle;}
+
+.btn {
+padding: 10px;
+}
+
+

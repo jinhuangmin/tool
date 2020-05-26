@@ -1,0 +1,216 @@
+<?
+$data=$_POST; 
+
+ $anchorNamx = $data['anchorName'];
+ $anchorName = explode(',',$anchorNamx);
+ $anchorSelect = $data['anchorSelect'];
+ $autoSize = $data['autoSize'];
+
+?>
+<form id="tForm" form-data="jdb" method="post" >
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">内容设置</a></li>
+		<li><a href="#tabs-2">样式设置</a></li>
+	</ul>
+	<div id="tabs-1">
+		<ul class="setform">
+			<li>
+				<label for="i1">应用ID：</label>
+				<input id="i1" class="setinput disabled" type="text" title="自动生成，无需填写" readonly name="appID" value="<?=$data['appID']?>" />
+			</li>
+			<li>
+				<label for="rd1">链接类型：</label>
+				<div id="rd1">
+					<input type="radio" id="r1" name="linkMode" value="ptlink" <? if($data['linkMode']=='ptlink'){echo'checked="checked"';} ?> />
+					<label for="r1" title="普通链接，请在下方输入链接地址">普通</label>
+					<input type="radio" id="r2" name="linkMode" value="gzlink" <? if($data['linkMode']=='gzlink'){echo'checked="checked"';} ?> />
+					<label for="r2" title="京东关注链接，请在下方输入宝贝ID">关注</label>
+					<input type="radio" id="r3" name="linkMode" value="wwlink" <? if($data['linkMode']=='wwlink'){echo'checked="checked"';} ?>>
+					<label for="r3" title="京东咚咚链接，请在下方输入店铺ID">咚咚</label>
+					<input type="radio" id="r4" name="linkMode" value="mdlink" <? if($data['linkMode']=='mdlink'){echo'checked="checked"';} ?> />
+					<label for="r4" title="锚点链接，请在下方选择需要跳转到的锚点">锚点</label>
+				</div>
+			</li>
+			
+			<li class="ptlink linkMode">
+				<label for="i2">链接地址：</label>
+				<input id="i2" class="setinput" type="text" title="请输入图片的链接地址，如：某个宝贝的页面地址。" name="href" value="<?=$data['href']?>" />
+			</li>
+			<li class="ptlink linkMode">
+				<label for="hrefMode">链接打开方式：</label>
+				<select id="hrefMode" name="hrefMode">
+                    <option value="_self" <? if($data['hrefMode']=='_self'){echo'selected="selected"';} ?> >原窗口打开</option>
+					<option value="_blank" <? if($data['hrefMode']=='_blank'){echo'selected="selected"';} ?> >新窗口打开</option>
+				</select>
+			</li>
+			
+			<li class="gzlink linkMode">
+				<label for="i3">宝贝ID：</label>
+				<input id="i3" class="setinput" type="text" title="请输入需要关注的宝贝ID。" name="attentionID" value="<?=$data['attentionID']?>" />
+			</li>
+			
+			<li class="wwlink linkMode">
+				<label for="i4">店铺ID：</label>
+				<input id="i4" class="setinput" type="text" title="请输入店铺ID。" name="wangID" value="<?=$data['wangID']?>" />
+			</li>
+			
+			<li class="mdlink linkMode">
+				<label for="anchorSelect">点击后跳转至：</label>
+				<select id="anchorSelect" name="anchorSelect">
+					<?
+					if($anchorNamx==''){echo'<option value="">请在左侧应用面版中至少添加一个锚点</option>';}
+					else{
+					if($anchorSelect){echo'<option value="'.$anchorSelect.'" > 锚点：'.$anchorSelect.'</option>';}
+					foreach($anchorName as $item){
+                       if($item==$anchorSelect){}else{echo'<option value="'.$item.'" > 锚点：'.$item.'</option>';}					
+						}}
+					?>
+				</select>
+			</li>
+			<li>
+				<label for="i5">背景图片地址：</label>
+				<input id="i5" class="setinput" type="text" title="请输入淘宝图片空间里的图片地址" name="pSrc" value="<?=$data['pSrc']?>" />
+				<input id="autoSize" class="chkBox" type="checkbox" name="autoSize" value="yes" <? if($autoSize=='yes'){echo'checked="checked"';} ?> />
+				<label for="autoSize" class="chkLabel">自动高宽</label>
+			</li>
+		</ul>
+	</div>
+	<div id="tabs-2">
+		<ul class="setform">
+			<li>
+				<label for="cd1">鼠标经过时显示：</label>
+				<div id="cd1">
+					<input type="checkbox" id="c1" name="mongoliaControl" value="mongoliaShow" <? if($data['mongoliaControl']=='mongoliaShow'){echo'checked="checked"';} ?> />
+					<label for="c1" title="可设置深色蒙层或浅色蒙层，鼠标经过热区时显示">蒙层</label>
+					<input type="checkbox" id="c2" name="borderControl" value="hborder" <? if($data['borderControl']=='hborder'){echo'checked="checked"';} ?> />
+					<label for="c2" title="鼠标经过热区时会显示边框，可设置边框颜色">边框</label>
+					<input type="checkbox" id="c3" name="shadowControl" value="shadowShow" <? if($data['shadowControl']=='shadowShow'){echo'checked="checked"';} ?> />
+					<label for="c3" title="鼠标经过热区时会显示阴影，可设置阴影颜色">阴影</label>
+				</div>
+			</li>
+			<li class="mongoliaShow mongoliaControl">
+				<label for="rd2">蒙层颜色：</label>
+				<div id="rd2">
+					<input type="radio" id="r5" name="mongoliaMode" value="mcblack" checked="checked" <? if($data['mongoliaMode']=='mcblack'){echo'checked="checked"';} ?>/>
+					<label for="r5" title="">深色</label>
+					<input type="radio" id="r6" name="mongoliaMode" value="mcwhite" <? if($data['mongoliaMode']=='mcwhite'){echo'checked="checked"';} ?> />
+					<label for="r6" title="">浅色</label>
+				</div>
+			</li>
+			<li class="hborder borderControl">
+				<label for="i5">边框颜色：</label>
+				<input id="i5" class="setinput tColorPicker" type="text" title="" name="borderColor" value="<?=$data['borderColor']?>" />
+			</li>
+			<li class="hborder borderControl">
+				<label for="i6">边框粗细：</label>
+				<input id="i6" class="setinput" type="text" title="" name="borderWidth" value="<?=$data['borderWidth']?>" />
+			</li>
+			<li class="shadowShow shadowControl">
+				<label for="shadowShowType">阴影显示方式：</label>
+				<select id="shadowShowType" name="shadowShowType">
+					<option value="1" <? if($data['shadowShowType']=='1'){echo'selected="selected"';} ?>>始终显示</option>
+					<option value="2" <? if($data['shadowShowType']=='2'){echo'selected="selected"';} ?>>鼠标经过时显示</option>
+				</select>
+			</li>
+			<li class="shadowShow shadowControl">
+				<label for="y4">阴影颜色：</label>
+				<input id="y4" class="setinput tColorPicker" type="text" title="" name="shadowColor" value="<?=$data['shadowColor']?>" />
+			</li>
+			<li class="shadowShow shadowControl">
+				<label for="y3">阴影模糊距离：</label>
+				<input id="y3" class="setinput" type="text" title="阴影的羽化范围" name="shadowBlur" value="<?=$data['shadowBlur']?>" />
+			</li>
+			<li class="shadowShow shadowControl">
+				<label for="y5">阴影尺寸：</label>
+				<input id="y5" class="setinput" type="text" title="阴影的实体大小" name="shadowSize" value="<?=$data['shadowSize']?>" />
+			</li>
+			<li class="shadowShow shadowControl">
+				<label for="y1">水平阴影距离：</label>
+				<input id="y1" class="setinput" type="text" title="阴影的距离外框的水平距离，正数为向右，负数为向左。" name="shadowLeft" value="<?=$data['shadowLeft']?>" />
+			</li>
+			<li class="shadowShow shadowControl">
+				<label for="y2">垂直阴影距离：</label>
+				<input id="y2" class="setinput" type="text" title="阴影的距离外框的垂直距离，正数为向下，负数为向上。" name="shadowTop" value="<?=$data['shadowTop']?>" />
+			</li>
+			<input id="h2" class="setinput" type="hidden" title="" name="shadowStyle" value="<?=$data['shadowStyle']?>" />
+			
+            <li style="text-align:center">
+			----------------------------------------------------------
+			</li>
+            
+            <li>
+				<label for="ii1">应用宽度：</label>
+				<input id="ii1" class="setinput" type="text" title="应用的宽度，如需精确调整，请在此处输入数值。" name="width" value="<?=$data['width']?>" />
+			</li>
+			<li>
+				<label for="ii2">应用高度：</label>
+				<input id="ii2" class="setinput" type="text" title="应用的高度，如需精确调整，请在此处输入数值。" name="height" value="<?=$data['height']?>" />
+			</li>
+			<li>
+				<label for="ii3">应用上边距：</label>
+				<input id="ii3" class="setinput" type="text" title="应用的上边距，如需精确调整，请在此处输入数值。" name="top" value="<?=$data['top']?>" />
+			</li>
+			<li>
+				<label for="ii4">应用左边距：</label>
+				<input id="ii4" class="setinput" type="text" title="应用的左边距，如需精确调整，请在此处输入数值。" name="left" value="<?=$data['left']?>" />
+			</li>
+		</ul>
+	</div>
+</div>
+</form>
+<script type="text/javascript">
+$(function() {
+//加载表单样式
+	$("#tabs").tabs();
+	$("#tForm select").selectmenu();
+	$("input, .setform > li > div").buttonset();
+	$(".setform").tooltip({
+		position: {
+			my: "left top",
+			at: "left bottom+5"
+		},
+		show: {
+			duration: "fast"
+		},
+		hide: {
+			effect: "hide"
+		}
+	});
+	$(".linkMode, .borderControl, .mongoliaControl, .shadowControl").hide();
+	$("#c1").click(function() {
+		if(!!$(this).prop("checked")) {
+			$(".mongoliaControl").show();
+		} else {
+			$(".mongoliaControl").hide();
+		}
+	});
+	$("#c2").click(function() {
+		if(!!$(this).prop("checked")) {
+			$(".borderControl").show();
+		} else {
+			$(".borderControl").hide();
+		}
+	});
+	$("#c3").click(function() {
+		if(!!$(this).prop("checked")) {
+			$(".shadowControl").show();
+		} else {
+			$(".shadowControl").hide();
+		}
+	});
+	""=="mongoliaShow" && $(".mongoliaControl").show();
+	""=="hborder" && $(".borderControl").show();
+	""=="shadowShow" && $(".shadowControl").show();
+	"ptlink"=="ptlink" && $(".ptlink").show();
+	"ptlink"=="gzlink" && $(".gzlink").show();
+	"ptlink"=="wwlink" && $(".wwlink").show();
+	"ptlink"=="mdlink" && $(".mdlink").show();
+	$("#rd1").children("input[name='linkMode']").click(function() {
+		var val = $(this).val();
+		$(".linkMode").hide();
+		$("."+val).show();
+	});
+	
+});
+</script>

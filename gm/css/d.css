@@ -1,0 +1,1905 @@
+img{
+	display: inline-block;
+	vertical-align: top;
+}
+/*UI样式*/
+.ui-dialog .ui-state-default, 
+.ui-dialog .ui-widget-content .ui-state-default, 
+.ui-dialog .ui-widget-header .ui-state-default{
+	background:#f5f5f5;
+}
+.ui-dialog .ui-tabs-nav .ui-state-default{
+	background:#eee;
+}
+.ui-dialog .ui-state-hover, 
+.ui-dialog .ui-widget-content .ui-state-hover, 
+.ui-dialog .ui-widget-header .ui-state-hover, 
+.ui-dialog .ui-state-focus, 
+.ui-dialog .ui-widget-content .ui-state-focus, 
+.ui-dialog .ui-widget-header .ui-state-focus{
+	background:#4cb6cb;
+}
+.ui-dialog-content{
+	overflow-x:hidden;
+}
+
+.ui-dialog .ui-widget-content button.ui-button-text-only{
+	background:#f9f9f9;
+	border:1px #dbe2e7 solid;
+	border-color: #dbe2e7;
+	border-bottom-color: #d5dde3;
+	-webkit-box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+}
+.ui-dialog .ui-widget-content button.ui-button-text-only .ui-button-text{
+	color:#788188;
+}
+.ui-dialog .ui-widget-content button.ui-state-hover{
+	background:#efefef;
+}
+.ui-dialog .ui-widget-content button.ui-state-hover .ui-button-text{
+	color:#788188;
+}
+.ui-dialog .ui-dialog-buttonpane{
+	border-top:1px #eee solid !important;
+}
+
+.ui-dialog .ui-state-active, 
+.ui-dialog .ui-widget-content .ui-state-active, 
+.ui-dialog .ui-widget-header .ui-state-active{
+	background:#fff;
+}
+.ui-dialog .ui-state-default, 
+.ui-dialog .ui-widget-content .ui-state-default, 
+.ui-dialog .ui-widget-header .ui-state-default{
+	border:none;
+}
+.ui-dialog .ui-tabs .ui-tabs-nav .ui-tabs-anchor{
+	border:1px #eee solid;
+	border-bottom:none;
+}
+.ui-tooltip {
+	border: 1px solid #333;
+	background: #111;
+	color: #fff;
+	opacity: 0.9;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);
+	z-index:10000;
+}
+.ui-dialog{
+	z-index:9999;
+	overflow:visible;
+}
+.ui-dialog .ui-dialog-title{
+	width:100%;
+}
+.ui-dialog .ui-dialog-titlebar {
+	padding: 0px;
+	position: relative;
+}
+.ui-dialog .ui-dialog-title{
+	margin:0px;
+	height:48px;
+	line-height:48px;
+	text-indent: 1em;
+}
+.ui-dialog .ui-dialog-title,
+.ui-dialog .ui-button .ui-button-text{
+	font-size:14px;
+}
+.ui-dialog .ui-widget-content{
+	border:none;
+}
+.ui-dialog .ui-widget-header{
+	background:none;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+}
+.ui-state-default,.ui-tabs-anchor{
+	outline:none;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor{
+	font-size:14px;
+}
+
+
+.ui-selectmenu-button{
+	height:40px;
+	line-height:40px;
+}
+.ui-selectmenu-button span.ui-selectmenu-text{
+	height:30px;
+	line-height:30px;
+}
+.ui-selectmenu-text{
+	border:1px #eee solid;
+}
+.ui-selectmenu-menu .ui-menu{
+	border:1px #eee solid;
+	border-top:none;
+}
+.ui-selectmenu-menu .ui-menu .ui-menu-item{
+	height:30px;
+	line-height:30px;
+	padding-left:10px;
+	color:#788188;
+}
+.ui-selectmenu-menu .ui-menu .ui-state-focus{
+	border:none;
+	background:#e8eff0;
+	color:#788188;
+	font-weight:100;
+	margin:0px;
+}
+.ui-buttonset label.ui-button-text-only{
+	width:60px;
+	text-align:left;
+}
+.ui-buttonset label.ui-button-text-only .ui-button-text{
+	font-weight:normal;
+	padding: .6em 1em;
+}
+.ui-dialog .ui-buttonset label.ui-state-hover{
+	background:#e9e9e9;
+	color:#788188;
+}
+.ui-dialog .ui-buttonset label.ui-state-active{
+	background:#4cb6cb;
+	color:#fff;
+}
+.ui-dialog .ui-buttonset label.ui-state-focus{
+	background:#f5f5f5;
+	color:#555555;
+}
+.ui-dialog .ui-buttonset label.ui-state-active{
+	background: #4cb6cb;
+	color: #fff;
+}
+
+.t-layer-selected .ui-icon,.t-action-selected .ui-icon {
+	background-image: url("../images/ui-icons_ffffff_256x240.png"/*tpa=http://junezx.com/2.0/images/ui-icons_ffffff_256x240.png*/);
+}
+/*页头*/
+#hd{
+	width:100%;
+	height:60px;
+	background:#fff;
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:1100;
+}
+#hd #logo{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:240px;
+	height:60px;
+	background:url("../images/logo.jpg"/*tpa=http://junezx.com/2.0/images/logo.jpg*/);
+}
+#hd #topbanner #login{
+	position:absolute;
+	left:240px;
+	top:0px;
+	cursor:pointer;
+	width:96px;
+	height:60px;
+	font-size:12px;
+	line-height:60px;
+	color:#999;
+}
+#hd #topbanner #login i{
+	background:url("../images/login.jpg"/*tpa=http://junezx.com/2.0/images/login.jpg*/) 0 5px no-repeat;
+	padding:12px;
+	margin-left:15px;
+	margin-right:8px;
+}
+#hd #topbanner #loginText{
+	position:absolute;
+	left:260px;
+	top:0px;
+	height:60px;
+	font-size:12px;
+	line-height:60px;
+	color:#999;
+	display:none;
+}
+
+#hd #topbanner #reg{
+	position:absolute;
+	left:336px;
+	top:0px;
+	cursor:pointer;
+	width:96px;
+	height:60px;
+	font-size:12px;
+	line-height:60px;
+	color:#999;
+}
+#hd #topbanner #reg i{
+	background:url("../images/reg.jpg"/*tpa=http://junezx.com/2.0/images/reg.jpg*/) 0 5px no-repeat;
+	padding:12px;
+	margin-left:15px;
+	margin-right:8px;
+}
+#hd #topbanner #login:hover,#hd #topbanner #reg:hover{
+	background:#edf2f3;
+	color:#000;
+}
+#hd #topbanner #login:hover i{
+	background:url("../images/loginhover.jpg"/*tpa=http://junezx.com/2.0/images/loginhover.jpg*/) 0 5px no-repeat;
+}
+#hd #topbanner #reg:hover i{
+	background:url("../images/reghover.jpg"/*tpa=http://junezx.com/2.0/images/reghover.jpg*/) 0 5px no-repeat;
+}
+#hd #topbanner #kbhelp{
+	position:absolute;
+	right:552px;
+	top:11px;
+	width:140px;
+	height:38px;
+	background:url("../images/keyboard.png"/*tpa=http://junezx.com/2.0/images/keyboard.png*/);
+	cursor:pointer;
+}
+#hd #topbanner #moretools,#head #topbar > div#moretools{
+	position:absolute;
+	right:691px;
+	top:11px;
+	width:94px;
+	height:38px;
+	background:url("../images/more.jpg"/*tpa=http://junezx.com/2.0/images/more.jpg*/);
+	cursor:pointer;
+	border:none;
+	margin:0;
+}
+#hd #topbanner #xifuconfig{
+	position:absolute;
+	right:406px;
+	top:11px;
+	width:148px;
+	height:38px;
+	background:url("../images/xifubtn.jpg"/*tpa=http://junezx.com/2.0/images/xifubtn.jpg*/);
+	cursor:pointer;
+}
+#hd #topbanner #save{
+	position:absolute;
+	right:328px;
+	top:11px;
+	width:78px;
+	height:38px;
+	background:url("../images/save.png"/*tpa=http://junezx.com/2.0/images/save.png*/);
+	cursor:pointer;
+}
+#hd #topbanner #makecode{
+	position:absolute;
+	right:116px;
+	top:10px;
+	width:106px;
+	height:38px;
+	background:url("../images/shengcheng.jpg"/*tpa=http://junezx.com/2.0/images/shengcheng.jpg*/);
+	cursor:pointer;
+}
+#hd #topbanner #importcode{
+	position:absolute;
+	right:222px;
+	top:10px;
+	width:106px;
+	height:38px;
+	background:url("../images/daoru.jpg"/*tpa=http://junezx.com/2.0/images/daoru.jpg*/);
+	cursor:pointer;
+}
+#hd #topbanner #preview{
+	position:absolute;
+	right:10px;
+	top:10px;
+	width:106px;
+	height:38px;
+	background:url("../images/yulan.jpg"/*tpa=http://junezx.com/2.0/images/yulan.jpg*/);
+	cursor:pointer;
+}
+#hd #topbanner #makecode:hover{
+	background:url("../images/shengchenghover.jpg"/*tpa=http://junezx.com/2.0/images/shengchenghover.jpg*/);
+}
+#hd #topbanner #save:hover{
+	background:url("../images/savehover.png"/*tpa=http://junezx.com/2.0/images/savehover.png*/);
+}
+#hd #topbanner #importcode:hover{
+	background:url("../images/daoruhover.jpg"/*tpa=http://junezx.com/2.0/images/daoruhover.jpg*/);
+}
+#hd #topbanner #preview:hover{
+	background:url("../images/yulanhover.jpg"/*tpa=http://junezx.com/2.0/images/yulanhover.jpg*/);
+}
+#hd #topbanner #xifuconfig:hover{
+	background:url("../images/xifubtnhover.jpg"/*tpa=http://junezx.com/2.0/images/xifubtnhover.jpg*/);
+}
+#hd #topbanner #kbhelp:hover{
+	background:url("../images/keyboardhover.png"/*tpa=http://junezx.com/2.0/images/keyboardhover.png*/);
+}
+#hd #topbanner #moretools:hover{
+	background:url("../images/morehover.jpg"/*tpa=http://junezx.com/2.0/images/morehover.jpg*/);
+}
+#morepannel ul{
+	padding:10px 10px;
+	margin:0px;
+}
+#morepannel ul li{
+	height:30px;
+	line-height:30px;
+}
+#morepannel ul li a{
+	color:#069;
+	font-size:14px;
+	font-family:微软雅黑;
+}
+#morepannel ul li a:hover{
+	text-decoration:underline;
+	color:#ff4a00;
+}
+/*页面区域*/
+#bd{
+	position:absolute;
+	width:100%;
+	top:60px;
+	left:0px;
+	background:#e0eaec;
+	z-index:999;
+}
+#sidemenu{
+	position:fixed;
+	width:70px;
+	top:60px;
+	left:0px;
+	background:#181f24;
+	z-index:1100;
+}
+#leftpannel{
+	position:fixed;
+	width:170px;
+	top:60px;
+	left:70px;
+	background:#101519;
+	z-index:1100;
+}
+#leftconsole{
+	position:fixed;
+	width:170px;
+	height:45px;
+	top:auto;
+	bottom:0px;
+	left:70px;
+	background:#000;
+	z-index:1100;
+}
+#box{
+	position:fixed;
+	top:60px;
+	left:240px;
+}
+#bd #rightpannel{
+	position:fixed;
+	top:60px;
+	left:auto;
+	right:0px;
+	width:180px;
+}
+#bd #rightpannel.rs{
+	width:30px;
+	cursor:pointer;
+	background:url("../images/rzhankai.png"/*tpa=http://junezx.com/2.0/images/rzhankai.png*/) #5a6a7a center center no-repeat;
+	opacity:0.7;
+}
+#bd #rightpannel.rs:hover{
+	opacity:1;
+}
+
+/*鼠标动作部分*/
+#sidemenu #mouseaction{
+	width:70px;
+	height:220px;
+	background:#232c32;
+	padding:15px 0px;
+	overflow:hidden;
+}
+#sidemenu #mouseaction .sidebutton{
+	width:70px;
+	height:55px;
+	cursor:pointer;
+	position:relative;
+	z-index:1;
+	-webkit-transition: .2s ease-in;
+	-moz-transition: .2s ease-in;
+	-o-transition: .2s ease-in;
+	transition: .2s ease-in;
+}
+#sidemenu #mouseaction .sidebutton:hover{
+	-ms-transform:scale(1.2,1.2); 
+	-moz-transform:scale(1.2,1.2); 
+	-webkit-transform:scale(1.2,1.2);
+	-o-transform:scale(1.2,1.2);
+	transform:scale(1.2,1.2);
+}
+#sidemenu #mouseaction .tuodong:hover{
+	-ms-transform:scale(1,1); 
+	-moz-transform:scale(1,1); 
+	-webkit-transform:scale(1,1);
+	-o-transform:scale(1,1);
+	transform:scale(1,1);
+}
+.shuhui{background:url("../images/a1.jpg"/*tpa=http://junezx.com/2.0/images/a1.jpg*/) -2px 0 no-repeat;}
+.kuangxuan{background:url("../images/a2.jpg"/*tpa=http://junezx.com/2.0/images/a2.jpg*/) -2px 0 no-repeat;}
+.tuodong{background:url("../images/a3.jpg"/*tpa=http://junezx.com/2.0/images/a3.jpg*/) -2px 0 no-repeat;z-index:2;}
+.fangda{background:url("../images/a4.jpg"/*tpa=http://junezx.com/2.0/images/a4.jpg*/) -2px 0 no-repeat;}
+.suoxiao{background:url("../images/a5.jpg"/*tpa=http://junezx.com/2.0/images/a5.jpg*/) -2px 0 no-repeat;}
+
+#mouseaction .shuhui.selected,.shuhui:hover{background:url("../images/a1hover.jpg"/*tpa=http://junezx.com/2.0/images/a1hover.jpg*/) -2px 0 no-repeat;}
+#mouseaction .kuangxuan.selected,.kuangxuan:hover{background:url("../images/a2hover.jpg"/*tpa=http://junezx.com/2.0/images/a2hover.jpg*/) -2px 0 no-repeat;}
+#mouseaction .tuodong.selected,.tuodong:hover{background:url("../images/a3select.jpg"/*tpa=http://junezx.com/2.0/images/a3select.jpg*/) -2px 0 repeat;}
+#mouseaction .fangda.selected,.fangda:hover{background:url("../images/a4hover.jpg"/*tpa=http://junezx.com/2.0/images/a4hover.jpg*/) -2px 0 no-repeat;}
+#mouseaction .suoxiao.selected,.suoxiao:hover{background:url("../images/a5hover.jpg"/*tpa=http://junezx.com/2.0/images/a5hover.jpg*/) -2px 0 no-repeat;}
+
+.huaxian{background:url("../images/pencil.jpg"/*tpa=http://junezx.com/2.0/images/pencil.jpg*/) -2px 0 no-repeat;}
+#mouseaction .huaxian.selected, .huaxian:hover{background:url("../images/pencil_hover.jpg"/*tpa=http://junezx.com/2.0/images/pencil_hover.jpg*/) -2px 0 no-repeat;}
+/*设置部分*/
+#sidemenu #configgroup{
+	width:70px;
+	height:385px;
+	overflow:hidden;
+	background:#000
+}
+#sidemenu #configgroup .sidebutton{
+	width:70px;
+	height:55px;
+	cursor:pointer;
+	-webkit-transition: .2s ease-in;
+	-moz-transition: .2s ease-in;
+	-o-transition: .2s ease-in;
+	transition: .2s ease-in;
+}
+.yingyong{background:url("../images/a6.jpg"/*tpa=http://junezx.com/2.0/images/a6.jpg*/) -1px 0;}
+.shezhi{background:url("../images/a7.jpg"/*tpa=http://junezx.com/2.0/images/a7.jpg*/) -1px 0;}
+.shuaxin{background:url("../images/a8.jpg"/*tpa=http://junezx.com/2.0/images/a8.jpg*/) -1px 0;}
+.daima{background:url("../images/a9.jpg"/*tpa=http://junezx.com/2.0/images/a9.jpg*/) -1px 0;}
+.zuhe{background:url("../images/a10.jpg"/*tpa=http://junezx.com/2.0/images/a10.jpg*/) -1px 0;}
+.shensuo{background:url("../images/zhankai.png"/*tpa=http://junezx.com/2.0/images/zhankai.png*/) -1px 0;}
+.shensuo.shouqi{background:url("../images/shouqi.png"/*tpa=http://junezx.com/2.0/images/shouqi.png*/) -1px 0;}
+.lianxiwo{background:url("../images/a11.jpg"/*tpa=http://junezx.com/2.0/images/a11.jpg*/) -1px 0;}
+
+#configgroup .yingyong.selected,.yingyong:hover{background:url("../images/a6hover.jpg"/*tpa=http://junezx.com/2.0/images/a6hover.jpg*/) -1px 0;}
+#configgroup .shezhi.selected,.shezhi:hover{background:url("../images/a7hover.jpg"/*tpa=http://junezx.com/2.0/images/a7hover.jpg*/) -1px 0;}
+#configgroup .shuaxin.selected,.shuaxin:hover{background:url("../images/a8hover.jpg"/*tpa=http://junezx.com/2.0/images/a8hover.jpg*/) -1px 0;}
+#configgroup .daima.selected,.daima:hover{background:url("../images/a9hover.jpg"/*tpa=http://junezx.com/2.0/images/a9hover.jpg*/) -1px 0;}
+#configgroup .zuhe.selected,.zuhe:hover{background:url("../images/a10hover.jpg"/*tpa=http://junezx.com/2.0/images/a10hover.jpg*/) -1px 0;}
+.shensuo:hover{background:url("../images/zhankaihover.png"/*tpa=http://junezx.com/2.0/images/zhankaihover.png*/) -1px 0;}
+.shensuo.shouqi:hover{background:url("../images/shouqihover.png"/*tpa=http://junezx.com/2.0/images/shouqihover.png*/) -1px 0;}
+#configgroup .lianxiwo.selected,.lianxiwo:hover{background:url("../images/a11hover.jpg"/*tpa=http://junezx.com/2.0/images/a11hover.jpg*/) -1px 0;}
+
+#configgroup .selected{
+	opacity: 0.7;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+
+#btngroup .appbtn-box {
+	height:40px;overflow:hidden;
+}
+#btngroup .appbtn-box .appbtn-title {
+	line-height:40px;
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	height:40px;background:#888;display:block;
+	cursor:default;
+}
+#btngroup .appbtn-x .appicon{
+	background-image:url("../images/appicon.png");
+	background-repeat:no-repeat;
+	padding:5px 12px;
+	margin-right:5px;
+}
+#btngroup .appbtn-x:hover .appicon{
+	background-image:url("../images/appiconhover.png"/*tpa=http://junezx.com/2.0/images/appiconhover.png*/);
+}
+#btngroup .t-icon-1 .appicon{background-position:2px 0px;}
+#btngroup .t-icon-2 .appicon{background-position:2px -40px;}
+#btngroup .t-icon-3 .appicon{background-position:2px -80px;}
+#btngroup .t-icon-4 .appicon{background-position:2px -120px;}
+#btngroup .t-icon-5 .appicon{background-position:2px -160px;}
+#btngroup .t-icon-6 .appicon{background-position:2px -200px;}
+#btngroup .t-icon-7 .appicon{background-position:2px -240px;}
+#btngroup .t-icon-8 .appicon{background-position:2px -280px;}
+#btngroup .t-icon-9 .appicon{background-position:2px -320px;}
+#btngroup .t-icon-10 .appicon{background-position:2px -360px;}
+#btngroup .t-icon-11 .appicon{background-position:2px -400px;}
+#btngroup .t-icon-12 .appicon{background-position:2px -440px;}
+#btngroup .t-icon-13 .appicon{background-position:2px -480px;}
+#btngroup .t-icon-14 .appicon{background-position:2px -520px;}
+#btngroup .t-icon-15 .appicon{background-position:2px -560px;}
+#btngroup .t-icon-16 .appicon{background-position:2px -600px;}
+#btngroup .t-icon-17 .appicon{background-position:2px -640px;}
+#btngroup .t-icon-18 .appicon{background-position:2px -680px;}
+#btngroup .t-icon-19 .appicon{background-position:2px -360px;}
+#btngroup .t-icon-20 .appicon{background-position:2px -720px;}
+#btngroup .t-icon-21 .appicon{background-position:2px -762px;}
+#btngroup .t-icon-22 .appicon{
+	background: url("../images/dm1.jpg"/*tpa=http://junezx.com/2.0/images/dm1.jpg*/) center center no-repeat;
+}
+#btngroup .t-icon-22:hover .appicon{
+	background: url("../images/dm2.jpg"/*tpa=http://junezx.com/2.0/images/dm2.jpg*/) center center no-repeat;
+}
+#btngroup .t-icon-23:hover .appicon{background: url("../images/sfq2.jpg"/*tpa=http://junezx.com/2.0/images/sfq2.jpg*/) 1px 2px;}
+#btngroup .t-icon-23 .appicon{background: url("../images/sfq1.jpg"/*tpa=http://junezx.com/2.0/images/sfq1.jpg*/) 1px 2px;}
+#btngroup .t-icon-24:hover .appicon{background: url("../../../img03.taobaocdn.com/imgextra/i3/39767794/TB2hOATbFXXXXXCXXXXXXXXXXXX-39767794.jpg"/*tpa=http://img03.taobaocdn.com/imgextra/i3/39767794/TB2hOATbFXXXXXCXXXXXXXXXXXX-39767794.jpg*/) 2px 0px;}
+#btngroup .t-icon-24 .appicon{background: url("../../../img01.taobaocdn.com/imgextra/i1/39767794/TB2QrZHbFXXXXaEXpXXXXXXXXXX-39767794.jpg"/*tpa=http://img01.taobaocdn.com/imgextra/i1/39767794/TB2QrZHbFXXXXaEXpXXXXXXXXXX-39767794.jpg*/) 2px 0px;}
+
+/*按钮面板部分*/
+#leftpannel .appbtn-x, #tZdyDialogPanel .appbtn-x{
+	color:#8ca1af;
+	font-size:14px;
+	line-height:40px;
+	width:150px;
+	padding-left:20px;
+	cursor:pointer;
+}
+#leftpannel .appbtn-x:hover, #tZdyDialogPanel .appbtn-x:hover{
+	background:#2c3942;
+	color:#fff;
+}
+#leftpannel .t-icon-1.appbtn-x, #tZdyDialogPanel .t-icon-1.appbtn-x{
+	margin-top:20px;
+}
+
+#leftpannel .appbtn-y, #tZdyDialogPanel .appbtn-y{
+	color:#8ca1af;
+	font-size:12px;
+	line-height:40px;
+	width:65px;
+	padding-left:20px;
+	cursor:pointer;
+	float:left;
+}
+#leftpannel .appbtn-y:hover, #tZdyDialogPanel .appbtn-y:hover{
+	background:#2c3942;
+	color:#fff;
+}
+
+#tZdyDialogPanel .appbtn-x{
+	padding-left:10px;
+	font-size:12px;
+	line-height:30px;
+	height:30px;
+	width:123px;
+}
+#tZdyDialogPanel .t-icon-1.appbtn-x{
+	margin-top:0px;
+}
+
+/*按钮面板排列按钮*/
+#leftconsole #danlie{
+	width:85px;
+	height:45px;
+	float:left;
+	background:url("../images/danlie.jpg"/*tpa=http://junezx.com/2.0/images/danlie.jpg*/) center center no-repeat;
+	cursor:pointer;
+}
+#leftconsole #shuanglie{
+	width:85px;
+	height:45px;
+	float:left;
+	background:url("../images/shuanglie.jpg"/*tpa=http://junezx.com/2.0/images/shuanglie.jpg*/) center center no-repeat;
+	cursor:pointer;
+}
+#leftconsole div:hover{
+	-webkit-transition: .2s ease-in;
+	-moz-transition: .2s ease-in;
+	-o-transition: .2s ease-in;
+	transition: .2s ease-in;
+	opacity: 0.7;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+
+/*右侧图层面板及动作面板*/
+#bd #rightpannel #dqpannel{
+	position:absolute;
+	width:180px;
+	height:190px;
+	top:0px;
+	left:0px;
+}
+#bd #rightpannel #tcpannel{
+	position:absolute;
+	width:180px;
+	left:0px;
+	top:190px;
+}
+#bd #rightpannel #acpannel{
+	position:absolute;
+	width:180px;
+	left:0px;
+}
+#bd #rightpannel #dqpannel #dqtitle{
+	width:180px;
+	height:40px;
+	background:url("../images/dqtitle.jpg"/*tpa=http://junezx.com/2.0/images/dqtitle.jpg*/);
+}
+#bd #rightpannel #tcpannel #tctitle{
+	width:180px;
+	height:40px;
+	background:url("../images/tctitle.jpg"/*tpa=http://junezx.com/2.0/images/tctitle.jpg*/);
+}
+#bd #rightpannel #acpannel #actitle{
+	width:180px;
+	height:40px;
+	background:url("../images/actitle.jpg"/*tpa=http://junezx.com/2.0/images/actitle.jpg*/);
+}
+#bd #rightpannel #dqpannel #dqbox{
+	width:180px;
+	height:150px;
+	background:#edf5f6;
+}
+
+#bd #rightpannel #dqpannel #dqbox .dqinput{
+	font-size:12px;
+	height:20px;
+	line-height:20px;
+	padding:3px 10px;
+	color:#888888;
+}
+#bd #rightpannel #dqpannel #dqbox .dqinput input{
+	width:55px;
+	height:15px;
+	line-height:15px;
+	margin-left:5px;
+	border:1px #ccc solid;
+	background:none;
+}
+#bd #rightpannel #dqpannel #dqbox .plbtn span{
+	width:60px;
+	height:24px;
+	line-height:24px;
+	background:#fff;
+	color:#788188;
+	font-size:12px;
+	text-align:center;
+	padding:7px;
+	cursor:pointer;
+	margin-left:10px;
+	border:1px #dbe2e7 solid;
+}
+#bd #rightpannel #dqpannel #dqbox .plbtn span:hover{
+	background:#eee;
+}
+#bd #rightpannel #dqpannel #dqbox .dqbtn .dqbutton{
+	float:left;
+	width:20px;
+	height:20px;
+	margin-top:10px;
+	margin-left:5px;
+	border:1px #ccc solid;
+	background-image:url("../images/bgduiqi.jpg"/*tpa=http://junezx.com/2.0/images/bgduiqi.jpg*/);
+	cursor:pointer;
+}
+#bd #rightpannel #dqpannel #dqbox .dqbtn .dqbutton:hover{
+	opacity:0.8;
+}
+
+#bd #rightpannel #dqpannel #dqbox .dqbtn .wzbutton{
+	float:left;
+	width:20px;
+	height:20px;
+	margin-top:10px;
+	margin-left:5px;
+	border:1px #ccc solid;
+	background-image:url("../../../img02.taobaocdn.com/imgextra/i2/39767794/TB2l4lybVXXXXXkXXXXXXXXXXXX-39767794.jpg"/*tpa=http://img02.taobaocdn.com/imgextra/i2/39767794/TB2l4lybVXXXXXkXXXXXXXXXXXX-39767794.jpg*/);
+	cursor:pointer;
+}
+#bd #rightpannel #dqpannel #dqbox .dqbtn .wzbutton:hover{
+	opacity:0.8;
+}
+
+#bd #rightpannel #tcpannel #tclist { 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+	width: 180px;
+	background:#edf5f6;
+}
+#bd #rightpannel #tcpannel #tclist li {
+	font-size:12px;
+	height:30px;
+	line-height:30px;
+	width: 178px;
+	background:#edf5f6;
+	border-color:#eee;
+	margin-top:-1px;
+	color:#788188;
+	font-weight:normal;
+}
+#bd #rightpannel #tcpannel #tclist li:hover{
+	background:#fff;
+	color:#545a5f;
+}
+#bd #rightpannel #tcpannel #tclist li .ui-icon{
+	float:right;
+	margin-top:6px;
+}
+#bd #rightpannel #tcpannel #tclist li .diseye{
+	float:left;
+	display:block;
+	width:24px;
+	height:30px;
+	background:url("../images/eye.jpg"/*tpa=http://junezx.com/2.0/images/eye.jpg*/);
+	margin-right:6px;
+	cursor:pointer;
+}
+#bd #rightpannel #tcpannel #tclist li .noneye{
+	float:left;
+	display:block;
+	width:24px;
+	height:30px;
+	background:url("../images/noneye.jpg"/*tpa=http://junezx.com/2.0/images/noneye.jpg*/);
+	margin-right:6px;
+	cursor:pointer;
+}
+#bd #rightpannel #tcpannel #tclist .ui-state-highlight{
+	height:30px;
+	line-height:30px;
+	background:#f9f9f9;
+}
+#bd #rightpannel #acpannel #aclist {
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+	width: 180px;
+	background:#edf5f6;
+}
+#bd #rightpannel #acpannel #aclist li {
+	font-size:12px;
+	height:30px;
+	line-height:30px;
+	width: 168px;
+	padding-left:10px;
+	background:#edf5f6;
+	border-color:#eee;
+	margin-top:-1px;
+	color:#788188;
+	overflow: hidden;
+	font-weight:normal;
+}
+#bd #rightpannel #acpannel #aclist li:hover{
+	background:#fff;
+	color:#545a5f;
+}
+#bd #rightpannel #acpannel #aclist li .ui-icon{
+	float:left;
+	margin-top:6px;
+	margin-right:4px;
+}
+#bd #rightpannel .rshousuo{
+	background:url("../images/rshousuo.png"/*tpa=http://junezx.com/2.0/images/rshousuo.png*/);
+	padding:10px;
+	float:right;
+	margin-top:10px;
+	margin-right:10px;
+	cursor:pointer;
+	opacity:0.7
+}
+#bd #rightpannel .rshousuo:hover{
+	opacity:1;
+}
+/*特效层子层*/
+#tParentThumb{
+	width:145px;
+	height:30px;
+	line-height:30px;
+	background:#f9f9f9;
+	z-index: 999;
+}
+#tThumb{
+	width:145px;
+	max-height:192px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	display:none;
+	background:url("../images/bgchild.png"/*tpa=http://junezx.com/2.0/images/bgchild.png*/);
+}
+#tThumb li{
+	width:145px;
+	height:30px;
+	line-height:30px;
+	background:#f9f9f9;
+	border-bottom:1px #eee solid;
+	cursor:ns-resize;
+}
+#tThumb li.t-thumb-selected, #tParentThumb.t-thumb-selected{
+	background:#17a05a;
+}
+#tThumb li .quick-edit-hoverimg, #tParentThumb .quick-edit-hoverimg{
+	margin-left:5px;
+}
+#tThumb li .quick-edit-hoverimg img, #tParentThumb .quick-edit-hoverimg img{
+	width:40px;
+	max-height:20px;
+	float:left;
+	margin-top:5px;
+}
+#tThumb li .t-layer-eye, #tParentThumb .t-layer-eye{
+	background: url("../images/eye.jpg"/*tpa=http://junezx.com/2.0/images/eye.jpg*/);
+	cursor:pointer;
+	float:left;
+	display:block;
+	width:24px;
+	height:30px;
+}
+#tThumb li .noneye, #tParentThumb .noneye{
+	background: url("../images/noneye.jpg"/*tpa=http://junezx.com/2.0/images/noneye.jpg*/);
+}
+#tThumb li .t-thumb-text, #tParentThumb .t-thumb-text{
+	color:#788188;
+	margin-left:5px;
+}
+#tThumb li.t-thumb-selected .t-thumb-text, #tParentThumb.t-thumb-selected .t-thumb-text{
+	color:#fff;
+}
+
+/*用户输入对话框内表单部分*/
+.setform{
+	width:480px;
+	list-style:none;
+	padding:0px;
+}
+.setform li{
+	width:487px;
+	height:50px;
+	line-height:50px;
+	position:relative;
+}
+.setform li label{
+	font-size:14px;
+	display: inline-block;
+	width:160px;
+	height:40px;
+	line-height:40px;
+	vertical-align: middle;
+	text-align:right;
+	color:#788188;
+	float:left;
+}
+.setform li .setinput{
+	width:200px;
+	height:24px;
+	line-height: 24px;
+	border:1px #c2ced6 solid;
+	border-radius: 3px;
+	padding: 7px 10px;
+	border-radius: 3px;
+	float:left;
+}
+.setform li .setinput.uploadinput{
+	width: 160px;
+	padding-right: 50px;
+}
+.setform li select{
+	width:222px;
+}
+.setform li .disabled, #jQuickSet .disabled {
+	background-color:#e1e1e1;
+	cursor:not-allowed;
+	-moz-user-select:none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	hutia:expression(this.onselectstart=function(){return(false)});
+}
+.setform li .lianxi{
+	display:block;
+	float:left;
+	width:90px;
+	height:26px;
+	background:url("../images/lianxi2.png"/*tpa=http://junezx.com/2.0/images/lianxi2.png*/);
+	margin-top:5px;
+	margin-left:5px;
+}
+.setform li .lianxi:hover{
+	background:url("../images/lianxi.png"/*tpa=http://junezx.com/2.0/images/lianxi.png*/);
+}
+.setform li input.chkBox{
+	margin-right:0px;
+}
+.setform li label.chkLabel{
+	font-size:12px;
+	width:50px;
+	float:none;
+	line-height:34px;
+}
+.setform li .tItemDialog{
+	height: 36px;
+	line-height: 30px;
+	background: #f9f9f9;
+	border: 1px #dbe2e7 solid;
+	border-color: #dbe2e7;
+	border-bottom-color: #d5dde3;
+	-webkit-box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	color:#788188;
+	cursor:pointer;
+	padding: 0 10px;
+}
+.setform li .tItemDialog:hover{
+	background: #efefef;
+}
+
+/*鼠标右键部分*/
+div.t-contextmenu{
+	background:#fff;
+	border:1px #aaa solid;
+	-webkit-box-shadow: 0 1px 15px rgba(0,0,0,.3);
+	box-shadow: 0 1px 15px rgba(0,0,0,.3);
+	padding:15px 10px;
+}
+ul.t-app-menu li, ul.t-layer-menu li{
+	background:#fff;
+	border:none;
+	color:#788188;
+}
+ul.t-app-menu li:hover, ul.t-layer-menu li:hover{
+	background:#4cb6cb;
+	color:#fff;
+}
+ul.t-app-menu li, ul.t-layer-menu li{
+	padding:5px 5px 5px 35px;
+}
+ul.t-app-menu li.t-context-up{
+	background:url("../images/t-up.jpg"/*tpa=http://junezx.com/2.0/images/t-up.jpg*/) left center no-repeat;
+}
+ul.t-app-menu li.t-context-down{
+	background:url("../images/t-down.jpg"/*tpa=http://junezx.com/2.0/images/t-down.jpg*/) left center no-repeat;
+}
+ul.t-app-menu li.t-context-disdrag{
+	background:url("../images/t-disdrag.jpg"/*tpa=http://junezx.com/2.0/images/t-disdrag.jpg*/) left center no-repeat;
+}
+ul.t-app-menu li.t-context-drag{
+	background:url("../images/t-drag.jpg"/*tpa=http://junezx.com/2.0/images/t-drag.jpg*/) left center no-repeat;
+}
+ul.t-app-menu li.t-context-edit{
+	background:url("../images/t-edit.jpg"/*tpa=http://junezx.com/2.0/images/t-edit.jpg*/) left center no-repeat;
+}
+ul.t-app-menu li.t-context-del{
+	background:url("../images/t-del.jpg"/*tpa=http://junezx.com/2.0/images/t-del.jpg*/) left center no-repeat;
+}
+ul.t-app-menu li.t-context-copy{
+	background:url("../images/t-copy.jpg"/*tpa=http://junezx.com/2.0/images/t-copy.jpg*/) left center no-repeat;
+}
+ul.t-app-menu li.t-context-add-child{
+	background:url("../images/newchild.jpg"/*tpa=http://junezx.com/2.0/images/newchild.jpg*/) left center no-repeat;
+}
+ul.t-app-menu li.t-context-up:hover{
+	background:url("../images/t-up-hover.jpg"/*tpa=http://junezx.com/2.0/images/t-up-hover.jpg*/) left center no-repeat #4cb6cb;
+}
+ul.t-app-menu li.t-context-down:hover{
+	background:url("../images/t-down-hover.jpg"/*tpa=http://junezx.com/2.0/images/t-down-hover.jpg*/) left center no-repeat #4cb6cb;
+}
+ul.t-app-menu li.t-context-disdrag:hover{
+	background:url("../images/t-disdrag-hover.jpg"/*tpa=http://junezx.com/2.0/images/t-disdrag-hover.jpg*/) left center no-repeat #4cb6cb;
+}
+ul.t-app-menu li.t-context-drag:hover{
+	background:url("../images/t-drag-hover.jpg"/*tpa=http://junezx.com/2.0/images/t-drag-hover.jpg*/) left center no-repeat #4cb6cb;
+}
+ul.t-app-menu li.t-context-edit:hover{
+	background:url("../images/t-edit-hover.jpg"/*tpa=http://junezx.com/2.0/images/t-edit-hover.jpg*/) left center no-repeat #4cb6cb;
+}
+ul.t-app-menu li.t-context-del:hover{
+	background:url("../images/t-del-hover.jpg"/*tpa=http://junezx.com/2.0/images/t-del-hover.jpg*/) left center no-repeat #4cb6cb;
+}
+ul.t-app-menu li.t-context-copy:hover{
+	background:url("../images/t-copy-hover.jpg"/*tpa=http://junezx.com/2.0/images/t-copy-hover.jpg*/) left center no-repeat #4cb6cb;
+}
+ul.t-app-menu li.t-context-add-child:hover{
+	background:url("../images/newchild-hover.jpg"/*tpa=http://junezx.com/2.0/images/newchild-hover.jpg*/) left center no-repeat #4cb6cb;
+}
+/*鼠标经过应用上方按钮组*/
+.t-control-btns{
+	display:block;
+	float:left;
+	height:20px;
+	z-index:1002;
+}
+.t-control-btns span{
+	display:block;
+	float:left;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	background-image:url("../images/btns.png"/*tpa=http://junezx.com/2.0/images/btns.png*/);
+	border:1px #ff272c solid;
+	margin-left:1px;
+	opacity: 0.7;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+	margin-top:-3px;
+}
+.t-control-btns span:hover{
+	background-image:url("../images/btns.png"/*tpa=http://junezx.com/2.0/images/btns.png*/);
+	border-color:#ff272c;
+	opacity: 1;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+}
+.t-control-btns span.t-control-btns-appaddchild{
+	background-position:-100px 0;
+	margin-left:0px;
+	margin-right:1px;
+	border-color:#36b0c8;
+}
+.t-control-btns span.t-control-btns-appaddchildA{
+	background-position:-100px 0;
+	margin-left:0px;
+	margin-right:1px;
+	border-color:#36b0c8;
+}
+.t-control-btns span.t-control-btns-appset{
+	background-position:0 0;
+	margin-left:0px;
+}
+.t-control-btns span.t-control-btns-lock{
+	background-position:-20px 0;
+}
+.t-control-btns span.t-control-btns-unlock{
+	background-position:-40px 0;
+}
+.t-control-btns span.t-control-btns-copy{
+	background-position:-60px 0;
+}
+.t-control-btns span.t-control-btns-close{
+	background-position:-80px 0;
+}
+
+.t-control-btns span.t-control-btns-help{
+	background-image:url("../../../img03.taobaocdn.com/imgextra/i3/39767794/TB2fK8UbVXXXXcYXXXXXXXXXXXX-39767794.gif"/*tpa=http://img03.taobaocdn.com/imgextra/i3/39767794/TB2fK8UbVXXXXcYXXXXXXXXXXXX-39767794.gif*/);
+	cursor: help;
+	border: 1px #232323 solid;
+}
+.t-control-btns span.t-control-btns-icon{
+	background-position:-120px 0;
+}
+
+/*左侧模块设置部分*/
+#moduleset label{
+	color:#c6c6c6;
+	font-size:14px;
+	height:40px;
+	line-height:40px;
+}
+#moduleset{
+	padding:10px 10px;
+}
+#moduleset .setinput{
+	margin-top:10px;
+	clear:both;
+}
+#moduleset .setinput input.textinput{
+	width:143px;
+	height:27px;
+	line-height:27px;
+	padding-left:5px;
+	font-size:12px;
+	border:1px #464646 solid;
+	background:#292e33;
+	color:#c6c6c6;
+}
+#moduleset .setinput select{
+	width:151px;
+	height:36px;
+	padding-left:5px;
+	font-size:12px;
+	border:1px #464646 solid;
+	background:#292e33;
+	color:#c6c6c6;
+}
+#moduleset .setinput .chkLabel{
+	float:left;
+	cursor:pointer;
+}
+.t-zdy-dialog-panel-a{
+	background:#000;
+	color:#fff;
+}
+#tZdyModulesetPanel .setinput {
+	height:28px;
+	margin-left:8px;
+	display:inline-block;
+}
+#tZdyModulesetPanel .setinput *{
+	float:left;
+	margin-top:5px;
+}
+#tZdyModulesetPanel #boxRepeat,#tZdyModulesetPanel #boxFixed{
+	margin-top:8px;
+}
+#tZdyModulesetPanel .setinput input{
+	margin-top:2px;
+	width:80px;
+}
+#tZdyModulesetPanel .setinput #moduleWidth,
+#tZdyModulesetPanel .setinput #moduleHeight{
+	width:40px;
+}
+.t-zdy-dialog{
+	outline:none;
+}
+
+
+#boxRepeat,#boxFixed{
+	float:left;
+	margin-top:13px;
+	cursor:pointer;
+}
+/*保存列表*/
+#logout{
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:20px;
+	background:url("../images/logout.png"/*tpa=http://junezx.com/2.0/images/logout.png*/) 0 1px no-repeat;
+	margin-left:10px;
+	color:#788188;
+	cursor:pointer;
+}
+#tSaveListBtn{
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:20px;
+	background:url("../images/open.png"/*tpa=http://junezx.com/2.0/images/open.png*/) 0 2px no-repeat;
+	margin-left:10px;
+	color:#1ab667;
+	cursor:pointer;
+}
+#tSaveList ul{
+	height: 302px;
+	list-style:none;
+	padding:0px;
+}
+#tSaveList ul li{
+	height:40px;
+	line-height:40px;
+	clear:both;
+	border-bottom:1px #eee solid;
+}
+#tSaveList ul li span{
+	font-size:14px;
+	color:#333;
+	display:block;
+	float:left;
+}
+#tSaveList ul li:first-child span.t-save-text,
+#tSaveList ul li:first-child span.t-save-time{
+	color:#960;
+}
+#tSaveList ul li span.t-save-text{
+	width:200px;
+	text-indent:15px;
+	overflow:hidden;
+	white-space: nowrap;
+}
+#tSaveList ul li span.t-save-time{
+	width:150px;
+	color:#888888;
+}
+#tSaveList ul li span.t-save-use{
+	margin-left:40px;
+	color:#2e83ff;
+}
+#tSaveList ul li span.t-save-use i{
+	background-image: url("../images/ui-icons_2e83ff_256x240.png"/*tpa=http://junezx.com/2.0/images/ui-icons_2e83ff_256x240.png*/);
+	background-position: -32px -64px;
+	display:block;
+	float:left;
+	width:16px;
+	height:16px;
+	margin-top:13px;
+}
+#tSaveList ul li span.t-save-delete{
+	margin-left:20px;
+	color:#cd0a0a;
+}
+#tSaveList ul li span.t-save-delete i{
+	background-image: url("../images/ui-icons_cd0a0a_256x240.png"/*tpa=http://junezx.com/2.0/images/ui-icons_cd0a0a_256x240.png*/);
+	background-position: -80px -128px;
+	display:block;
+	float:left;
+	width:16px;
+	height:16px;
+	margin-top:13px;
+}
+#tSaveList ul li span.t-save-use,#tSaveList ul li span.t-save-delete{
+	cursor:pointer;
+}
+#tSaveList ul li span.t-save-use:hover,#tSaveList ul li span.t-save-delete:hover{
+	color:#888;
+}
+#tSaveList ul li span.t-save-use:hover i,#tSaveList ul li span.t-save-delete:hover i{
+	background-image: url("../images/ui-icons_888888_256x240.png"/*tpa=http://junezx.com/2.0/images/ui-icons_888888_256x240.png*/);
+}
+#autoSaveCountdown{
+	margin-left:10px;
+}
+#autoSaveCountdown i{
+	font-style:normal;
+	color:#ff3333;
+	font-size:14px;
+	margin:0 2px;
+}
+#tSaveUsedSwitchBtn{
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:20px;
+	background:url("../images/gouhover.jpg"/*tpa=http://junezx.com/2.0/images/gouhover.jpg*/) 0 3px no-repeat;
+	margin-left:10px;
+	color:#8e8e8e;
+	cursor:pointer;
+}
+#bd #box #junebox #june div.junehtml{
+	cursor:crosshair;
+	top:0;
+	left:0;
+}
+
+/*有趣的效果组合*/
+
+#tZuhe .zuhebox{
+	width:auto;
+	height:322px;
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+#tZuhe .zuhebox .zuhelist{
+	width:155px;
+	height:135px;
+	border:3px #eee solid;
+	float:left;
+	margin-left:10px;
+	margin-top:10px;
+	position:relative;
+	overflow:hidden;
+	background-color:#fff;
+}
+#tZuhe .zuhebox .zuhelist:hover{
+	border:3px #428bca solid;
+	background-color:#eee;
+}
+#tZuhe .zuhebox .zuhelist img{
+	width:155px;
+	max-height:87px;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+#tZuhe .zuhebox .zuhelist .zuhemc{
+	position:absolute;
+	width:155px;
+	height:87px;
+	background:url("../../../img04.taobaocdn.com/imgextra/i4/39767794/T29EtMX2FXXXXXXXXX-39767794.png"/*tpa=http://img04.taobaocdn.com/imgextra/i4/39767794/T29EtMX2FXXXXXXXXX-39767794.png*/); 
+	-webkit-transition: .5s ease-in;
+	-moz-transition: .5s ease-in;
+	-o-transition: .5s ease-in;
+	transition: .5s ease-in;
+	opacity:0;
+}
+#tZuhe .zuhebox .zuhelist:hover .zuhemc{
+	opacity:0.3;
+}
+#tZuhe .zuhebox .zuhelist .zuhetitle{
+	position:absolute;
+	width:155px;
+	height:24px;
+	line-height:24px;
+	overflow:hidden;
+	bottom:24px;
+	left:0px;
+	text-align:center;
+	color:#788188;
+}
+#tZuhe .zuhebox .zuhelist span.zuheuse{
+	color:#2e83ff;
+	position:absolute;
+	display:block;
+	width:60px;
+	height:24px;
+	line-height:24px;
+	bottom:0px;
+	left:25px;
+	cursor:pointer;
+}
+#tZuhe .zuhebox .zuhelist span.zuheuse i{
+	background-image: url("../images/ui-icons_2e83ff_256x240.png"/*tpa=http://junezx.com/2.0/images/ui-icons_2e83ff_256x240.png*/);
+	background-position: -32px -64px;
+	display:block;
+	float:left;
+	width:16px;
+	height:16px;
+	margin-top:3px;
+}
+#tZuhe .zuhebox .zuhelist span.zuhepreview{
+	color:#2e83ff;
+	position:absolute;
+	display:block;
+	width:60px;
+	height:24px;
+	line-height:24px;
+	bottom:0px;
+	right:25px;
+	cursor:pointer;
+}
+#tZuhe .zuhebox .zuhelist span.zuhepreview a{
+	color:#2e83ff;
+}
+#tZuhe .zuhebox .zuhelist span.zuhepreview i{
+	background-image: url("../images/ui-icons_2e83ff_256x240.png"/*tpa=http://junezx.com/2.0/images/ui-icons_2e83ff_256x240.png*/);
+	background-position: -160px -112px;
+	display:block;
+	float:left;
+	width:16px;
+	height:16px;
+	margin-top:3px;
+}
+#tZuhe .zuhebox .zuhelist span.zuheuse:hover,#tZuhe .zuhebox .zuhelist span.zuhepreview:hover,#tZuhe .zuhebox .zuhelist span.zuhepreview:hover a{
+	color:#cd0a0a;
+}
+#tZuhe .zuhebox .zuhelist span.zuheuse:hover i,#tZuhe .zuhebox .zuhelist span.zuhepreview:hover i{
+	background-image: url("../images/ui-icons_cd0a0a_256x240.png"/*tpa=http://junezx.com/2.0/images/ui-icons_cd0a0a_256x240.png*/);
+}
+#tZuhePage span.dian, #tSavePage span.dian{
+	display:block;
+	float:left;
+	width:32px;
+	height:32px;
+	line-height:32px;
+	text-align:center;
+}
+#tZuhePage a, #tSavePage a{
+	display:block;
+	width:32px;
+	height:32px;
+	line-height:32px;
+	text-align:center;
+	float:left;
+	text-decoration:none;
+	border:1px solid #eaeef1;
+	margin-left:-1px;
+	color:#428bca;
+	outline:none;
+}
+#tZuhePage a:hover, #tSavePage a:hover{
+	border-color: #eaeef1;
+	background-color: #e8eff0;
+}
+#tZuhePage a.prev, #tSavePage a.prev{
+	background:url("../images/prev.jpg"/*tpa=http://junezx.com/2.0/images/prev.jpg*/) center center no-repeat;
+}
+#tZuhePage a.next, #tSavePage a.next{
+	background:url("../images/next.jpg"/*tpa=http://junezx.com/2.0/images/next.jpg*/) center center no-repeat;
+}
+#tZuhePage a.on, #tSavePage a.on{
+	background:#428bca;
+	color:#fff;
+	border:1px solid #428bca;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*for  bbchoose*/
+.tb-dialog-header {
+background-color: #2D2D2D;
+color: #fff;
+font-size: 12px;
+height: 40px;
+line-height: 40px;
+padding-left: 12px;
+z-index: 10000388;
+cursor: move;
+}
+.tb-dialog-body {
+position: relative;
+z-index: 10000388;
+display: block;
+border: none;
+border-top-width: 0;
+background-color: #fff;
+zoom: 1;
+}
+.manual-rec-content {
+width: 519px;
+height: 500px;
+}
+.manual-rec-content .hidden {
+display: none;
+}
+.opt-footer {
+margin-top: 30px;
+margin-left: 110px;
+}
+.manual-rec-content .items{
+clear:both;
+}
+.manual-rec-content .items-count {
+margin: 0px;
+padding: 0px 10px 10px 10px;
+height:24px;
+}
+.manual-rec-content .items-count .selected {
+background-color: #2D2D2D;
+color: #fff;
+}
+
+.manual-rec-content .items-count a {
+margin: 0 10px 0 0;
+cursor: pointer;
+display: block;
+float: left;
+height: 24px;
+line-height: 24px;
+padding: 1px 9px;
+border-radius: 2px;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+text-decoration: none;
+}
+
+.manual-rec-content .item-srch {
+background-color: #e8e8e8;
+margin: 0 10px;
+padding: 10px 0 10px 10px;
+height: 24px;
+}
+.manual-rec-content .srch-cond {
+float: left;
+}
+.manual-rec-content .srch-conds .keyword {
+position: relative;
+margin-left: 7px;
+}
+.manual-rec-content .srch-cond .keyword-label {
+color: #a9a9a9;
+position: absolute;
+top: 3px;
+left: 5px;
+}
+.manual-rec-content .srch-conds .price {
+width: 122px;
+}
+.manual-rec-content .srch-conds .price .control {
+float: left;
+}
+.manual-rec-content .srch-cond .control {
+margin-left: 0;
+}
+.manual-rec-content .srch-conds .price .control-label {
+width: 25px;
+height: 25px;
+line-height: 25px;
+vertical-align: middle;
+margin: 0 3px 0 7px;
+color: #A9A9A9;
+float: left;
+}
+.manual-rec-content .srch-cond select.input-box {
+width: 178px;
+}
+.manual-rec-content .srch-cond input.input-box {
+width: 130px;
+}
+.manual-rec-content .srch-conds .price input {
+width: 35px;
+}
+.manual-rec-content .srch-conds input.input-box, .manual-rec-content .srch-conds select.input-box {
+border-color: #C0C0C0 #D9D9D9 #D9D9D9;
+border-style: solid;
+border-width: 1px;
+height: 23px;
+}
+.manual-rec-content .item-srch .srch-btn, .manual-rec-content .edit-pagination .pg-prev, .manual-rec-content .edit-pagination .pg-next, .manual-rec-content .msg-icon {
+background: url("../../../gdp.alicdn.com/tps/i2/T1Knu8XmNgXXXXXXXX-93-83.png"/*tpa=http://gdp.alicdn.com/tps/i2/T1Knu8XmNgXXXXXXXX-93-83.png*/) no-repeat scroll 0 0;
+}
+
+.manual-rec-content .srch-action {
+float: left;
+height: 25px;
+line-height: 21px;
+}
+.manual-rec-content .srch-btn {
+display: inline-block;
+width: 21px;
+height: 20px;
+margin-left: 8px;
+cursor: pointer;
+vertical-align: middle;
+}
+.manual-rec-content .items {
+padding: 0 20px;
+}
+.manual-rec-content .item-wrap {
+border-bottom: 1px solid #e9e6e6;
+padding: 6px 0 6px 15px;
+height: 50px;
+overflow: hidden;
+margin-top: 5px;
+}
+.manual-rec-content .item-wrap.item-selected {
+background: #f5f5f5;
+}
+.manual-rec-content .item .pic, .manual-rec-content .item .detail-info {
+float: left;
+}
+
+.manual-rec-content .item .detail-info .title a{
+color:#069;
+}
+.manual-rec-content .item .detail-info .title a:hover{
+color:#f33;
+}
+.manual-rec-content .item .detail-info .price{
+line-height: 30px;
+}
+.manual-rec-content .item .pic {
+width: 50px;
+height: 50px;
+margin-right: 15px;
+}
+.manual-rec-content .item .pic img {
+width: 50px;
+height: 50px;
+}
+.manual-rec-content .item .detail-info, .manual-rec-content .item .title a {
+color: #6e6e6e;
+}
+.manual-rec-content .item .detail-info {
+width: 310px;
+white-space: nowrap;
+overflow: hidden;
+}
+.manual-rec-content .item .opts {
+float: right;
+margin-right: 5px;
+margin-top: 12px;
+width: 60px;
+text-align: center;
+background: #555;
+color: #fff;
+padding: 2px 0;
+border-radius: 4px;
+}
+.manual-rec-content .item .opts a{
+color:#eee;
+}
+
+.manual-rec-content .item .opts:hover{
+background:#222
+}
+.manual-rec-content .item .opts:hover a{
+color:#fff;
+}
+
+
+.manual-rec-content .edit-pagination {
+float: right;
+margin-top: 10px;
+margin-right: 20px;
+}
+
+.manual-rec-content .edit-pagination .pg-prev-disabled {
+background-position: 0 -30px;
+}
+.manual-rec-content .edit-pagination .pg-prev {
+background-position: -25px -30px;
+float: left;
+margin-right: 5px;
+}
+.manual-rec-content .edit-pagination .pg-next {
+background-position: -75px -30px;
+float: right;
+}
+.manual-rec-content .edit-pagination .pg-prev, .manual-rec-content .edit-pagination .pg-next {
+display: inline-block;
+height: 25px;
+width: 18px;
+}
+.manual-rec-content .edit-pagination .pg-item {
+display: inline-block;
+width: 23px;
+height: 23px;
+line-height: 23px;
+float: left;
+text-align: center;
+border: 1px solid #ccc;
+margin-right: 5px;
+}
+.manual-rec-content .edit-pagination .pg-current {
+color: #f40;
+}
+#tb_choosePage, #tb_choosePage1{
+height:40px;
+line-height:40px;
+margin:15px auto;
+}
+#tb_choosePage a, #tb_choosePage1 a{
+padding:5px 10px;
+background:#f2f2f2;
+border:1px #ddd solid;
+margin-left:4px;
+color:#788188;
+}
+#tb_choosePage a.on, #tb_choosePage1 a.on{
+font-weight:bold;
+}
+#tb_choosePage a:hover, #tb_choosePage1 a:hover{
+background:#eee;
+border:1px #ddd solid;
+color:#333;
+}
+#tb_choosePage a.unclick, #tb_choosePage1 a.unclick{
+color:#ccc;
+}
+#tb_choosePage a.unclick:hover, #tb_choosePage1 a.unclick:hover{
+background:#f2f2f2;
+}
+
+#tItemPageTab{
+height: 33px;
+line-height: 33px;
+margin: 5px 0 20px 0;
+border-bottom: 1px solid #f2f4f8;
+}
+
+.tItem-page {
+height: 33px;
+line-height: 33px;
+background: #eee;
+width: 90px;
+text-align: center;
+display: inline-block;
+border: 1px #eee solid;
+border-bottom: none;
+font-weight: bold;
+color: #555;
+font-size: 14px;
+margin-left: 5px;
+cursor:pointer;
+}
+.tItem-page:hover{
+background: #4cb6cb;
+color:#fff;
+border-color:#4cb6cb;
+}
+.tItem-page.selected{
+height: 33px;
+line-height: 33px;
+background: #fff;
+width: 90px;
+text-align: center;
+display: inline-block;
+border: 1px #f2f4f8 solid;
+border-bottom: none;
+font-weight: bold;
+color: #333;
+font-size: 14px;
+}
+
+.tPicUploadBtn {
+	position: absolute;
+	right: 100px;
+	float: right;
+	margin-top: 4px;
+	height: 30px;
+	line-height: 30px;
+	width:40px;
+	text-align:center;
+	display:inline-block;
+	background: #f9f9f9;
+	border: 1px #dbe2e7 solid;
+	border-color: #dbe2e7;
+	border-bottom-color: #d5dde3;
+	-webkit-box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	color: #788188;
+	cursor: pointer;
+}
+.tPicUploadBtn.tPicRgiht107{
+	right:107px;
+}
+.tPicUploadBtn.tPicRgiht190{
+	right:190px;
+}
+.tPicUploadBtn.tPicRgiht90{
+	right:90px;
+	top:0;
+}
+.upload-img-btn{
+	position: relative;
+	overflow: hidden;
+	margin-right: 4px;
+	display:inline-block;
+	*display:inline;
+	padding:5px 10px 5px;
+	font-size:12px;
+	line-height:18px;
+	*line-height:20px;
+	color:#fff;
+	text-align:center;
+	vertical-align:middle;
+	cursor:pointer;
+	float: right;
+	margin-right: 24px;
+	margin-bottom: 5px;
+	background: #f9f9f9;
+	border: 1px #dbe2e7 solid;
+	border-color: #dbe2e7;
+	border-bottom-color: #d5dde3;
+	-webkit-box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	color: #788188;
+	font-weight: bold;
+}
+.upload-img-btn:hover{
+	background: #efefef;
+}
+.upload-img-btn input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	border: solid transparent;
+	opacity: 0;
+	filter:alpha(opacity=0);
+	cursor: pointer;
+}
+#picZoneBox, #picItemBox{
+width:780px;
+height:380px;
+}
+#picCateBox, #picCateBox1{
+width: 190px;
+height: 380px;
+overflow-y: scroll;
+float:left;
+}
+#picBox, #picBox1{
+width: 550px;
+height: 339px;
+background: #f5f5f5;
+float: left;
+margin-left: 10px;
+border:1px #f2f4f8 solid;
+overflow:auto;
+padding-bottom:5px;
+}
+#picBox .picElement, #picBox1 .picElement {
+float: left;
+width: 100px;
+height: 120px;
+margin-left: 5px;
+margin-top: 5px;
+background: #fff;
+outline: 1px #ddd solid;
+text-align: center;
+padding-top: 10px;
+cursor:pointer;
+overflow:hidden;
+}
+#picBox .picElement:hover, #picBox1 .picElement:hover{
+outline: 1px #999 solid;
+}
+#picBox .picElement.selected, #picBox1 .picElement.selected{
+outline: 1px #28b2c3 solid;
+}
+#picBox .picElement .img-name, #picBox1 .picElement .img-name{
+line-height:36px;
+color:#788188;
+overflow:hidden;
+}
+#picBox .picElement .img-container, #picBox1 .picElement .img-container{
+height: 80px;
+}
+#picBoxPage, #picBoxPage1{
+clear: both;
+float: right;
+margin-right: 35px;
+height: 40px;
+line-height: 40px;
+margin-top: 10px;
+}
+#picBoxPage a, #picBoxPage1 a{
+padding:5px 10px;
+background:#f2f2f2;
+border:1px #ddd solid;
+margin-left:4px;
+color:#788188;
+}
+#picBoxPage a.on, #picBoxPage1 a.on{
+font-weight:bold;
+}
+#picBoxPage a:hover, #picBoxPage1 a:hover{
+background:#eee;
+border:1px #ddd solid;
+color:#333;
+}
+#picBoxPage a.unclick, #picBoxPage1 a.unclick{
+color:#ccc;
+}
+#picBoxPage a.unclick:hover, #picBoxPage1 a.unclick:hover{
+background:#f2f2f2;
+}
+#unBindShopDiv{
+	position: absolute;
+	z-index: 2000;
+	background: #fff;
+	width: 240px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px #ddd solid;
+	left: 240px;
+	top: 60px;
+	border-top: none;
+	text-indent: 5px;
+	overflow: hidden;
+	padding-bottom: 5px;
+}
+#unBindShopDiv .unBindSpan1{
+	padding: 0 5px;
+	color: #069;
+	display: inline-block;
+	width: 120px;
+	height: 40px;
+	overflow: hidden;
+}
+#unBindShopDiv .unBindSpan2{
+	display: inline-block;
+	height: 40px;
+	overflow: hidden;
+	color: #0dca6a;
+}
+#unBindShopDiv .unBindSpan3{
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	color: #788188;
+	padding: 2px 8px;
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	text-align: center;
+	border: 1px #ddd solid;
+	background: #f2f2f2;
+	text-indent: 0px;
+}
+.tBtn{
+	height: 20px;
+	line-height: 18px;
+	background: #f9f9f9;
+	border: 1px #dbe2e7 solid;
+	border-color: #dbe2e7;
+	border-bottom-color: #d5dde3;
+	-webkit-box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	color:#788188;
+	cursor:pointer;
+	vertical-align:top;
+}

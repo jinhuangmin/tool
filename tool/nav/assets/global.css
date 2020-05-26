@@ -1,0 +1,81 @@
+body{height:100%;background:#eee;}
+
+
+.psrel{position:relative;}
+.psabs{position:absolute;}
+.left{float:left;}
+.right{float:right;}
+
+
+#container{margin:5px auto 0px 5px;width:990px;height:100%;overflow:hidden;text-align:left;background:#fff;position:relative;}
+
+
+.tools-nav{position:fixed;left:995px;top:0px;width:265px;line-height:0px;font-size:0px;height:0px;background:#000;z-index:120;overflow:hidden;padding-bottom:30px;}
+.tools-nav .nav-open{width:265px;height:30px;cursor:pointer;position:absolute;display:block;overflow:hidden;right:0px;bottom:0px;z-index:30;background:url("http://www.guanmeikj.com/gongju/daohang/images/panel/nav_arw.gif") no-repeat 0px 0px;}
+.tools-nav .nav-close{background-position:0px -30px;}
+.tools-nav .nav-open:hover{opacity:0.5}
+.tools-nav .title{display:none;}
+.tools-nav .navs{width:265px;height:0px;overflow:hidden;}
+.tools-nav .navs li{width:265px;height:30px;border-bottom:1px solid #333;float:left;}
+.tools-nav .navs li a{width:245px;display:block;background:#000;line-height:30px;font-size:12px;color:#fff;padding:0px 10px;text-decoration:none;}
+.tools-nav .navs li a:hover{background:#333;}
+
+
+
+
+.toolex{ width:990px; height:42px; position:absolute; top:430px; left:5px; background:url("http://www.guanmeikj.com/gongju/daohang/images/sm2.gif"); z-index:100; }
+
+
+
+.logo{height:66px;width:125px;display:block;overflow:hidden;background:url("http://www.guanmeikj.com/gongju/daohang/images/logo.png") no-repeat;margin-left:10px; display:none;}
+
+
+.panel{width:265px;position: absolute;top:81px;left:1005px;z-index:100;}
+.panel .panel-box{padding:0px 10px 10px 10px;background:#fff; border:1px solid #cecece;}
+.panel .fomritem{text-align:right;}
+.panel .apicode{width:243px;overflow:hidden;background:#ccc;margin-bottom:1px;margin-bottom:5px;}
+.panel .fitem{float:left;width:245px;margin:0px;}
+.panel .fitem dt{font-size:12px;font-weight:normal;color:#333;line-height:20px;}
+.panel .fitem dd{height:30px;padding:0px;margin:0px;position:relative;}
+.panel .fitem-small{width:115px;}
+.panel .fitem-small .ui-ipttext{width:55px;}
+
+
+.usealert{width:235px;padding:10px 15px 10px 15px;background:#FFFFCC;}
+.usealert a{color:#0000ff;}
+.usealert a:hover{color:#ff0000;}
+
+
+
+
+
+.panel .wwinfo{margin-bottom:5px;}
+.cur-ww{}
+.cur-ww:before{content:'';position:absolute;bottom:-11px;left:2px;display:inline-block;height:0px;border-bottom:5px solid #ff0000;border-left:5px solid transparent;border-right:5px solid transparent;}
+
+
+.countdown{cursor:pointer;}
+.countdown span{float:left;}
+.ui-combtn-selected{background:#ff0000;}
+.countdownbox .apicode{height:40px;}
+.countdownbox .apicode .ui-txtarea{height:40px;overflow:hidden;width:243px;}
+.countdownbox .fomritem{height:30px;margin-bottom:8px;}
+.countdownbox .addcditem .ui-combtn,.countdownbox .fontsets .ui-combtn{float:left;margin-right:2px;}
+
+
+.sysnav #content{padding:10px 0px 0px 5px;}
+.sysnav #hd{width:990px;}
+.sysnav .apicode{height:327px;}
+.sysnav .apicode .ui-txtarea{height:327px;overflow:auto;width:243px; border:1px solid #cecece;}
+.sysnav .panel .fitem{margin:0px 15px 10px 0px;}
+
+.sysnavtab{position:absolute;left:5px;width:990px;top:450px;}
+.sysnavtab .tab_nav{height:27px;}
+.sysnavtab .tab_nav li{float:left;padding:0px 10px;line-height:26px;background:#f4f4f4;color:#333;margin-right:3px;cursor:pointer; border:1px solid #cecece;}
+.sysnavtab .tab_nav li.selected{background:#69b1a7;color:#fff;}
+.sysnavtab .tab_content{background:#fff;padding:10px; border:1px solid #cecece;}
+
+
+.preview .item{position:absolute;}
+.preview a.default{display:block;}
+.preview .popup{visibility:hidden;}

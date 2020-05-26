@@ -1,0 +1,183 @@
+.hide{
+	display:none;
+}
+.show{
+	display:block;
+}
+.clear{
+	clear:both;
+}
+* {
+	-moz-user-select:none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	hutia:expression(this.onselectstart=function(){return(false)});
+}
+a img {border: none;}
+body, button, input, select, textarea{
+	font: 12px/1.5 微软雅黑,tahoma,arial;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+	margin: 0;
+	padding: 0;
+}
+html input{
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none, 
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	font-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	-webkit-text-size-adjust: 100%;
+	
+	-moz-user-select:text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	user-select: text;
+	hutia:expression(this.onselectstart=function(){return(true)});
+}
+html textarea, .errorcode {
+	-moz-user-select:text;
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	user-select: text;
+	hutia:expression(this.onselectstart=function(){return(true)});
+}
+
+ul {
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+
+#tLoadingOverlay {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	background: #000;
+	opacity: 0.5;
+}
+.j-tazb {overflow:hidden;}
+#juneDragHelper .t-app, #juneDragHelper .t-app-child {
+    position: absolute;
+    z-index: 99;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+img {
+    display: inline-block;
+    vertical-align: top;
+}
+.junehtml .j-tazb {display:none;}
+.jcbText {
+	font-size: inherit;
+	font-family:inherit;
+	font-weight:inherit;
+	font-style:inherit;
+	text-align:inherit;
+	text-indent:inherit;
+	letter-spacing:inherit;
+	white-space: normal;
+}
+/*
+.june-ruler-ll {
+	position:absolute;
+	background:#000;
+	width:0px;
+	height: 100%;
+}
+.june-tooltipimg {float:none;}
+#tLayerMenu_jib ul li i {
+	padding: 5px 8px;
+    margin-right: 2px;
+    background: url(https://img.alicdn.com/imgextra/i2/39767794/TB20d6kpVXXXXaGXXXXXXXXXXXX-39767794.png) -31px -126px;
+    line-height: 30px;
+    cursor: pointer;
+    margin-left: 5px;
+    text-align: right;
+}
+#tLayerMenu_jib ul li.selected i{
+    padding: 5px 8px;
+    margin-right: 2px;
+    background: url(https://img.alicdn.com/imgextra/i2/39767794/TB20d6kpVXXXXaGXXXXXXXXXXXX-39767794.png) -10px -126px;
+}
+#handleHelper_hdyw {
+	top: -26px;
+	left: 0px;
+	position:absolute;
+	width:24px;
+	height:24px;
+	color:#ffffff;
+	background:#212121;
+	cursor:pointer;
+}
+#handleHelper_hdyw icon {
+	font-size:20px;
+	line-height:24px;
+}
+#header .head-big-btn > div.unable {
+	color:#CCCCCC;
+	cursor:default;
+}
+#header .head-big-btn > div.unable:hover {
+	background:transparent;
+}
+.june-cast {position:absolute;}
+
+.setform li .setinput.error{
+	outline:2px #ff4646 solid;
+}
+span.june-i-error {
+	position:fixed;
+	width:auto;
+	padding:0 10px;
+	height:34px;
+	line-height:34px;
+	border-radius:3px;
+	background:#FF4646;
+	color:#FFFFFF!important;
+	text-align:center;
+}
+*/
+.j-fapp-hover:hover > span {
+	outline:1px solid #14cc70;
+}
+#usertabs span.qqlogin{
+	float: left;
+	margin-left: 158px;
+	cursor:pointer;
+}
+#usertabs span.qqlogin i{
+	background: url(https://img.alicdn.com/imgextra/i1/669655157/TB2YV4wem1I.eBjy0FjXXabfXXa-669655157.png) center center no-repeat;
+	width: 20px;
+	height: 30px;
+	float: left;
+	display: block;
+	margin-top: 6px;
+	margin-right: 3px;
+}
+.t-control-btns span.t-control-btns-setstyle{ display:none !important}
+#header .head-big-btn > div .gjhover{ height: auto}
+
+/*高度调整*/
+.handle-drag-canvas {
+	position:absolute;background:url(https://img.alicdn.com/imgextra/i3/800803731/TB2LyTAiv6H8KJjy0FjXXaXepXa-800803731.png) center center no-repeat #e5e5e5;border:1px solid #999;
+}
+
+#header .help{
+	width: 90px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color:#ea3838;
+	position: absolute;
+	top:0;
+	left: 430px;
+}
+#header .help:hover{
+	background: #f5f7fa;
+}

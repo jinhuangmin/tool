@@ -1,0 +1,52 @@
+{template "content","header"}
+
+<div class="main">
+
+<div class="ann" style="width:100px; height:100px; background:#f00">zhuan</div>
+</div>
+
+
+
+
+<script language="javascript">
+function fxcun(json,n,m) {
+	if(n<m){
+	v=n+1;
+	json[n].key=v;
+	$.ajax({
+		   type: "POST",
+		   url: '/index.php?m=member&c=ajax&a=olduser',
+		   data:  {'data':json[n],'pc_hash':$_GET},
+		   success: function(msg2){
+			  $('#fxaddinfo').append(msg2);
+			  n++;
+			  fxcun(json,n,m);
+
+		}	
+		});
+	}
+}
+ $("ann").click(function(){
+
+$.ajax( {  
+     url:'/qqyy789',// 跳转到 action  
+      data:{   
+        alld : alld  
+      },  
+     type:'post',    
+     dataType:'json',  
+     success:function(data) {  
+         json=msg.data;
+			 m=msg.num;
+			 n=0;
+            fxcun(msg,n,m);
+      },  
+      error : function() {  
+           // view("异常！");  
+           alert("异常！");  
+      }  
+ });
+
+});
+ </script>
+{template "content","footer"}

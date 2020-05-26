@@ -1,0 +1,37 @@
+<?php
+return array (
+  'qq' => 
+  array (
+    'fieldid' => '110',
+    'modelid' => '10',
+    'siteid' => '0',
+    'field' => 'qq',
+    'name' => 'QQ',
+    'tips' => '',
+    'css' => '',
+    'minlength' => '1',
+    'maxlength' => '0',
+    'pattern' => '/^[0-9.-]+$/',
+    'errortips' => '',
+    'formtype' => 'text',
+    'setting' => '{"size":"50","defaultvalue":"","ispassword":"0"}',
+    'formattribute' => '',
+    'unsetgroupids' => '',
+    'unsetroleids' => '',
+    'iscore' => '0',
+    'issystem' => '0',
+    'isunique' => '0',
+    'isbase' => '1',
+    'issearch' => '0',
+    'isadd' => '1',
+    'isfulltext' => '0',
+    'isposition' => '0',
+    'listorder' => '0',
+    'disabled' => '0',
+    'isomnipotent' => '0',
+    'size' => '50',
+    'defaultvalue' => '',
+    'ispassword' => '0',
+  ),
+);
+?>

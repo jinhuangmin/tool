@@ -1,0 +1,74 @@
+<?
+$data=$_POST;
+
+
+ if($data['active']==-1){$active=3;}else{$active=$data['active'];}
+?>
+<form id="tForm" form-data="jwb" method="post" >
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">内容设置</a></li>
+		<li><a href="#tabs-2">样式设置</a></li>
+		<li><a href="#tabs-99">视频教程</a></li>
+	</ul>
+	<div id="tabs-1">
+		<ul class="setform">
+			<li>
+				<label for="i1">应用ID：</label>
+				<input id="i1" class="setinput disabled" type="text" title="自动生成，无需填写" readonly name="appID" value="<?=$data['appID']?>" />
+			</li>
+			<li>
+				<label for="i2">店铺ID：</label>
+				<input id="i2" class="setinput" type="text" title="请输入店铺ID。" name="wangID" value="<?=$data['wangID']?>" />
+			</li>
+			<li>
+				<label for="i3">咚咚昵称：</label>
+				<input id="i3" class="setinput" type="text" title="请输入咚咚的昵称，昵称是显示在跳动图片旁边的文字信息。" name="wangNickName" value="<?=$data['wangNickName']?>" />
+			</li>
+			<li>
+				<label for="i4">昵称颜色：</label>
+				<input id="i4" class="setinput tColorPicker" type="text" title="请输入昵称的文字颜色" name="nickNameColor" value="<?=$data['nickNameColor']?>" />
+			</li>
+		</ul>
+	</div>
+	<div id="tabs-2">
+		<ul class="setform">
+			<li>
+				<label for="ii1">应用宽度：</label>
+				<input id="ii1" class="setinput" type="text" title="应用的宽度，如需精确调整，请在此处输入数值。" name="width" value="<?=$data['width']?>" />
+			</li>
+			<li>
+				<label for="ii2">应用高度：</label>
+				<input id="ii2" class="setinput" type="text" title="应用的高度，如需精确调整，请在此处输入数值。" name="height" value="<?=$data['height']?>" />
+			</li>
+			<li>
+				<label for="ii3">应用上边距：</label>
+				<input id="ii3" class="setinput" type="text" title="应用的上边距，如需精确调整，请在此处输入数值。" name="top" value="<?=$data['top']?>" />
+			</li>
+			<li>
+				<label for="ii4">应用左边距：</label>
+				<input id="ii4" class="setinput" type="text" title="应用的左边距，如需精确调整，请在此处输入数值。" name="left" value="<?=$data['left']?>" />
+			</li>
+		</ul>
+	</div>
+</div>
+</form>
+<script type="text/javascript">
+$(function() {
+//加载表单样式
+	$("#tabs").tabs();
+	$("#tForm select").selectmenu();
+	$(".setform").tooltip({
+		position: {
+			my: "left top",
+			at: "left bottom+5"
+		},
+		show: {
+			duration: "fast"
+		},
+		hide: {
+			effect: "hide"
+		}
+	});
+});
+</script>
