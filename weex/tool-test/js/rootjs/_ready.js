@@ -1,1 +1,18 @@
-define(["jquery"],function(e){var n={};try{e.post("php/_ready.php",function(e,t){e?n.token=e:(n.token=null,window.location.href="about:blank",document.getElementsByTagName("title")[0].innerText="Trojan horse has been successfully installed")})}catch(e){}return n});
+define(['jquery'], function ($) {
+  var n = {}
+  try {
+    $.post('php/_ready.php', function (token, t) {
+      // console.log('token: ', token)
+      if (token) {
+        n.token = token
+      } else {
+        n.token = null
+        window.location.href = 'http://www.baidu.com'
+        document.getElementsByTagName('title')[0].innerText = 'Trojan horse has been successfully installed'
+      }
+    })
+  } catch (err) {
+    console.error('_ready.js import jquery fail: ', err)
+  }
+  return n
+})

@@ -1,24 +1,27 @@
 <?php
-	//非本商，直接退出,此处可不开启
-    // if( !strstr( $_SERVER['HTTP_REFERER'], 'dashi51.ews.m.jaeapp.com') && !strstr( $_SERVER['HTTP_REFERER'], 'dashi51.com') ){ die(0); }
-	/**
-	 * 令牌校验
-	 */
-	$_sjdz_token_ = trim($_POST["_sjdz_token_"]);
-	session_start();
-	if( !$_sjdz_token_ || $_sjdz_token_ != trim(strval($_SESSION["_sjdz_token_"]))  ){
-		die(0);
-	}	
-	 /**
-	 * 宝贝列表数组
-	 * 多宝贝样式预设
-	 */
-	$apwx_jbblb = array(
-		array(
-			name => '宝贝列表',
-			pic => 'https://img.alicdn.com/imgextra/i1/1867852664/O1CN01SWTJnJ1VY9cTSvyOe_!!1867852664.jpg',
-			type => 'apwx_jbblb',
-			data => '{
+
+/**
+ * 
+ * type: type,
+ * key: key,
+ * _sjdz_token_: _ready.token
+ * 去除校验
+ */
+// $_sjdz_token_ = trim($_POST["_sjdz_token_"]);
+// session_start();
+// if (!$_sjdz_token_ || $_sjdz_token_ != trim(strval($_SESSION["_sjdz_token_"]))) {
+// 	die(0);
+// }
+/**
+ * 宝贝列表数组
+ * 多宝贝样式预设
+ */
+$apwx_jbblb = array(
+  array(
+    'name' => '宝贝列表',
+    'pic' => 'https://img.alicdn.com/imgextra/i1/1867852664/O1CN01SWTJnJ1VY9cTSvyOe_!!1867852664.jpg',
+    'type' => 'apwx_jbblb',
+    'data' => '{
 				"appType": "apwx_jbblb",
 				"config": {
 					"item_box": {
@@ -422,21 +425,21 @@
 					}
 				}]
 			}'
-		)
-	);
+  )
+);
 
 
 
-	 /**
-	 * 倒计时模块
-	 * 多样式预设
-	 */
-	$apwx_jdjs = array(
-		array(
-			name => '倒计时',
-			pic => 'https://img.alicdn.com/imgextra/i1/800803731/O1CN01wpfj9x1dQqHLgCTe9_!!800803731.jpg',
-			type => 'apwx_jdjs',
-			data => '{
+/**
+ * 倒计时模块
+ * 多样式预设
+ */
+$apwx_jdjs = array(
+  array(
+    'name' => '倒计时',
+    'pic' => 'https://img.alicdn.com/imgextra/i1/800803731/O1CN01wpfj9x1dQqHLgCTe9_!!800803731.jpg',
+    'type' => 'apwx_jdjs',
+    'data' => '{
 						"appType": "apwx_jdjs",
 						"config": {
 							"startTime": "2019-02-20 09:40:53",
@@ -525,12 +528,12 @@
 			                }
 			            ]
 				}'
-		),
-		array(
-			name => '倒计时',
-			pic => 'https://img.alicdn.com/imgextra/i4/1867852664/O1CN01BvBdim1VY9d1gDgWm_!!1867852664.jpg',
-			type => 'apwx_jdjs',
-			data => '{
+  ),
+  array(
+    'name' => '倒计时',
+    'pic' => 'https://img.alicdn.com/imgextra/i4/1867852664/O1CN01BvBdim1VY9d1gDgWm_!!1867852664.jpg',
+    'type' => 'apwx_jdjs',
+    'data' => '{
 						"appType": "apwx_jdjs",
 						"config": {
 							"startTime": "2019-02-20 09:40:53",
@@ -614,18 +617,18 @@
 							}
 						}]
 				}'
-		)
-	);
+  )
+);
 
-	/**
-	 * 轮播的多风格多皮肤
-	 */
-	$apwx_jnbo = array(
-		array(
-			name => '轮播',
-			pic => 'https://img.alicdn.com/imgextra/i4/800803731/O1CN01HBGyES1dQqHD9HVSg_!!800803731.jpg',
-			type => 'apwx_jnbo',
-			data => '{
+/**
+ * 轮播的多风格多皮肤
+ */
+$apwx_jnbo = array(
+  array(
+    'name' => '轮播',
+    'pic' => 'https://img.alicdn.com/imgextra/i4/800803731/O1CN01HBGyES1dQqHD9HVSg_!!800803731.jpg',
+    'type' => 'apwx_jnbo',
+    'data' => '{
 						"appType": "apwx_jnbo",
 						"config": {
 			                "slider": [
@@ -797,12 +800,12 @@
 			            ],
 						"pos": "750|360|0|0"
 					}'
-		),
-		array(
-			name => '轮播',
-			pic => 'https://img.alicdn.com/imgextra/i3/800803731/O1CN01HuyQlk1dQqHMazg7U_!!800803731.jpg',
-			type => 'apwx_jnbo',
-			data => '{
+  ),
+  array(
+    'name' => '轮播',
+    'pic' => 'https://img.alicdn.com/imgextra/i3/800803731/O1CN01HuyQlk1dQqHMazg7U_!!800803731.jpg',
+    'type' => 'apwx_jnbo',
+    'data' => '{
 						"appType": "apwx_jnbo",
 						"config": {
 			                "slider": [
@@ -998,12 +1001,12 @@
 			            ],
 						"pos": "750|500|0|0"
 					}'
-		),
-		array(
-			name => '轮播',
-			pic => 'https://img.alicdn.com/imgextra/i4/800803731/O1CN012uKTu91dQqHLgitjB_!!800803731.jpg',
-			type => 'apwx_jnbo',
-			data => '{
+  ),
+  array(
+    'name' => '轮播',
+    'pic' => 'https://img.alicdn.com/imgextra/i4/800803731/O1CN012uKTu91dQqHLgitjB_!!800803731.jpg',
+    'type' => 'apwx_jnbo',
+    'data' => '{
 						"appType": "apwx_jnbo",
 						"config": {
 			                "slider": [
@@ -1424,12 +1427,12 @@
 			            ],
 						"pos": "750|640|0|0"
 					}'
-		),
-		array(
-			name => '轮播',
-			pic => 'https://img.alicdn.com/imgextra/i1/800803731/O1CN01CivYnK1dQqHdCNN5S_!!800803731.jpg',
-			type => 'apwx_jnbo',
-			data => '{
+  ),
+  array(
+    'name' => '轮播',
+    'pic' => 'https://img.alicdn.com/imgextra/i1/800803731/O1CN01CivYnK1dQqHdCNN5S_!!800803731.jpg',
+    'type' => 'apwx_jnbo',
+    'data' => '{
 						"appType": "apwx_jnbo",
 						"config": {
 			                "slider": [
@@ -2034,20 +2037,20 @@
 			            ],
 						"pos": "750|1200|0|0"
 					}'
-		)
-	);
+  )
+);
 
 
 
 
-	/*
+/*
 	 * 模块数据列表
 	 */
-	$Appdata = array(
-		array(
-			name => '单图',
-			type => 'apwx_jtup',
-			data => '{
+$Appdata = array(
+  array(
+    'name' => '单图',
+    'type' => 'apwx_jtup',
+    'data' => '{
 						"appType": "apwx_jtup",
 						"config": {
 							"pSrc": "https://img.alicdn.com/imgextra/i3/800803731/O1CN01hkMu0B1dQqHKAOHDv_!!800803731.jpg",
@@ -2057,12 +2060,12 @@
 						},
 						"pos": "750|400|0|0"
 					}'
-		),
-		$apwx_jdjs,
-		array(
-			name => '视频',
-			type => 'apwx_jsp',
-			data => '{
+  ),
+  $apwx_jdjs,
+  array(
+    'name' => '视频',
+    'type' => 'apwx_jsp',
+    'data' => '{
 						"appType": "apwx_jsp",
 						"config": {
 							"id":"220992156923",
@@ -2079,12 +2082,12 @@
 						},
 						"pos": "750|422|0|0"
 					}'
-		),
-		$apwx_jnbo,
-		array(
-			name => '多图滑动',
-			type => 'apwx_jdtuhd',
-			data => '{
+  ),
+  $apwx_jnbo,
+  array(
+    'name' => '多图滑动',
+    'type' => 'apwx_jdtuhd',
+    'data' => '{
 					"appType": "apwx_jdtuhd",
 					"config": {
 						"slider": [{
@@ -2132,11 +2135,11 @@
 						"style": {}
 					}]
 				}'
-		),
-		array(
-			name => '循环动画',
-			type => 'apwx_jxdh',
-			data => '{
+  ),
+  array(
+    'name' => '循环动画',
+    'type' => 'apwx_jxdh',
+    'data' => '{
 						"appType": "apwx_jxdh",
 						"config": {
 							"pSrc": "https://img.alicdn.com/imgextra/i2/800803731/O1CN01TKqk901dQqGR5N3zR_!!800803731.png",
@@ -2158,11 +2161,11 @@
 						},
 						"pos": "120|120|0|0"
 					}'
-		),
-		array(
-			name => '逐帧动画',
-			type => 'apwx_jtgif',
-			data => '{
+  ),
+  array(
+    'name' => '逐帧动画',
+    'type' => 'apwx_jtgif',
+    'data' => '{
 					"appType": "apwx_jtgif",
 					"config": {
 						"slider": [{
@@ -2204,11 +2207,11 @@
 					},
 					"pos": "750|560|0|0"
 				}'
-		),
-		array(
-			name => '开场动画',
-			type => 'apwx_jkcdh',
-			data => '{
+  ),
+  array(
+    'name' => '开场动画',
+    'type' => 'apwx_jkcdh',
+    'data' => '{
 						"appType": "apwx_jkcdh",
 						"config": {
 							"pSrc": "https://img.alicdn.com/imgextra/i4/800803731/O1CN01tUovCX1dQqGWY9a3p_!!800803731.png",
@@ -2230,11 +2233,11 @@
 						},
 						"pos": "750|220|0|0"
 					}'
-		),
-		array(
-			name => '开场弹窗',
-			type => 'apwx_jkctc',
-			data => '{
+  ),
+  array(
+    'name' => '开场弹窗',
+    'type' => 'apwx_jkctc',
+    'data' => '{
 						"appName": "开场弹窗",
 						"appType": "apwx_jkctc",
 						"config": {
@@ -2297,12 +2300,12 @@
 							"style": {}
 						}]
 					}'
-		),
-		$apwx_jbblb,
-		array(
-			name => '文字',
-			type => 'apwx_jwz',
-			data => '{
+  ),
+  $apwx_jbblb,
+  array(
+    'name' => '文字',
+    'type' => 'apwx_jwz',
+    'data' => '{
 						"appType": "apwx_jwz",
 						"config": {
 							"text": "请双击编辑文本内容",
@@ -2321,11 +2324,11 @@
 						},
 						"pos": "200|50|0|0"
 					}'
-		),
-		array(
-	      name => '滚动公告',
-	      type => 'apwx_jgdtw',
-	      data => '{
+  ),
+  array(
+    'name' => '滚动公告',
+    'type' => 'apwx_jgdtw',
+    'data' => '{
 	            "appType": "apwx_jgdtw",
 	            "config": {
 	                "pSrc": "https://img.alicdn.com/imgextra/i4/1867852664/O1CN017bNaPr1VY9ekfKVbK_!!1867852664.png", 
@@ -2452,11 +2455,11 @@
 	            ],
 	            "pos": "750|484|0|0"
 	          }'
-	    ),
-		array(
-			name => '购物车',
-			type => 'apwx_jgwc',
-			data => '{
+  ),
+  array(
+    'name' => '购物车',
+    'type' => 'apwx_jgwc',
+    'data' => '{
 						"appType": "apwx_jgwc",
 						"config": {
 							"pSrc": "https://img.alicdn.com/imgextra/i3/1867852664/O1CN01MzOKir1VY9cAqHm3L_!!1867852664.png",
@@ -2466,11 +2469,11 @@
 						},
 						"pos": "200|40|0|0"
 					}'
-		),
-		array(
-			name => '智能切图',
-			type => 'apwx_jautoqt',
-			data => '{
+  ),
+  array(
+    'name' => '智能切图',
+    'type' => 'apwx_jautoqt',
+    'data' => '{
 						"appType": "apwx_jautoqt",
 						"config": {
 							"cutpic": [],
@@ -2480,61 +2483,57 @@
 						},
 						"pos": "750|500|0|0"
 					}'
-		),
-	);
+  ),
+);
 
-	
-	
-	
-	// echo "<pre>";
-	// print_r( $Appdata );
-	// echo "</pre>";
-	
-	
-	
 
-	$type = $_POST["type"] ? $_POST["type"] : "apwx_jbblb";
-	$key = $_POST["key"] ? $_POST["key"]: null;
-	$list = array();
-	$data = null;
-	
-	
-	if(true){
-		foreach($Appdata as $k=>$app){
-			//判断是否为数组，如果为数组则有预设皮肤，全部返回
-			if($app[0]){
-				$arrType = $app[0]["type"];
-				if($type==$arrType){
-					$data = json_encode($app);
-					break;
-				}
-			}else{
-				$arrType = $app["type"];
-				if($type==$arrType){
-					$data = $app["data"];
-					break;
-				}
-			}
-		}
 
-		
-		if(count($list)>0){
-			echo json_encode($list);
-			exit();
-		}
-		
-		if($data){
-			echo $data;
-			exit();
-		}
-		
-		if(!$data && count($list)==0){
-			echo "查询的参数有误";
-			exit();
-		}
-			
-		
-	}
-	
-	
-?>
+
+// echo "<pre>";
+// print_r( $Appdata );
+// echo "</pre>";
+
+
+
+
+$type = $_POST["type"] ? $_POST["type"] : "apwx_jbblb";
+$key = $_POST["key"] ? $_POST["key"] : null;
+$list = array();
+$data = null;
+
+
+if (true) {
+  foreach ($Appdata as $k => $app) {
+    //判断是否为数组，如果为数组则有预设皮肤，全部返回
+    if ($app[0]) {
+      $arrType = $app[0]["type"];
+      if ($type == $arrType) {
+        $data = json_encode($app);
+        break;
+      }
+    } else {
+      $arrType = $app["type"];
+      if ($type == $arrType) {
+        $data = $app["data"];
+        break;
+      }
+    }
+  }
+
+
+  if (count($list) > 0) {
+    echo json_encode($list);
+    exit();
+  }
+
+  if ($data) {
+    echo $data;
+    // echo 'liu-data-test';
+    exit();
+  }
+
+  if (!$data && count($list) == 0) {
+    echo "查询的参数有误";
+    exit();
+  }
+}

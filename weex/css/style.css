@@ -165,7 +165,7 @@ html,body {
 .show-left .nav2 a{width: 100%;height: 40px;line-height: 40px;text-indent: 50px;font-size: 14px;color:#333;text-decoration: none;display: block;}
 .show-left .nav2 a:hover{background: #f6f6f6; color:#ff5000;}
 
-.show-right{padding:80px 0 0 15%;background: #fff;}
+.show-right{padding:80px 0 100px 15%;background: #fff;}
 .show-right h2{font-size: 42px;font-weight: 400;color: #000;text-align: center;height:150px;line-height:170px;}
 .show-right .nave{height:60px;text-align: center; overflow: hidden;background: #fff;}
 .show-right .nave-fixed{width: 85%;position: fixed;top:80px;z-index: 997;}

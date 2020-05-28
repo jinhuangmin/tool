@@ -2479,6 +2479,24 @@ define(["taoAPP", "appLayer", "jquery.spectrum", "jquery.cooike", "Sortable", "l
 				text: "缩放至0.9倍",
 				value: "scale(0.9, 0.9)"
 			}, {
+				text: "缩放至1.1倍",
+				value: "scale(1.1, 1.1)"
+			}, {
+				text: "缩放至1.2倍",
+				value: "scale(1.2, 1.2)"
+			}, {
+				text: "缩放至1.3倍",
+				value: "scale(1.3, 1.3)"
+			}, {
+				text: "缩放至1.5倍",
+				value: "scale(1.5, 1.5)"
+			}, {
+				text: "缩放至1.8倍",
+				value: "scale(1.8, 1.8)"
+			}, {
+				text: "缩放至2倍",
+				value: "scale(2, 2)"
+			}, {
 				text: "0.1倍至正常",
 				value: '{"_scale_exp_":5,"scale_1":"scale(0.1, 0.1)","scale_2":"scale(1, 1)"}'
 			}, {
@@ -2802,7 +2820,7 @@ define(["taoAPP", "appLayer", "jquery.spectrum", "jquery.cooike", "Sortable", "l
 	}, g.apwx_jtgif = function(t, e, a) {
 		var i, n = t.attr("data-config") ? JSON.parse(t.attr("data-config")) : {},
 			s = n.slider,
-			o = (n.customContent && JSON.stringify(n.customContent), "编辑" + t.attr("appname") || "编辑动图切换");
+			o = (n.customContent && JSON.stringify(n.customContent), "编辑" + t.attr("appname") || "编辑逐帧动画");
 		i = [{
 			name: "图片",
 			ele: "slider_tu",

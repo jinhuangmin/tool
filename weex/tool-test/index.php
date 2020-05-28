@@ -114,8 +114,8 @@
 								<li class="app" data-type="apwx_jdtuhd" data-key="0"><icon>&#xe620;</icon><span>多图滑动</span></li>
 								<li class="app" data-type="apwx_jgdtw" data-key="0"><icon>&#xe6ea;</icon><span>滚动公告</span></li>
 								<li class="app" data-type="apwx_jtgif" data-key="0"><icon>&#xe6ea;</icon><span>逐帧动画</span></li>
-								<li class="app" data-type="apwx_jkctc" data-key="0"><icon>&#xe630;</icon><span>开场弹窗</span></li>
-								<li class="app" data-type="apwx_jbblb" data-key="0"><icon>&#xe639;</icon><span>宝贝列表</span></li>
+<!-- 								<li class="app" data-type="apwx_jkctc" data-key="0"><icon>&#xe630;</icon><span>开场弹窗</span></li>
+ -->								<li class="app" data-type="apwx_jbblb" data-key="0"><icon>&#xe639;</icon><span>宝贝列表</span></li>
 								<!-- <li class="app" data-type="apwx_jgwc" data-key="0"><icon>&#xe61a;</icon><span>购物车</span></li> -->
 								<!-- <li class="app" data-type="apwx_jautoqt" data-key="0"><icon>&#xe60e;</icon><span>智能切图</span></li> -->
 							</ul>
